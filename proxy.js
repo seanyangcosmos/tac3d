@@ -63,7 +63,7 @@ async function sendKeyEmail(email, key, plan) {
       'Authorization': `Bearer ${process.env.RESEND_API_KEY}`
     },
     body: JSON.stringify({
-      from: 'TAC-3D <noreply@sycds.com>',
+      from: 'TAC-3D <noreply@tac3d.sycds.com>',
       to: email,
       subject: `Your TAC-3D ${planNames[plan]} Access Key`,
       html: `

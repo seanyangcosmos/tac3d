@@ -140,6 +140,12 @@ textarea::placeholder,input::placeholder{color:var(--text-3)}
 .history-empty{text-align:center;padding:64px 32px;color:var(--text-3);font-size:14px}
 .history-detail{display:none;padding:16px 20px;border-top:1px solid var(--border);font-size:13px;color:var(--text-2);line-height:1.7;background:#fff}
 .history-detail.open{display:block}
+.chart-wrap{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px;margin-bottom:24px}
+.chart-title{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:16px;display:flex;align-items:center;justify-content:space-between}
+.chart-legend{display:flex;gap:16px}
+.chart-legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-3)}
+.chart-legend-dot{width:8px;height:8px;border-radius:50%}
+canvas#trendChart{width:100%;height:200px;display:block}
 </style>
 </head>
 <body>
@@ -208,6 +214,18 @@ textarea::placeholder,input::placeholder{color:var(--text-3)}
   <div class="page" id="pageHistory">
     <div class="history-page-title">Screening History</div>
     <div class="history-page-sub">Past decision assessments, stored locally on this server.</div>
+    <div class="chart-wrap" id="chartWrap" style="display:none">
+      <div class="chart-title">
+        Score Trends
+        <div class="chart-legend">
+          <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#1a56db"></div>Index</div>
+          <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#dc2626"></div>Tension</div>
+          <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#d97706"></div>Alignment</div>
+          <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#16a34a"></div>Convergence</div>
+        </div>
+      </div>
+      <canvas id="trendChart"></canvas>
+    </div>
     <div class="history-list" id="historyList">
       <div class="history-empty">Loading history...</div>
     </div>
@@ -471,6 +489,68 @@ function resetForm() {
   window.scrollTo({top:0,behavior:"smooth"});
 }
 
+function drawChart(rows) {
+  var wrap = document.getElementById("chartWrap");
+  if (rows.length < 2) { wrap.style.display = "none"; return; }
+  wrap.style.display = "block";
+  var canvas = document.getElementById("trendChart");
+  var dpr = window.devicePixelRatio || 1;
+  var w = canvas.parentElement.clientWidth - 56;
+  var h = 200;
+  canvas.width = w * dpr;
+  canvas.height = h * dpr;
+  canvas.style.width = w + "px";
+  canvas.style.height = h + "px";
+  var ctx = canvas.getContext("2d");
+  ctx.scale(dpr, dpr);
+  var pad = {top:16, right:16, bottom:32, left:36};
+  var cw = w - pad.left - pad.right;
+  var ch = h - pad.top - pad.bottom;
+  // grid
+  ctx.strokeStyle = "#e5e7eb";
+  ctx.lineWidth = 1;
+  [0,25,50,75,100].forEach(function(v) {
+    var y = pad.top + ch - (v/100)*ch;
+    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left+cw, y); ctx.stroke();
+    ctx.fillStyle = "#888"; ctx.font = "10px DM Mono, monospace";
+    ctx.fillText(v, 4, y+4);
+  });
+  var n = rows.length;
+  var series = [
+    {key:"eligibility_index", color:"#1a56db", width:2.5},
+    {key:"tension", color:"#dc2626", width:1.5},
+    {key:"alignment", color:"#d97706", width:1.5},
+    {key:"convergence", color:"#16a34a", width:1.5}
+  ];
+  // x labels
+  ctx.fillStyle = "#888"; ctx.font = "10px DM Mono, monospace"; ctx.textAlign = "center";
+  rows.slice().reverse().forEach(function(row, i) {
+    var x = pad.left + (n===1?cw/2:i/(n-1)*cw);
+    var d = new Date(row.created_at);
+    ctx.fillText((d.getMonth()+1)+"/"+d.getDate(), x, h-6);
+  });
+  // lines
+  series.forEach(function(s) {
+    ctx.strokeStyle = s.color;
+    ctx.lineWidth = s.width;
+    ctx.lineJoin = "round";
+    ctx.beginPath();
+    rows.slice().reverse().forEach(function(row, i) {
+      var x = pad.left + (n===1?cw/2:i/(n-1)*cw);
+      var y = pad.top + ch - (row[s.key]/100)*ch;
+      i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    });
+    ctx.stroke();
+    // dots
+    rows.slice().reverse().forEach(function(row, i) {
+      var x = pad.left + (n===1?cw/2:i/(n-1)*cw);
+      var y = pad.top + ch - (row[s.key]/100)*ch;
+      ctx.fillStyle = s.color;
+      ctx.beginPath(); ctx.arc(x,y,3,0,Math.PI*2); ctx.fill();
+    });
+  });
+}
+
 async function loadHistory() {
   var container = document.getElementById("historyList");
   container.innerHTML = '<div class="history-empty">Loading...</div>';
@@ -481,6 +561,7 @@ async function loadHistory() {
       container.innerHTML = '<div class="history-empty">No screenings yet. Run your first assessment to see history here.</div>';
       return;
     }
+    drawChart(rows);
     var html = "";
     rows.forEach(function(row) {
       var vc = {ELIGIBLE:"eligible",ELIGIBLE_WITH_CONDITIONS:"conditional",DEFER:"defer",RESTRUCTURE:"restructure"}[row.verdict] || "conditional";

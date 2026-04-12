@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TAC-3D Decision Eligibility Screener</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#ffffff;--surface:#f5f5f5;--surface2:#ebebeb;--border:#d0d0d0;--border2:#c0c0c0;--accent:#1a56db;--accent-dim:#dbeafe;--green:#16a34a;--green-dim:#dcfce7;--amber:#d97706;--amber-dim:#fef3c7;--red:#dc2626;--red-dim:#fee2e2;--text:#111111;--text-2:#444444;--text-3:#888888}
@@ -234,6 +236,7 @@ canvas#trendChart{width:100%;height:200px;display:block}
 </div>
 
 <script>
+var currentResult = null;
 var layers = [{name:"financial",content:""},{name:"operational",content:""}];
 var conversationHistory = [];
 var roundCount = 0;
@@ -457,7 +460,9 @@ function showResults(r) {
   html += '<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-title">Convergence Profile</span><span class="rpt-toggle open">^</span></div><div class="rpt-body">'+cHTML+"</div></div>";
   html += '<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-title">Gap Inventory</span><span class="rpt-toggle open">^</span></div><div class="rpt-body">'+gHTML+"</div></div>";
   html += condHTML+"</div>";
+  currentResult = r;
   var followupQ = r.followup_question || "Do you have additional context that could affect this structural assessment?";
+  html += '<div style="display:flex;justify-content:flex-end;margin-bottom:16px"><button class="reset-btn" onclick="exportPDF()" style="display:flex;align-items:center;gap:8px;border-color:var(--accent);color:var(--accent)">&#8595; Export PDF</button></div>';
   html += '<div class="followup-wrap"><div class="followup-header"><span class="followup-tag">TAC-3D FOLLOW-UP</span></div><div class="followup-q">'+followupQ+'</div><div class="followup-input-area"><textarea id="followupInput" rows="3" placeholder="Provide additional context or evidence..."></textarea><div class="followup-actions"><button class="run-btn" onclick="submitFollowup()"><span>Re-evaluate</span><span>&#8594;</span></button><button class="reset-btn" onclick="resetForm()">New screening</button><span class="followup-round">Round '+roundCount+'</span></div></div></div>';
   var ra = document.getElementById("resultsArea");
   ra.innerHTML = html;
@@ -595,3 +600,214 @@ function toggleHistoryDetail(card) {
 </script>
 </body>
 </html>
+<script>
+// Inject exportPDF into page after jsPDF loads
+document.addEventListener('DOMContentLoaded', function() {
+  window.exportPDF = function() {
+    if (!currentResult) return;
+    var r = currentResult;
+    var { jsPDF } = window.jspdf;
+    var doc = new jsPDF({ unit: 'mm', format: 'a4' });
+    var margin = 20;
+    var pageW = 210;
+    var contentW = pageW - margin * 2;
+    var y = margin;
+
+    // header
+    doc.setFillColor(26, 86, 219);
+    doc.rect(0, 0, pageW, 16, 'F');
+    doc.setTextColor(255,255,255);
+    doc.setFontSize(10);
+    doc.setFont('helvetica','bold');
+    doc.text('TAC-3D', margin, 10);
+    doc.setFont('helvetica','normal');
+    doc.text('Decision Eligibility Report', margin + 20, 10);
+    doc.text(new Date().toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}), pageW - margin, 10, {align:'right'});
+    y = 26;
+
+    // verdict
+    var verdictColors = {ELIGIBLE:[22,163,74], ELIGIBLE_WITH_CONDITIONS:[26,86,219], DEFER:[217,119,6], RESTRUCTURE:[220,38,38]};
+    var vc = verdictColors[r.verdict] || [26,86,219];
+    doc.setFillColor(vc[0], vc[1], vc[2]);
+    doc.roundedRect(margin, y, contentW, 20, 2, 2, 'F');
+    doc.setTextColor(255,255,255);
+    doc.setFontSize(13);
+    doc.setFont('helvetica','bold');
+    var vl = {ELIGIBLE:'ELIGIBLE',ELIGIBLE_WITH_CONDITIONS:'ELIGIBLE WITH CONDITIONS',DEFER:'DEFER',RESTRUCTURE:'RESTRUCTURE'}[r.verdict] || r.verdict;
+    doc.text(vl, margin + 6, y + 8);
+    doc.setFontSize(9);
+    doc.setFont('helvetica','normal');
+    var sumLines = doc.splitTextToSize(r.verdict_summary || '', contentW - 12);
+    doc.text(sumLines[0] || '', margin + 6, y + 14);
+    y += 26;
+
+    // scores
+    doc.setTextColor(100,100,100);
+    doc.setFontSize(8);
+    doc.setFont('helvetica','bold');
+    doc.text('DIMENSION SCORES', margin, y);
+    y += 5;
+    var scoreData = [
+      ['Tension', r.scores.tension],
+      ['Alignment', r.scores.alignment],
+      ['Convergence', r.scores.convergence],
+      ['Eligibility Index', r.scores.eligibility_index]
+    ];
+    scoreData.forEach(function(sd) {
+      doc.setTextColor(60,60,60);
+      doc.setFontSize(9);
+      doc.setFont('helvetica', sd[0]==='Eligibility Index'?'bold':'normal');
+      doc.text(sd[0], margin, y + 4);
+      // bar
+      var barX = margin + 45;
+      var barW = contentW - 60;
+      doc.setFillColor(235,235,235);
+      doc.roundedRect(barX, y, barW, 5, 1, 1, 'F');
+      var pct = sd[1] / 100;
+      var fc = sd[1] >= 72 ? [22,163,74] : sd[1] >= 48 ? [26,86,219] : sd[1] >= 28 ? [217,119,6] : [220,38,38];
+      doc.setFillColor(fc[0],fc[1],fc[2]);
+      doc.roundedRect(barX, y, barW * pct, 5, 1, 1, 'F');
+      doc.setTextColor(fc[0],fc[1],fc[2]);
+      doc.setFont('helvetica','bold');
+      doc.text(String(sd[1]), pageW - margin, y + 4, {align:'right'});
+      y += 9;
+    });
+    y += 4;
+
+    // structural summary
+    doc.setTextColor(100,100,100);
+    doc.setFontSize(8);
+    doc.setFont('helvetica','bold');
+    doc.text('STRUCTURAL SUMMARY', margin, y);
+    y += 4;
+    doc.setTextColor(60,60,60);
+    doc.setFontSize(9);
+    doc.setFont('helvetica','normal');
+    var sumText = (r.structural_summary || '').replace(/<[^>]+>/g, '');
+    var sumWrapped = doc.splitTextToSize(sumText, contentW);
+    doc.text(sumWrapped, margin, y);
+    y += sumWrapped.length * 4 + 4;
+
+    // tension map table
+    if (r.tension_map && r.tension_map.length) {
+      if (y > 240) { doc.addPage(); y = margin; }
+      doc.setTextColor(100,100,100);
+      doc.setFontSize(8);
+      doc.setFont('helvetica','bold');
+      doc.text('TENSION MAP', margin, y);
+      y += 3;
+      doc.autoTable({
+        startY: y,
+        margin: {left: margin, right: margin},
+        headStyles: {fillColor:[240,240,240], textColor:[80,80,80], fontSize:8, fontStyle:'bold'},
+        bodyStyles: {fontSize:8, textColor:[60,60,60]},
+        head: [['Layers', 'Severity', 'Deduction', 'Conflict']],
+        body: r.tension_map.map(function(t) {
+          return [(t.layers||[]).join(' x '), (t.severity||'').toUpperCase(), '-'+t.deduction+' pts', t.conflict];
+        }),
+        columnStyles: {0:{cellWidth:30}, 1:{cellWidth:20}, 2:{cellWidth:20}, 3:{cellWidth:'auto'}}
+      });
+      y = doc.lastAutoTable.finalY + 6;
+    }
+
+    // alignment gaps
+    if (r.alignment_gaps && r.alignment_gaps.length) {
+      if (y > 240) { doc.addPage(); y = margin; }
+      doc.setTextColor(100,100,100);
+      doc.setFontSize(8);
+      doc.setFont('helvetica','bold');
+      doc.text('ALIGNMENT ASSESSMENT', margin, y);
+      y += 3;
+      doc.autoTable({
+        startY: y,
+        margin: {left: margin, right: margin},
+        headStyles: {fillColor:[240,240,240], textColor:[80,80,80], fontSize:8, fontStyle:'bold'},
+        bodyStyles: {fontSize:8, textColor:[60,60,60]},
+        head: [['Severity', 'Description']],
+        body: r.alignment_gaps.map(function(g) {
+          return [(g.severity||'').toUpperCase(), g.description];
+        }),
+        columnStyles: {0:{cellWidth:25}}
+      });
+      y = doc.lastAutoTable.finalY + 6;
+    }
+
+    // convergence risks
+    if (r.convergence_risks && r.convergence_risks.length) {
+      if (y > 240) { doc.addPage(); y = margin; }
+      doc.setTextColor(100,100,100);
+      doc.setFontSize(8);
+      doc.setFont('helvetica','bold');
+      doc.text('CONVERGENCE PROFILE', margin, y);
+      y += 3;
+      doc.autoTable({
+        startY: y,
+        margin: {left: margin, right: margin},
+        headStyles: {fillColor:[240,240,240], textColor:[80,80,80], fontSize:8, fontStyle:'bold'},
+        bodyStyles: {fontSize:8, textColor:[60,60,60]},
+        head: [['Severity', 'Scenario']],
+        body: r.convergence_risks.map(function(c) {
+          return [(c.severity||'').toUpperCase(), c.scenario];
+        }),
+        columnStyles: {0:{cellWidth:25}}
+      });
+      y = doc.lastAutoTable.finalY + 6;
+    }
+
+    // gap inventory
+    if (r.gap_inventory && r.gap_inventory.length) {
+      if (y > 240) { doc.addPage(); y = margin; }
+      doc.setTextColor(100,100,100);
+      doc.setFontSize(8);
+      doc.setFont('helvetica','bold');
+      doc.text('GAP INVENTORY', margin, y);
+      y += 3;
+      doc.autoTable({
+        startY: y,
+        margin: {left: margin, right: margin},
+        headStyles: {fillColor:[240,240,240], textColor:[80,80,80], fontSize:8, fontStyle:'bold'},
+        bodyStyles: {fontSize:8, textColor:[60,60,60]},
+        head: [['Type', 'Gap', 'Resolution']],
+        body: r.gap_inventory.map(function(g) {
+          return [g.load_bearing ? 'LOAD-BEARING' : 'SECONDARY', g.gap, g.resolution];
+        }),
+        columnStyles: {0:{cellWidth:28}, 1:{cellWidth:60}}
+      });
+      y = doc.lastAutoTable.finalY + 6;
+    }
+
+    // conditions
+    if (r.conditions && r.conditions.length) {
+      if (y > 240) { doc.addPage(); y = margin; }
+      doc.setTextColor(100,100,100);
+      doc.setFontSize(8);
+      doc.setFont('helvetica','bold');
+      doc.text('CONDITIONS FOR ELIGIBILITY', margin, y);
+      y += 4;
+      r.conditions.forEach(function(c, i) {
+        doc.setTextColor(26,86,219);
+        doc.setFont('helvetica','bold');
+        doc.setFontSize(9);
+        doc.text('0'+(i+1), margin, y);
+        doc.setTextColor(60,60,60);
+        doc.setFont('helvetica','normal');
+        var cLines = doc.splitTextToSize(c, contentW - 12);
+        doc.text(cLines, margin + 10, y);
+        y += cLines.length * 4 + 3;
+      });
+    }
+
+    // footer
+    var pageCount = doc.internal.getNumberOfPages();
+    for (var p = 1; p <= pageCount; p++) {
+      doc.setPage(p);
+      doc.setTextColor(180,180,180);
+      doc.setFontSize(7);
+      doc.text('TAC-3D Decision Eligibility Report · Generated by TAC-3D v0.3', margin, 292);
+      doc.text('Page ' + p + ' of ' + pageCount, pageW - margin, 292, {align:'right'});
+    }
+
+    doc.save('TAC-3D-Report-' + new Date().toISOString().slice(0,10) + '.pdf');
+  };
+});
+</script>

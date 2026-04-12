@@ -3,811 +3,486 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TAC-3D Decision Eligibility Screener</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+<title>TAC-3D — Decision Eligibility Screener</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#ffffff;--surface:#f5f5f5;--surface2:#ebebeb;--border:#d0d0d0;--border2:#c0c0c0;--accent:#1a56db;--accent-dim:#dbeafe;--green:#16a34a;--green-dim:#dcfce7;--amber:#d97706;--amber-dim:#fef3c7;--red:#dc2626;--red-dim:#fee2e2;--text:#111111;--text-2:#444444;--text-3:#888888}
+:root{--bg:#ffffff;--surface:#f7f7f7;--surface2:#efefef;--border:#e0e0e0;--border2:#d0d0d0;--accent:#1a56db;--accent-dim:#dbeafe;--green:#16a34a;--green-dim:#dcfce7;--amber:#d97706;--red:#dc2626;--red-dim:#fee2e2;--text:#111111;--text-2:#444444;--text-3:#888888}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;font-size:14px;line-height:1.7;min-height:100vh}
-header{border-bottom:1px solid var(--border);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);z-index:100}
-.logo{display:flex;align-items:center;gap:12px}
-.logo-text{font-family:"DM Mono",monospace;font-size:13px;font-weight:500;letter-spacing:.14em;color:var(--accent)}
-.logo-div{width:1px;height:16px;background:var(--border2)}
-.logo-sub{font-size:12px;color:var(--text-3)}
-.badge{font-family:"DM Mono",monospace;font-size:10px;color:var(--text-3);border:1px solid var(--border2);border-radius:4px;padding:3px 8px}
-.nav-links{display:flex;align-items:center;gap:8px}
-.nav-btn{font-family:"DM Mono",monospace;font-size:11px;color:var(--text-3);background:transparent;border:1px solid var(--border2);border-radius:4px;padding:4px 12px;cursor:pointer;transition:all .15s;letter-spacing:.06em}
-.nav-btn:hover,.nav-btn.active{color:var(--accent);border-color:var(--accent);background:var(--accent-dim)}
-.container{max-width:860px;margin:0 auto;padding:48px 32px 100px}
-.hero{text-align:center;padding:32px 0 48px}
-.hero-eye{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;opacity:.8}
-.hero h1{font-family:"Playfair Display",serif;font-size:36px;font-weight:400;line-height:1.25;margin-bottom:14px;letter-spacing:-.02em}
-.hero-desc{font-size:15px;color:var(--text-2);max-width:500px;margin:0 auto;line-height:1.8}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:20px}
-.card-sec{padding:24px 28px;border-bottom:1px solid var(--border)}
-.card-sec:last-child{border-bottom:none}
-.sec-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.sec-num{width:20px;height:20px;background:var(--accent-dim);border:1px solid var(--accent);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:"DM Mono",monospace;font-size:10px;color:var(--accent)}
-.hint{font-size:12px;color:var(--text-3);margin-bottom:12px;font-style:italic}
-textarea,input[type=text]{width:100%;background:var(--surface2);border:1px solid var(--border2);border-radius:6px;padding:12px 14px;font-family:"DM Sans",sans-serif;font-size:14px;color:var(--text);outline:none;resize:vertical;transition:border-color .15s}
-textarea:focus,input[type=text]:focus{border-color:var(--accent)}
-textarea::placeholder,input::placeholder{color:var(--text-3)}
-.layers{display:flex;flex-direction:column;gap:12px}
-.layer{background:var(--surface2);border:1px solid var(--border2);border-radius:8px;overflow:hidden}
-.layer-hdr{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.02)}
-.layer-tag{font-family:"DM Mono",monospace;font-size:10px;color:var(--text-3);letter-spacing:.06em}
-.layer-name{flex:1;background:transparent;border:none;border-radius:0;padding:0;font-family:"DM Mono",monospace;font-size:12px;color:var(--accent);font-weight:500;outline:none}
-.layer-del{background:none;border:none;color:var(--text-3);cursor:pointer;font-size:16px;padding:0 4px;line-height:1}
-.layer-del:hover{color:var(--red)}
-.layer-body{width:100%;background:transparent;border:none;border-radius:0;padding:12px 14px;font-size:13.5px;min-height:80px;resize:vertical;color:var(--text);outline:none}
-.add-btn{width:100%;background:transparent;border:1px dashed var(--border2);border-radius:8px;padding:12px;color:var(--text-3);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;transition:all .15s}
-.add-btn:hover{border-color:var(--accent);color:var(--accent)}
-.submit-area{display:flex;align-items:center;gap:16px;padding:20px 0 0}
-.run-btn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:13px 32px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .15s}
-.run-btn:hover{opacity:.88;transform:translateY(-1px)}
-.run-note{font-size:12px;color:var(--text-3);line-height:1.5}
-.loading{display:none;text-align:center;padding:64px 32px;background:var(--surface);border:1px solid var(--border);border-radius:10px}
-.loading.show{display:block}
-.spinner{width:40px;height:40px;border:2px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 20px}
-@keyframes spin{to{transform:rotate(360deg)}}
-.load-txt{font-family:"DM Mono",monospace;font-size:12px;color:var(--text-3);letter-spacing:.08em}
-.steps{margin-top:20px;display:flex;flex-direction:column;gap:8px;max-width:280px;margin-left:auto;margin-right:auto}
-.step{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--text-3);opacity:.4;transition:opacity .3s}
-.step.active{opacity:1;color:var(--accent)}
-.step.done{opacity:.6;color:var(--green)}
-.dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
-.results{display:none}
-.results.show{display:block;animation:fadeUp .4s ease}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.verdict{border-radius:10px;padding:24px 28px;margin-bottom:20px;border:1px solid;display:flex;align-items:center;gap:20px}
-.verdict.eligible{background:var(--green-dim);border-color:var(--green)}
-.verdict.conditional{background:var(--accent-dim);border-color:var(--accent)}
-.verdict.defer{background:var(--amber-dim);border-color:var(--amber)}
-.verdict.restructure{background:var(--red-dim);border-color:var(--red)}
-.v-icon{font-size:28px;flex-shrink:0}
-.v-label{font-family:"DM Mono",monospace;font-size:13px;font-weight:500;letter-spacing:.1em;margin-bottom:4px}
-.verdict.eligible .v-label{color:var(--green)}
-.verdict.conditional .v-label{color:var(--accent)}
-.verdict.defer .v-label{color:var(--amber)}
-.verdict.restructure .v-label{color:var(--red)}
-.v-sum{font-size:13.5px;color:var(--text-2);line-height:1.65}
-.scores{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px;margin-bottom:20px}
-.sc-title{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:20px}
-.sc-rows{display:flex;flex-direction:column;gap:14px}
-.sc-row{display:grid;grid-template-columns:140px 1fr 48px;align-items:center;gap:16px}
-.sc-lbl{font-size:13px;font-weight:500;color:var(--text-2)}
-.sc-lbl small{display:block;font-size:11px;color:var(--text-3);font-weight:400;margin-top:1px}
-.sc-track{height:8px;background:var(--surface2);border-radius:4px;overflow:hidden;border:1px solid var(--border)}
-.sc-fill{height:100%;border-radius:4px;transition:width 1s cubic-bezier(.16,1,.3,1);width:0}
-.sc-num{font-family:"DM Mono",monospace;font-size:15px;font-weight:500;text-align:right}
-.sc-div{height:1px;background:var(--border);margin:4px 0}
-.report{display:flex;flex-direction:column;gap:16px}
-.rpt-sec{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
-.rpt-hdr{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;background:var(--surface2);cursor:pointer;user-select:none}
-.rpt-title{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-2);flex:1}
-.rpt-toggle{font-size:11px;color:var(--text-3);transition:transform .2s}
-.rpt-toggle.open{transform:rotate(180deg)}
-.rpt-body{padding:20px;font-size:14px;color:var(--text-2);line-height:1.75}
-.rpt-body.hidden{display:none}
-.rlist{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
-.rlist li{padding:12px 14px;background:var(--surface2);border-radius:6px;border-left:3px solid var(--border2);font-size:13.5px}
-.rlist li.high{border-left-color:var(--red)}
-.rlist li.critical{border-left-color:#7c0000}
-.rlist li.moderate{border-left-color:var(--amber)}
-.rlist li.low{border-left-color:var(--green)}
-.rlbl{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:4px}
-.cond-list{display:flex;flex-direction:column;gap:8px}
-.cond-item{display:flex;gap:10px;padding:10px 14px;background:var(--accent-dim);border:1px solid rgba(26,86,219,.2);border-radius:6px;font-size:13.5px;color:#1a56db}
-.cond-num{font-family:"DM Mono",monospace;font-size:11px;color:var(--accent);flex-shrink:0;margin-top:2px}
-.reset-btn{display:inline-block;background:transparent;border:1px solid var(--border2);border-radius:8px;padding:10px 24px;color:var(--text-3);font-size:13px;cursor:pointer;transition:all .15s}
-.reset-btn:hover{border-color:var(--text-3);color:var(--text)}
-.err{display:none;background:var(--red-dim);border:1px solid var(--red);border-radius:8px;padding:16px 20px;color:#dc2626;font-size:13.5px;margin-top:16px}
-.err.show{display:block}
-.followup-wrap{margin-top:32px;border:1px solid var(--accent);border-radius:10px;overflow:hidden;background:var(--accent-dim)}
-.followup-header{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:1px solid rgba(26,86,219,.2);background:rgba(26,86,219,.06)}
-.followup-tag{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.12em;color:var(--accent);font-weight:500}
-.followup-q{padding:16px 20px;font-size:13.5px;color:var(--text);line-height:1.75}
-.followup-input-area{padding:0 20px 20px}
-.followup-input-area textarea{background:#fff;border-color:rgba(26,86,219,.3)}
-.followup-input-area textarea:focus{border-color:var(--accent)}
-.followup-actions{display:flex;align-items:center;gap:12px;margin-top:12px}
-.followup-round{font-family:"DM Mono",monospace;font-size:10px;color:var(--text-3);margin-left:auto}
-.history-strip{margin-bottom:20px;display:flex;flex-direction:column;gap:8px}
-.history-item{padding:10px 14px;border-radius:6px;font-size:12.5px;line-height:1.6}
-.history-item.user{background:var(--surface2);border-left:3px solid var(--border2);color:var(--text-2)}
-.history-label{font-family:"DM Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.08em;margin-bottom:4px;color:var(--text-3)}
-
-/* ── History Page ── */
-.page{display:none}
-.page.active{display:block}
-.history-page-title{font-family:"Playfair Display",serif;font-size:28px;font-weight:400;margin-bottom:8px}
-.history-page-sub{font-size:14px;color:var(--text-3);margin-bottom:32px}
-.history-list{display:flex;flex-direction:column;gap:16px}
-.history-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:border-color .15s}
-.history-card:hover{border-color:var(--accent)}
-.history-card-top{padding:16px 20px;display:flex;align-items:flex-start;gap:16px}
-.history-verdict-badge{font-family:"DM Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.08em;padding:4px 10px;border-radius:4px;flex-shrink:0;margin-top:2px}
-.history-verdict-badge.eligible{background:var(--green-dim);color:var(--green)}
-.history-verdict-badge.conditional{background:var(--accent-dim);color:var(--accent)}
-.history-verdict-badge.defer{background:var(--amber-dim);color:var(--amber)}
-.history-verdict-badge.restructure{background:var(--red-dim);color:var(--red)}
-.history-card-decision{font-size:13.5px;color:var(--text);line-height:1.5;flex:1}
-.history-card-meta{font-size:11px;color:var(--text-3);margin-top:4px}
-.history-card-scores{padding:12px 20px;border-top:1px solid var(--border);background:var(--surface2);display:flex;gap:24px}
-.history-score-item{display:flex;flex-direction:column;align-items:center;gap:2px}
-.history-score-label{font-size:10px;color:var(--text-3);letter-spacing:.06em;text-transform:uppercase}
-.history-score-val{font-family:"DM Mono",monospace;font-size:16px;font-weight:500}
-.history-empty{text-align:center;padding:64px 32px;color:var(--text-3);font-size:14px}
-.history-detail{display:none;padding:16px 20px;border-top:1px solid var(--border);font-size:13px;color:var(--text-2);line-height:1.7;background:#fff}
-.history-detail.open{display:block}
-.chart-wrap{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px;margin-bottom:24px}
-.chart-title{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:16px;display:flex;align-items:center;justify-content:space-between}
-.chart-legend{display:flex;gap:16px}
-.chart-legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-3)}
-.chart-legend-dot{width:8px;height:8px;border-radius:50%}
-canvas#trendChart{width:100%;height:200px;display:block}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;font-size:15px;line-height:1.7}
+/* NAV */
+nav{border-bottom:1px solid var(--border);padding:0 48px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);z-index:100}
+.nav-logo{font-family:"DM Mono",monospace;font-size:14px;font-weight:500;letter-spacing:.14em;color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-link{font-size:13px;color:var(--text-3);text-decoration:none;transition:color .15s}
+.nav-link:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;text-decoration:none;border:none}
+.btn-primary{background:var(--accent);color:#fff;padding:10px 22px}
+.btn-primary:hover{opacity:.88;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--accent);padding:9px 22px;border:1px solid var(--accent)}
+.btn-outline:hover{background:var(--accent-dim)}
+.btn-ghost{background:transparent;color:var(--text-3);padding:9px 18px;border:1px solid var(--border2)}
+.btn-ghost:hover{border-color:var(--text-3);color:var(--text)}
+/* HERO */
+.hero{text-align:center;padding:96px 24px 80px;max-width:820px;margin:0 auto}
+.hero-tag{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:inline-block;border:1px solid rgba(26,86,219,.3);background:var(--accent-dim);padding:4px 14px;border-radius:20px}
+.hero h1{font-family:"Playfair Display",serif;font-size:52px;font-weight:400;line-height:1.15;margin-bottom:20px;letter-spacing:-.02em;color:var(--text)}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{font-size:17px;color:var(--text-2);max-width:560px;margin:0 auto 40px;line-height:1.75}
+.hero-cta{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.hero-note{font-size:12px;color:var(--text-3);margin-top:16px}
+/* SOCIAL PROOF */
+.proof{text-align:center;padding:24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface)}
+.proof-inner{max-width:700px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+.proof-item{font-size:13px;color:var(--text-3);display:flex;align-items:center;gap:8px}
+.proof-item strong{color:var(--text);font-weight:600}
+/* HOW IT WORKS */
+.section{padding:80px 24px;max-width:900px;margin:0 auto}
+.section-tag{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.section-title{font-family:"Playfair Display",serif;font-size:34px;font-weight:400;margin-bottom:12px;letter-spacing:-.01em}
+.section-sub{font-size:15px;color:var(--text-2);max-width:500px;margin-bottom:48px;line-height:1.7}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step-card{padding:28px 24px;border:1px solid var(--border);border-radius:12px;background:var(--surface);position:relative}
+.step-num{font-family:"DM Mono",monospace;font-size:11px;color:var(--accent);font-weight:600;letter-spacing:.08em;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.step-num::after{content:'';flex:1;height:1px;background:var(--border)}
+.step-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:8px}
+.step-desc{font-size:13.5px;color:var(--text-2);line-height:1.65}
+/* FEATURES */
+.features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.feature-card{padding:24px;border:1px solid var(--border);border-radius:10px;background:var(--surface)}
+.feature-icon{font-size:22px;margin-bottom:12px}
+.feature-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px}
+.feature-desc{font-size:13px;color:var(--text-2);line-height:1.6}
+/* DIMENSION SCORES DEMO */
+.demo-block{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:16px}
+.demo-title{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:20px}
+.demo-row{display:grid;grid-template-columns:120px 1fr 40px;align-items:center;gap:12px;margin-bottom:12px}
+.demo-label{font-size:13px;color:var(--text-2);font-weight:500}
+.demo-bar-wrap{height:8px;background:var(--surface2);border-radius:4px;overflow:hidden;border:1px solid var(--border)}
+.demo-bar{height:100%;border-radius:4px}
+.demo-num{font-family:"DM Mono",monospace;font-size:14px;font-weight:500;text-align:right}
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pricing-card{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface)}
+.pricing-card.featured{border-color:var(--accent);background:#fff;box-shadow:0 4px 24px rgba(26,86,219,.1)}
+.pricing-top{padding:28px 24px 20px}
+.pricing-badge{font-family:"DM Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--accent);background:var(--accent-dim);border:1px solid rgba(26,86,219,.2);border-radius:20px;padding:3px 10px;display:inline-block;margin-bottom:16px}
+.pricing-name{font-size:16px;font-weight:600;color:var(--text);margin-bottom:4px}
+.pricing-price{font-family:"DM Mono",monospace;font-size:32px;font-weight:500;color:var(--text);margin-bottom:4px}
+.pricing-price span{font-size:14px;color:var(--text-3);font-weight:400}
+.pricing-desc{font-size:13px;color:var(--text-3);margin-bottom:20px;line-height:1.5}
+.pricing-features{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.pricing-features li{font-size:13px;color:var(--text-2);display:flex;align-items:flex-start;gap:8px}
+.pricing-features li::before{content:'✓';color:var(--green);font-weight:600;flex-shrink:0;margin-top:1px}
+.pricing-bottom{padding:0 24px 24px}
+/* KEY ENTRY */
+.key-section{background:var(--surface);border-top:1px solid var(--border);padding:64px 24px}
+.key-inner{max-width:520px;margin:0 auto;text-align:center}
+.key-title{font-family:"Playfair Display",serif;font-size:26px;font-weight:400;margin-bottom:8px}
+.key-sub{font-size:14px;color:var(--text-3);margin-bottom:28px}
+.key-input-wrap{display:flex;gap:10px}
+.key-input-wrap input{flex:1;background:#fff;border:1px solid var(--border2);border-radius:8px;padding:13px 16px;font-family:"DM Mono",monospace;font-size:13px;color:var(--text);outline:none;transition:border-color .15s}
+.key-input-wrap input:focus{border-color:var(--accent)}
+.key-input-wrap input::placeholder{color:var(--text-3)}
+.key-err{color:var(--red);font-size:13px;margin-top:10px;display:none}
+.key-err.show{display:block}
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:16px;padding:40px;max-width:480px;width:100%;margin:20px;position:relative;animation:fadeUp .25s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:20px;color:var(--text-3);cursor:pointer}
+.modal-title{font-family:"Playfair Display",serif;font-size:22px;font-weight:400;margin-bottom:6px}
+.modal-sub{font-size:13.5px;color:var(--text-3);margin-bottom:24px}
+.modal-tabs{display:flex;gap:8px;margin-bottom:20px}
+.modal-tab{flex:1;padding:9px;border:1px solid var(--border2);border-radius:7px;background:transparent;font-size:13px;color:var(--text-3);cursor:pointer;transition:all .15s;text-align:center}
+.modal-tab.active{background:var(--accent-dim);border-color:var(--accent);color:var(--accent);font-weight:600}
+.modal-section{display:none}
+.modal-section.active{display:block}
+.modal-input{width:100%;background:var(--surface);border:1px solid var(--border2);border-radius:7px;padding:12px 14px;font-family:"DM Sans",sans-serif;font-size:14px;color:var(--text);outline:none;margin-bottom:12px;transition:border-color .15s}
+.modal-input:focus{border-color:var(--accent)}
+.modal-input::placeholder{color:var(--text-3)}
+.modal-err{color:var(--red);font-size:13px;margin-bottom:10px;display:none}
+.modal-err.show{display:block}
+.key-display-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:16px}
+.key-warning{font-size:11px;font-weight:600;color:var(--amber);letter-spacing:.06em;margin-bottom:8px}
+.key-value{font-family:"DM Mono",monospace;font-size:13px;color:var(--accent);word-break:break-all;margin-bottom:10px}
+.plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.plan-opt{border:1px solid var(--border);border-radius:8px;padding:14px;cursor:pointer;transition:all .15s}
+.plan-opt:hover,.plan-opt.sel{border-color:var(--accent);background:var(--accent-dim)}
+.plan-opt-name{font-weight:600;font-size:14px;margin-bottom:2px}
+.plan-opt-price{font-family:"DM Mono",monospace;font-size:16px;color:var(--accent)}
+.plan-opt-limit{font-size:11px;color:var(--text-3);margin-top:3px}
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;align-items:center;justify-content:space-between;background:var(--surface)}
+.footer-logo{font-family:"DM Mono",monospace;font-size:12px;color:var(--text-3);letter-spacing:.1em}
+.footer-note{font-size:12px;color:var(--text-3)}
+/* RESPONSIVE */
+@media(max-width:700px){
+  .steps-grid,.features-grid,.pricing-grid{grid-template-columns:1fr}
+  .hero h1{font-size:36px}
+  nav{padding:0 20px}
+  .section{padding:56px 20px}
+}
 </style>
 </head>
 <body>
-<header>
-  <div class="logo">
-    <span class="logo-text">TAC-3D</span>
-    <span class="logo-div"></span>
-    <span class="logo-sub">Decision Eligibility Screener</span>
-  </div>
-  <div class="nav-links">
-    <button class="nav-btn active" id="navScreen" onclick="showPage('screen')">Screener</button>
-    <button class="nav-btn" id="navHistory" onclick="showPage('history')">History</button>
-    <span class="badge">v0.3</span>
-  </div>
-</header>
 
-<div class="container">
-
-  <!-- SCREENER PAGE -->
-  <div class="page active" id="pageScreen">
-    <div class="hero">
-      <div class="hero-eye">Structural Reliability Assessment</div>
-      <h1>Is your decision<br>structurally ready?</h1>
-      <p class="hero-desc">Submit your decision and evidence layers. TAC-3D evaluates structural compatibility and returns a Decision Eligibility verdict.</p>
-    </div>
-    <div id="formArea">
-      <div class="card">
-        <div class="card-sec">
-          <div class="sec-label"><span class="sec-num">1</span>The Decision</div>
-          <div class="hint">State the decision as a clear, specific proposition.</div>
-          <textarea id="decisionInput" rows="3" placeholder="e.g. Invest $5M in an AI medical startup with a 3-year hold period"></textarea>
-        </div>
-        <div class="card-sec">
-          <div class="sec-label"><span class="sec-num">2</span>Evidence Layers</div>
-          <div class="hint">Add 2-6 independent evidence sources.</div>
-          <div class="layers" id="layersList"></div>
-          <button class="add-btn" onclick="addLayer()"><span>+</span> Add evidence layer</button>
-        </div>
-        <div class="card-sec">
-          <div class="sec-label"><span class="sec-num">3</span>Context <span style="font-weight:300;text-transform:none;letter-spacing:0;font-size:10px;color:var(--text-3)">(optional)</span></div>
-          <div class="hint">Decision environment or execution conditions.</div>
-          <textarea id="contextInput" rows="2" placeholder="e.g. PE buyout, 5-year hold, board approval required"></textarea>
-        </div>
-      </div>
-      <div class="submit-area">
-        <button class="run-btn" onclick="runScreening()"><span>Run Screening</span><span>&#8594;</span></button>
-        <div class="run-note">Assessment takes 20-40 seconds.<br>TAC-3D searches external sources before evaluating.</div>
-      </div>
-      <div class="err" id="errMsg"></div>
-    </div>
-    <div class="loading" id="loadingState">
-      <div class="spinner"></div>
-      <div class="load-txt" id="loadTxt">ANALYZING STRUCTURAL RELIABILITY</div>
-      <div class="steps">
-        <div class="step" id="s1"><span class="dot"></span>Searching external sources</div>
-        <div class="step" id="s2"><span class="dot"></span>Evaluating tension geometry</div>
-        <div class="step" id="s3"><span class="dot"></span>Mapping directional alignment</div>
-        <div class="step" id="s4"><span class="dot"></span>Testing convergence stability</div>
-        <div class="step" id="s5"><span class="dot"></span>Generating eligibility verdict</div>
-      </div>
-    </div>
-    <div class="results" id="resultsArea"></div>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">TAC&#8209;3D</div>
+  <div class="nav-right">
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <button class="btn btn-ghost" onclick="openModal('key')">Enter Key</button>
+    <button class="btn btn-primary" onclick="openModal('trial')">Start Free Trial</button>
   </div>
+</nav>
 
-  <!-- HISTORY PAGE -->
-  <div class="page" id="pageHistory">
-    <div class="history-page-title">Screening History</div>
-    <div class="history-page-sub">Past decision assessments, stored locally on this server.</div>
-    <div class="chart-wrap" id="chartWrap" style="display:none">
-      <div class="chart-title">
-        Score Trends
-        <div class="chart-legend">
-          <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#1a56db"></div>Index</div>
-          <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#dc2626"></div>Tension</div>
-          <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#d97706"></div>Alignment</div>
-          <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#16a34a"></div>Convergence</div>
-        </div>
-      </div>
-      <canvas id="trendChart"></canvas>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Structural Decision Intelligence</div>
+  <h1>Is your decision<br><em>structurally ready?</em></h1>
+  <p class="hero-sub">TAC-3D evaluates the structural compatibility of your decision across evidence layers — before you commit. Powered by live web search and AI reasoning.</p>
+  <div class="hero-cta">
+    <button class="btn btn-primary" style="padding:13px 28px;font-size:15px" onclick="openModal('trial')">Start Free Trial &rarr;</button>
+    <button class="btn btn-outline" style="padding:13px 28px;font-size:15px" onclick="openModal('upgrade')">View Plans</button>
+  </div>
+  <p class="hero-note">3 free screenings &middot; No credit card required</p>
+</section>
+
+<!-- PROOF -->
+<div class="proof">
+  <div class="proof-inner">
+    <div class="proof-item"><strong>3 Dimensions</strong> Tension · Alignment · Convergence</div>
+    <div class="proof-item"><strong>Live Web Search</strong> Validates your evidence in real time</div>
+    <div class="proof-item"><strong>PDF Export</strong> Full structured report</div>
+    <div class="proof-item"><strong>Multi-round</strong> AI follow-up &amp; re-evaluation</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="section-tag">How it works</div>
+  <div class="section-title">Three steps to structural clarity</div>
+  <p class="section-sub">TAC-3D doesn't tell you if your decision is right. It tells you if it's structurally ready to be made.</p>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-title">Submit your decision</div>
+      <p class="step-desc">State the decision and add 2–6 independent evidence layers — financial, operational, market, regulatory, or any relevant dimension.</p>
     </div>
-    <div class="history-list" id="historyList">
-      <div class="history-empty">Loading history...</div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-title">TAC-3D searches &amp; evaluates</div>
+      <p class="step-desc">The engine searches external sources to validate your assumptions, then scores Tension, Alignment, and Convergence across your evidence.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-title">Receive your verdict</div>
+      <p class="step-desc">Get an Eligibility verdict — ELIGIBLE, CONDITIONAL, DEFER, or RESTRUCTURE — with a full structural report and gap inventory.</p>
     </div>
   </div>
+</section>
 
+<!-- DEMO BLOCK -->
+<section style="padding:0 24px 80px;max-width:900px;margin:0 auto">
+  <div class="demo-block">
+    <div class="demo-title">Sample Output — Dimension Scores</div>
+    <div class="demo-row">
+      <div class="demo-label">Tension<br><small style="font-size:11px;color:var(--text-3)">Evidence conflict</small></div>
+      <div class="demo-bar-wrap"><div class="demo-bar" style="width:72%;background:#1a56db"></div></div>
+      <div class="demo-num" style="color:#1a56db">72</div>
+    </div>
+    <div class="demo-row">
+      <div class="demo-label">Alignment<br><small style="font-size:11px;color:var(--text-3)">Directional compat.</small></div>
+      <div class="demo-bar-wrap"><div class="demo-bar" style="width:65%;background:#d97706"></div></div>
+      <div class="demo-num" style="color:#d97706">65</div>
+    </div>
+    <div class="demo-row">
+      <div class="demo-label">Convergence<br><small style="font-size:11px;color:var(--text-3)">Context stability</small></div>
+      <div class="demo-bar-wrap"><div class="demo-bar" style="width:58%;background:#d97706"></div></div>
+      <div class="demo-num" style="color:#d97706">58</div>
+    </div>
+    <div style="height:1px;background:var(--border);margin:8px 0 12px"></div>
+    <div class="demo-row">
+      <div class="demo-label" style="font-weight:600;color:var(--text)">Eligibility Index<br><small style="font-size:11px;color:var(--text-3)">Weighted composite</small></div>
+      <div class="demo-bar-wrap"><div class="demo-bar" style="width:65%;background:#1a56db"></div></div>
+      <div class="demo-num" style="color:#1a56db;font-size:18px">65</div>
+    </div>
+  </div>
+  <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 18px;background:var(--accent-dim);border:1px solid rgba(26,86,219,.2);border-radius:8px;font-size:13.5px;color:#1a56db">
+    <strong>ELIGIBLE WITH CONDITIONS</strong> &mdash; Decision viable but requires material conditions before deployment.
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" style="padding-top:0">
+  <div class="section-tag">Capabilities</div>
+  <div class="section-title">Built for rigorous decisions</div>
+  <p class="section-sub">Every screening is grounded in external data and structured reasoning — not just pattern matching.</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🔍</div>
+      <div class="feature-title">Live Web Search Validation</div>
+      <p class="feature-desc">TAC-3D searches external sources in real time to verify market claims, valuations, and structural assumptions — not just your inputs.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <div class="feature-title">Three-Dimensional Scoring</div>
+      <p class="feature-desc">Tension, Alignment, and Convergence scores reveal where your decision is structurally weak — before it fails in execution.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔄</div>
+      <div class="feature-title">Multi-Round Re-evaluation</div>
+      <p class="feature-desc">TAC-3D follows up with targeted questions. Add context, resolve gaps, and watch your scores update in real time.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📄</div>
+      <div class="feature-title">Structured PDF Reports</div>
+      <p class="feature-desc">Export a complete decision report with scores, tension map, gap inventory, and conditions — ready for boards or investment committees.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <div class="feature-title">Screening History</div>
+      <p class="feature-desc">Track all past assessments. Score trend charts show how your decision quality evolves over time.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎯</div>
+      <div class="feature-title">Gap Inventory</div>
+      <p class="feature-desc">Every screening identifies load-bearing gaps — the specific missing evidence that, if unresolved, blocks decision viability.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing" style="border-top:1px solid var(--border);padding-top:80px">
+  <div class="section-tag">Pricing</div>
+  <div class="section-title">Simple, transparent pricing</div>
+  <p class="section-sub">Start free. Upgrade when you need more screenings.</p>
+  <div class="pricing-grid">
+    <!-- FREE -->
+    <div class="pricing-card">
+      <div class="pricing-top">
+        <div class="pricing-badge">FREE TRIAL</div>
+        <div class="pricing-name">Trial</div>
+        <div class="pricing-price">$0<span>/forever</span></div>
+        <p class="pricing-desc">Get started with no commitment. Explore the full TAC-3D experience.</p>
+        <ul class="pricing-features">
+          <li>3 screenings included</li>
+          <li>Web search validation</li>
+          <li>Multi-round re-evaluation</li>
+          <li>PDF export</li>
+          <li>Screening history</li>
+        </ul>
+      </div>
+      <div class="pricing-bottom">
+        <button class="btn btn-outline" style="width:100%;justify-content:center" onclick="openModal('trial')">Start Free Trial</button>
+      </div>
+    </div>
+    <!-- PRO -->
+    <div class="pricing-card featured">
+      <div class="pricing-top">
+        <div class="pricing-badge">MOST POPULAR</div>
+        <div class="pricing-name">Pro</div>
+        <div class="pricing-price">$29<span>/month</span></div>
+        <p class="pricing-desc">For individual investors, analysts, and strategy professionals.</p>
+        <ul class="pricing-features">
+          <li>50 screenings / month</li>
+          <li>Web search validation</li>
+          <li>Multi-round re-evaluation</li>
+          <li>PDF export</li>
+          <li>Screening history &amp; trends</li>
+          <li>Priority processing</li>
+        </ul>
+      </div>
+      <div class="pricing-bottom">
+        <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="openModal('upgrade','pro')">Get Pro &rarr;</button>
+      </div>
+    </div>
+    <!-- TEAM -->
+    <div class="pricing-card">
+      <div class="pricing-top">
+        <div class="pricing-badge">TEAM</div>
+        <div class="pricing-name">Team</div>
+        <div class="pricing-price">$99<span>/month</span></div>
+        <p class="pricing-desc">For investment teams, strategy groups, and biotech organizations.</p>
+        <ul class="pricing-features">
+          <li>200 screenings / month</li>
+          <li>Web search validation</li>
+          <li>Multi-round re-evaluation</li>
+          <li>PDF export</li>
+          <li>Screening history &amp; trends</li>
+          <li>Priority processing</li>
+        </ul>
+      </div>
+      <div class="pricing-bottom">
+        <button class="btn btn-outline" style="width:100%;justify-content:center" onclick="openModal('upgrade','team')">Get Team &rarr;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY ENTRY -->
+<div class="key-section">
+  <div class="key-inner">
+    <div class="key-title">Already have an access key?</div>
+    <p class="key-sub">Enter your key to access TAC-3D directly.</p>
+    <div class="key-input-wrap">
+      <input type="text" id="directKeyInput" placeholder="TAC-PRO-XXXX-XXXX-XXXX">
+      <button class="btn btn-primary" onclick="submitDirectKey()">Enter &rarr;</button>
+    </div>
+    <div class="key-err" id="directKeyErr"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">TAC&#8209;3D &middot; Decision Eligibility Screener</div>
+  <div class="footer-note">&copy; 2026 &middot; tac3d.sycds.com</div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-title" id="modalTitle">Get Access</div>
+    <p class="modal-sub" id="modalSub">Choose how you want to start.</p>
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="mtabTrial" onclick="switchModalTab('trial')">Free Trial</button>
+      <button class="modal-tab" id="mtabUpgrade" onclick="switchModalTab('upgrade')">Upgrade</button>
+      <button class="modal-tab" id="mtabKey" onclick="switchModalTab('key')">I have a key</button>
+    </div>
+    <!-- TRIAL -->
+    <div class="modal-section active" id="msecTrial">
+      <p style="font-size:13px;color:var(--text-2);margin-bottom:16px">Get 3 free screenings instantly. No credit card required.</p>
+      <input type="email" id="trialEmail" class="modal-input" placeholder="your@email.com">
+      <div class="modal-err" id="trialErr"></div>
+      <div id="trialMsg"></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="requestTrial()">Get Free Access &rarr;</button>
+    </div>
+    <!-- UPGRADE -->
+    <div class="modal-section" id="msecUpgrade">
+      <div class="plan-grid">
+        <div class="plan-opt sel" id="mplanPro" onclick="selectPlan('pro')">
+          <div class="plan-opt-name">Pro</div>
+          <div class="plan-opt-price">$29<span style="font-size:12px;color:var(--text-3)">/mo</span></div>
+          <div class="plan-opt-limit">50 screenings</div>
+        </div>
+        <div class="plan-opt" id="mplanTeam" onclick="selectPlan('team')">
+          <div class="plan-opt-name">Team</div>
+          <div class="plan-opt-price">$99<span style="font-size:12px;color:var(--text-3)">/mo</span></div>
+          <div class="plan-opt-limit">200 screenings</div>
+        </div>
+      </div>
+      <input type="email" id="upgradeEmail" class="modal-input" placeholder="your@email.com">
+      <div class="modal-err" id="upgradeErr"></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="startCheckout()">Continue to Payment &rarr;</button>
+    </div>
+    <!-- KEY -->
+    <div class="modal-section" id="msecKey">
+      <input type="text" id="modalKeyInput" class="modal-input" placeholder="TAC-PRO-XXXX-XXXX-XXXX">
+      <div class="modal-err" id="keyErr"></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitKey()">Enter Screener &rarr;</button>
+    </div>
+  </div>
 </div>
 
 <script>
-var currentResult = null;
-var layers = [{name:"financial",content:""},{name:"operational",content:""}];
-var conversationHistory = [];
-var roundCount = 0;
+var SELECTED_PLAN = 'pro';
+var PRICE_IDS = {pro:'price_1TLHuhPzaDhTbSXM5jUv8y1u', team:'price_1TLHvYPzaDhTbSXMVYPAc5QR'};
 
-function showPage(page) {
-  document.getElementById('pageScreen').classList.toggle('active', page === 'screen');
-  document.getElementById('pageHistory').classList.toggle('active', page === 'history');
-  document.getElementById('navScreen').classList.toggle('active', page === 'screen');
-  document.getElementById('navHistory').classList.toggle('active', page === 'history');
-  if (page === 'history') loadHistory();
+function openModal(tab, plan) {
+  document.getElementById('modalOverlay').classList.add('open');
+  switchModalTab(tab || 'trial');
+  if (plan) selectPlan(plan);
+}
+function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
+function closeModalOutside(e) { if(e.target===document.getElementById('modalOverlay')) closeModal(); }
+
+function switchModalTab(tab) {
+  ['trial','upgrade','key'].forEach(function(t) {
+    document.getElementById('mtab'+cap(t)).classList.toggle('active', t===tab);
+    document.getElementById('msec'+cap(t)).classList.toggle('active', t===tab);
+  });
+}
+function cap(s) { return s.charAt(0).toUpperCase()+s.slice(1); }
+
+function selectPlan(plan) {
+  SELECTED_PLAN = plan;
+  document.getElementById('mplanPro').classList.toggle('sel', plan==='pro');
+  document.getElementById('mplanTeam').classList.toggle('sel', plan==='team');
 }
 
-function renderLayers() {
-  var list = document.getElementById("layersList");
-  list.innerHTML = "";
-  for (var i = 0; i < layers.length; i++) {
-    var delBtn = layers.length > 2 ? '<button class="layer-del" onclick="removeLayer('+i+')">x</button>' : "";
-    var div = document.createElement("div");
-    div.className = "layer";
-    div.innerHTML = '<div class="layer-hdr"><span class="layer-tag">LAYER '+(i+1)+'</span><input class="layer-name" type="text" value="'+layers[i].name+'" placeholder="label" data-idx="'+i+'">'+delBtn+'</div><textarea class="layer-body" rows="3" placeholder="Paste evidence here..." data-idx="'+i+'">'+layers[i].content+'</textarea>';
-    list.appendChild(div);
-  }
-  var names = list.querySelectorAll(".layer-name");
-  for (var n = 0; n < names.length; n++) {
-    names[n].addEventListener("change", function() { layers[parseInt(this.getAttribute("data-idx"))].name = this.value; });
-  }
-  var bodies = list.querySelectorAll(".layer-body");
-  for (var b = 0; b < bodies.length; b++) {
-    bodies[b].addEventListener("change", function() { layers[parseInt(this.getAttribute("data-idx"))].content = this.value; });
-  }
-}
-
-function addLayer() {
-  if (layers.length >= 8) return;
-  layers.push({name:"layer "+(layers.length+1),content:""});
-  renderLayers();
-}
-
-function removeLayer(i) {
-  layers.splice(i, 1);
-  renderLayers();
-}
-
-renderLayers();
-
-function animateSteps() {
-  var ids = ["s1","s2","s3","s4","s5"];
-  var delays = [0,5000,10000,16000,22000];
-  for (var i = 0; i < ids.length; i++) {
-    (function(idx) {
-      setTimeout(function() {
-        if (idx > 0) {
-          var prev = document.getElementById(ids[idx-1]);
-          if (prev) { prev.classList.remove("active"); prev.classList.add("done"); }
-        }
-        var el = document.getElementById(ids[idx]);
-        if (el) el.classList.add("active");
-      }, delays[idx]);
-    })(i);
-  }
-}
-
-var PROMPT = "You are TAC-3D, a Decision Eligibility Screener with web search capability. Before evaluating, use web search to verify 2-3 key claims in the evidence layers — such as market size, competitor landscape, regulatory environment, or valuation benchmarks. Search for data points that could confirm or challenge the structural assumptions.\n\nEvaluate decisions by analyzing structural compatibility across evidence layers using three dimensions: Tension, Alignment, Convergence.\n\nSCORING RULES:\nTENSION (starts at 100): Core assumptions contradict: -25. Incompatible timelines: -15. Unconfirmed premises: -12. Conflicting data: -10. Minor inconsistency: -5. Min 0.\nALIGNMENT (starts at 100): Different outcome pathways: -30. Inconsistent resources: -20. Success condition negates another: -18. Critical dependency missing: -15. Different priorities: -8. Min 0.\nCONVERGENCE (starts at 100): Holds in one scenario only: -28. Assumptions not stress-tested: -18. Sensitive to one external change: -15. Cross-time stability not evaluated: -12. Incomplete coverage: -6. Min 0.\nELIGIBILITY INDEX: (Tension x 0.35) + (Alignment x 0.40) + (Convergence x 0.25), rounded.\nVERDICTS: ELIGIBLE>=72, ELIGIBLE_WITH_CONDITIONS 48-71, DEFER 28-47, RESTRUCTURE<28.\n\nIf the user provides additional context in follow-up messages, re-evaluate and update scores accordingly. Always return ONLY valid JSON (no markdown, no explanation outside JSON): {scores:{tension:int,alignment:int,convergence:int,eligibility_index:int},verdict:string,verdict_summary:string,tension_map:[{layers:[string,string],conflict:string,severity:string,deduction:int}],alignment_gaps:[{description:string,severity:string}],convergence_risks:[{scenario:string,severity:string}],gap_inventory:[{gap:string,load_bearing:bool,resolution:string}],conditions:[string],structural_summary:string,followup_question:string}";
-
-async function runScreening() {
-  var decision = document.getElementById("decisionInput").value.trim();
-  var context = document.getElementById("contextInput").value.trim();
-  var list = document.getElementById("layersList");
-  var names = list.querySelectorAll(".layer-name");
-  var bodies = list.querySelectorAll(".layer-body");
-  for (var i = 0; i < layers.length; i++) {
-    if (names[i]) layers[i].name = names[i].value;
-    if (bodies[i]) layers[i].content = bodies[i].value;
-  }
-  var errEl = document.getElementById("errMsg");
-  errEl.classList.remove("show");
-  if (!decision) { showErr("Please describe the decision."); return; }
-  var filled = layers.filter(function(l){ return l.content.trim().length > 0; });
-  if (filled.length < 2) { showErr("Please provide content for at least 2 evidence layers."); return; }
-  var layerText = "";
-  for (var i = 0; i < layers.length; i++) {
-    if (layers[i].content.trim()) {
-      layerText += "LAYER "+(i+1)+" - "+layers[i].name.toUpperCase()+"\n"+layers[i].content+"\n\n---\n\n";
-    }
-  }
-  var userMsg = "DECISION: "+decision+(context ? "\n\nCONTEXT: "+context : "")+"\n\n---\n\nEVIDENCE LAYERS:\n\n"+layerText;
-  conversationHistory = [];
-  roundCount = 0;
-  conversationHistory.push({role:"user", content: userMsg});
-  document.getElementById("formArea").style.display = "none";
-  document.getElementById("loadingState").classList.add("show");
-  document.getElementById("loadTxt").textContent = "SEARCHING EXTERNAL SOURCES";
-  animateSteps();
-  await callAPI();
-}
-
-async function callAPI() {
-  try {
-    var resp = await fetch("/api/chat", {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 4000,
-        system: PROMPT,
-        messages: conversationHistory
-      })
+function requestTrial() {
+  var email = document.getElementById('trialEmail').value.trim();
+  if (!email) return;
+  var btn = event.target; btn.disabled=true; btn.textContent='Sending...';
+  fetch('/api/trial', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+    .then(function(r){return r.json().then(function(d){return{ok:r.ok,d:d};});})
+    .then(function(res){
+      btn.disabled=false; btn.textContent='Get Free Access →';
+      if (!res.ok) { showErr('trialErr', res.d.error); return; }
+      var key = res.d.key;
+      localStorage.setItem('tac3d_key', key);
+      document.getElementById('trialMsg').innerHTML =
+        '<div class="key-display-box" style="margin-bottom:12px">'
+        + '<div class="key-warning">&#9888; SAVE YOUR KEY &mdash; needed to log in again</div>'
+        + '<div class="key-value">'+key+'</div>'
+        + '<button id="cpyBtn" style="background:var(--accent);color:#fff;border:none;border-radius:6px;padding:5px 14px;font-size:12px;cursor:pointer">Copy Key</button>'
+        + '</div>'
+        + '<p style="font-size:12px;color:var(--text-3);margin-bottom:12px">Also sent to '+email+'. Redirecting in 3 seconds...</p>';
+      document.getElementById('cpyBtn').onclick = function(){ navigator.clipboard.writeText(key); this.textContent='Copied!'; };
+      setTimeout(function(){ window.location.href='/screener'; }, 3000);
     });
-    var data = await resp.json();
-    if (data.error) throw new Error(data.error);
-    var raw = data.content && data.content[0] ? data.content[0].text : "";
-    var match = raw.match(/\{[\s\S]*\}/);
-    if (!match) throw new Error("Could not parse response.");
-    var result = JSON.parse(match[0]);
-    if (typeof result.scores.tension !== "number") throw new Error("Invalid score data.");
-    conversationHistory.push({role:"assistant", content: raw});
-    roundCount++;
-    showResults(result);
-  } catch(err) {
-    document.getElementById("loadingState").classList.remove("show");
-    document.getElementById("formArea").style.display = "block";
-    showErr("Assessment failed: " + err.message);
-  }
 }
 
-async function submitFollowup() {
-  var input = document.getElementById("followupInput").value.trim();
-  if (!input) return;
-  conversationHistory.push({role:"user", content: "Additional context: " + input});
-  document.getElementById("loadingState").classList.add("show");
-  document.getElementById("loadTxt").textContent = "RE-EVALUATING WITH NEW CONTEXT";
-  document.getElementById("resultsArea").classList.remove("show");
-  await callAPI();
+function submitKey() {
+  var key = document.getElementById('modalKeyInput').value.trim();
+  if (!key) return;
+  fetch('/api/validate-key', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key:key})})
+    .then(function(r){return r.json().then(function(d){return{ok:r.ok,d:d};});})
+    .then(function(res){
+      if (!res.ok) { showErr('keyErr', res.d.error); return; }
+      localStorage.setItem('tac3d_key', key);
+      window.location.href = '/screener';
+    });
 }
 
-function showErr(msg) {
-  var el = document.getElementById("errMsg");
+function submitDirectKey() {
+  var key = document.getElementById('directKeyInput').value.trim();
+  if (!key) return;
+  fetch('/api/validate-key', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key:key})})
+    .then(function(r){return r.json().then(function(d){return{ok:r.ok,d:d};});})
+    .then(function(res){
+      if (!res.ok) { showErr('directKeyErr', res.d.error); return; }
+      localStorage.setItem('tac3d_key', key);
+      window.location.href = '/screener';
+    });
+}
+
+function startCheckout() {
+  var email = document.getElementById('upgradeEmail').value.trim();
+  var btn = event.target; btn.disabled=true; btn.textContent='Loading...';
+  fetch('/api/create-checkout', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({priceId:PRICE_IDS[SELECTED_PLAN],email:email})})
+    .then(function(r){return r.json();})
+    .then(function(d){ btn.disabled=false; btn.textContent='Continue to Payment →'; if(d.url) window.location.href=d.url; });
+}
+
+function showErr(id, msg) {
+  var el = document.getElementById(id);
   el.textContent = msg;
-  el.classList.add("show");
+  el.style.display = 'block';
 }
 
-function scoreColor(n) {
-  if (n >= 72) return "var(--green)";
-  if (n >= 48) return "var(--accent)";
-  if (n >= 28) return "var(--amber)";
-  return "var(--red)";
-}
-
-function showResults(r) {
-  document.getElementById("loadingState").classList.remove("show");
-  var vc = {ELIGIBLE:"eligible",ELIGIBLE_WITH_CONDITIONS:"conditional",DEFER:"defer",RESTRUCTURE:"restructure"}[r.verdict] || "conditional";
-  var vi = {ELIGIBLE:"V",ELIGIBLE_WITH_CONDITIONS:"O",DEFER:"!",RESTRUCTURE:"X"}[r.verdict] || "O";
-  var vl = {ELIGIBLE:"ELIGIBLE",ELIGIBLE_WITH_CONDITIONS:"ELIGIBLE WITH CONDITIONS",DEFER:"DEFER",RESTRUCTURE:"RESTRUCTURE"}[r.verdict] || r.verdict;
-  var tHTML = "";
-  if (r.tension_map && r.tension_map.length) {
-    tHTML = '<ul class="rlist">';
-    for (var i = 0; i < r.tension_map.length; i++) {
-      var t = r.tension_map[i];
-      tHTML += '<li class="'+(t.severity||"moderate")+'"><div class="rlbl">'+((t.layers||[]).join(" x "))+" - "+(t.severity||"").toUpperCase()+" - -"+(t.deduction||0)+" pts</div>"+t.conflict+"</li>";
-    }
-    tHTML += "</ul>";
-  } else { tHTML = '<p style="color:var(--green);font-size:13px">No structural conflicts detected.</p>'; }
-  var aHTML = "";
-  if (r.alignment_gaps && r.alignment_gaps.length) {
-    aHTML = '<ul class="rlist">';
-    for (var i = 0; i < r.alignment_gaps.length; i++) {
-      var g = r.alignment_gaps[i];
-      aHTML += '<li class="'+(g.severity||"moderate")+'"><div class="rlbl">'+(g.severity||"").toUpperCase()+"</div>"+g.description+"</li>";
-    }
-    aHTML += "</ul>";
-  } else { aHTML = '<p style="color:var(--green);font-size:13px">Evidence layers are directionally compatible.</p>'; }
-  var cHTML = "";
-  if (r.convergence_risks && r.convergence_risks.length) {
-    cHTML = '<ul class="rlist">';
-    for (var i = 0; i < r.convergence_risks.length; i++) {
-      var c = r.convergence_risks[i];
-      cHTML += '<li class="'+(c.severity||"moderate")+'"><div class="rlbl">'+(c.severity||"").toUpperCase()+"</div>"+c.scenario+"</li>";
-    }
-    cHTML += "</ul>";
-  } else { cHTML = '<p style="color:var(--green);font-size:13px">Conclusion is stable across evaluated scenarios.</p>'; }
-  var gHTML = "";
-  if (r.gap_inventory && r.gap_inventory.length) {
-    gHTML = '<ul class="rlist">';
-    for (var i = 0; i < r.gap_inventory.length; i++) {
-      var g = r.gap_inventory[i];
-      gHTML += '<li class="'+(g.load_bearing?"high":"moderate")+'"><div class="rlbl">'+(g.load_bearing?"LOAD-BEARING GAP":"SECONDARY GAP")+'</div><strong style="color:var(--text)">'+g.gap+'</strong><div style="margin-top:6px;font-size:12.5px;color:var(--text-3)">Resolution: '+g.resolution+"</div></li>";
-    }
-    gHTML += "</ul>";
-  } else { gHTML = '<p style="color:var(--green);font-size:13px">No critical evidence gaps identified.</p>'; }
-  var condHTML = "";
-  if (r.conditions && r.conditions.length) {
-    condHTML = '<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-title">Conditions for Eligibility</span><span class="rpt-toggle open">^</span></div><div class="rpt-body"><div class="cond-list">';
-    for (var i = 0; i < r.conditions.length; i++) {
-      condHTML += '<div class="cond-item"><span class="cond-num">0'+(i+1)+'</span><span>'+r.conditions[i]+"</span></div>";
-    }
-    condHTML += "</div></div></div>";
+// check if already has key
+window.addEventListener('DOMContentLoaded', function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('success')) {
+    openModal('key');
+    document.getElementById('msecKey').insertAdjacentHTML('afterbegin','<div style="background:#dcfce7;border:1px solid #16a34a;border-radius:8px;padding:12px 14px;margin-bottom:16px;font-size:13px;color:#166534">&#10003; Payment successful! Check your email for your access key.</div>');
+    window.history.replaceState({},'','/');
   }
-  var historyHTML = "";
-  if (roundCount > 1) {
-    historyHTML = '<div class="history-strip">';
-    for (var h = 0; h < conversationHistory.length - 2; h++) {
-      var hItem = conversationHistory[h];
-      if (hItem.role === "user" && h > 0) {
-        historyHTML += '<div class="history-item user"><div class="history-label">YOU</div>' + hItem.content.replace("Additional context: ","") + '</div>';
-      }
-    }
-    historyHTML += '</div>';
-  }
-  var html = historyHTML;
-  html += '<div class="verdict '+vc+'"><div class="v-icon">'+vi+'</div><div><div class="v-label">'+vl+(roundCount > 1 ? ' <span style="font-size:10px;opacity:.6">· Round '+roundCount+'</span>' : '')+'</div><div class="v-sum">'+(r.verdict_summary||"")+'</div></div></div>';
-  html += '<div class="scores"><div class="sc-title">Dimension Scores</div><div class="sc-rows">';
-  html += '<div class="sc-row"><div class="sc-lbl">Tension<small>Evidence conflict</small></div><div class="sc-track"><div class="sc-fill" id="f1" style="background:'+scoreColor(r.scores.tension)+'"></div></div><div class="sc-num" style="color:'+scoreColor(r.scores.tension)+'">'+r.scores.tension+'</div></div>';
-  html += '<div class="sc-row"><div class="sc-lbl">Alignment<small>Directional compat.</small></div><div class="sc-track"><div class="sc-fill" id="f2" style="background:'+scoreColor(r.scores.alignment)+'"></div></div><div class="sc-num" style="color:'+scoreColor(r.scores.alignment)+'">'+r.scores.alignment+'</div></div>';
-  html += '<div class="sc-row"><div class="sc-lbl">Convergence<small>Context stability</small></div><div class="sc-track"><div class="sc-fill" id="f3" style="background:'+scoreColor(r.scores.convergence)+'"></div></div><div class="sc-num" style="color:'+scoreColor(r.scores.convergence)+'">'+r.scores.convergence+'</div></div>';
-  html += '<div class="sc-div"></div>';
-  html += '<div class="sc-row"><div class="sc-lbl" style="font-weight:600;color:var(--text)">Eligibility Index<small>Weighted composite</small></div><div class="sc-track"><div class="sc-fill" id="f4" style="background:'+scoreColor(r.scores.eligibility_index)+'"></div></div><div class="sc-num" style="color:'+scoreColor(r.scores.eligibility_index)+';font-size:17px">'+r.scores.eligibility_index+'</div></div>';
-  html += '</div></div><div class="report">';
-  html += '<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-title">Structural Summary</span><span class="rpt-toggle open">^</span></div><div class="rpt-body">'+(r.structural_summary||"")+"</div></div>";
-  html += '<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-title">Tension Map</span><span class="rpt-toggle open">^</span></div><div class="rpt-body">'+tHTML+"</div></div>";
-  html += '<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-title">Alignment Assessment</span><span class="rpt-toggle open">^</span></div><div class="rpt-body">'+aHTML+"</div></div>";
-  html += '<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-title">Convergence Profile</span><span class="rpt-toggle open">^</span></div><div class="rpt-body">'+cHTML+"</div></div>";
-  html += '<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-title">Gap Inventory</span><span class="rpt-toggle open">^</span></div><div class="rpt-body">'+gHTML+"</div></div>";
-  html += condHTML+"</div>";
-  currentResult = r;
-  var followupQ = r.followup_question || "Do you have additional context that could affect this structural assessment?";
-  html += '<div style="display:flex;justify-content:flex-end;margin-bottom:16px"><button class="reset-btn" onclick="exportPDF()" style="display:flex;align-items:center;gap:8px;border-color:var(--accent);color:var(--accent)">&#8595; Export PDF</button></div>';
-  html += '<div class="followup-wrap"><div class="followup-header"><span class="followup-tag">TAC-3D FOLLOW-UP</span></div><div class="followup-q">'+followupQ+'</div><div class="followup-input-area"><textarea id="followupInput" rows="3" placeholder="Provide additional context or evidence..."></textarea><div class="followup-actions"><button class="run-btn" onclick="submitFollowup()"><span>Re-evaluate</span><span>&#8594;</span></button><button class="reset-btn" onclick="resetForm()">New screening</button><span class="followup-round">Round '+roundCount+'</span></div></div></div>';
-  var ra = document.getElementById("resultsArea");
-  ra.innerHTML = html;
-  ra.classList.add("show");
-  setTimeout(function() {
-    var f1 = document.getElementById("f1"); if(f1) f1.style.width = r.scores.tension+"%";
-    var f2 = document.getElementById("f2"); if(f2) f2.style.width = r.scores.alignment+"%";
-    var f3 = document.getElementById("f3"); if(f3) f3.style.width = r.scores.convergence+"%";
-    var f4 = document.getElementById("f4"); if(f4) f4.style.width = r.scores.eligibility_index+"%";
-  }, 100);
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-
-function toggle(hdr) {
-  var body = hdr.nextElementSibling;
-  var t = hdr.querySelector(".rpt-toggle");
-  body.classList.toggle("hidden");
-  t.classList.toggle("open");
-}
-
-function resetForm() {
-  var ra = document.getElementById("resultsArea");
-  ra.classList.remove("show");
-  ra.innerHTML = "";
-  conversationHistory = [];
-  roundCount = 0;
-  document.getElementById("formArea").style.display = "block";
-  document.getElementById("errMsg").classList.remove("show");
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-
-function drawChart(rows) {
-  var wrap = document.getElementById("chartWrap");
-  if (rows.length < 2) { wrap.style.display = "none"; return; }
-  wrap.style.display = "block";
-  var canvas = document.getElementById("trendChart");
-  var dpr = window.devicePixelRatio || 1;
-  var w = canvas.parentElement.clientWidth - 56;
-  var h = 200;
-  canvas.width = w * dpr;
-  canvas.height = h * dpr;
-  canvas.style.width = w + "px";
-  canvas.style.height = h + "px";
-  var ctx = canvas.getContext("2d");
-  ctx.scale(dpr, dpr);
-  var pad = {top:16, right:16, bottom:32, left:36};
-  var cw = w - pad.left - pad.right;
-  var ch = h - pad.top - pad.bottom;
-  // grid
-  ctx.strokeStyle = "#e5e7eb";
-  ctx.lineWidth = 1;
-  [0,25,50,75,100].forEach(function(v) {
-    var y = pad.top + ch - (v/100)*ch;
-    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left+cw, y); ctx.stroke();
-    ctx.fillStyle = "#888"; ctx.font = "10px DM Mono, monospace";
-    ctx.fillText(v, 4, y+4);
-  });
-  var n = rows.length;
-  var series = [
-    {key:"eligibility_index", color:"#1a56db", width:2.5},
-    {key:"tension", color:"#dc2626", width:1.5},
-    {key:"alignment", color:"#d97706", width:1.5},
-    {key:"convergence", color:"#16a34a", width:1.5}
-  ];
-  // x labels
-  ctx.fillStyle = "#888"; ctx.font = "10px DM Mono, monospace"; ctx.textAlign = "center";
-  rows.slice().reverse().forEach(function(row, i) {
-    var x = pad.left + (n===1?cw/2:i/(n-1)*cw);
-    var d = new Date(row.created_at);
-    ctx.fillText((d.getMonth()+1)+"/"+d.getDate(), x, h-6);
-  });
-  // lines
-  series.forEach(function(s) {
-    ctx.strokeStyle = s.color;
-    ctx.lineWidth = s.width;
-    ctx.lineJoin = "round";
-    ctx.beginPath();
-    rows.slice().reverse().forEach(function(row, i) {
-      var x = pad.left + (n===1?cw/2:i/(n-1)*cw);
-      var y = pad.top + ch - (row[s.key]/100)*ch;
-      i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
-    });
-    ctx.stroke();
-    // dots
-    rows.slice().reverse().forEach(function(row, i) {
-      var x = pad.left + (n===1?cw/2:i/(n-1)*cw);
-      var y = pad.top + ch - (row[s.key]/100)*ch;
-      ctx.fillStyle = s.color;
-      ctx.beginPath(); ctx.arc(x,y,3,0,Math.PI*2); ctx.fill();
-    });
-  });
-}
-
-async function loadHistory() {
-  var container = document.getElementById("historyList");
-  container.innerHTML = '<div class="history-empty">Loading...</div>';
-  try {
-    var resp = await fetch("/api/history");
-    var rows = await resp.json();
-    if (!rows.length) {
-      container.innerHTML = '<div class="history-empty">No screenings yet. Run your first assessment to see history here.</div>';
-      return;
-    }
-    drawChart(rows);
-    var html = "";
-    rows.forEach(function(row) {
-      var vc = {ELIGIBLE:"eligible",ELIGIBLE_WITH_CONDITIONS:"conditional",DEFER:"defer",RESTRUCTURE:"restructure"}[row.verdict] || "conditional";
-      var vl = {ELIGIBLE:"ELIGIBLE",ELIGIBLE_WITH_CONDITIONS:"CONDITIONAL",DEFER:"DEFER",RESTRUCTURE:"RESTRUCTURE"}[row.verdict] || row.verdict;
-      var decision = row.decision.replace(/DECISION:\s*/,'').split('\n')[0].substring(0,120);
-      var date = new Date(row.created_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit'});
-      html += '<div class="history-card" onclick="toggleHistoryDetail(this)">';
-      html += '<div class="history-card-top">';
-      html += '<span class="history-verdict-badge '+vc+'">'+vl+'</span>';
-      html += '<div><div class="history-card-decision">'+decision+'</div><div class="history-card-meta">'+date+'</div></div>';
-      html += '</div>';
-      html += '<div class="history-card-scores">';
-      html += '<div class="history-score-item"><span class="history-score-label">T</span><span class="history-score-val" style="color:'+scoreColor(row.tension)+'">'+row.tension+'</span></div>';
-      html += '<div class="history-score-item"><span class="history-score-label">A</span><span class="history-score-val" style="color:'+scoreColor(row.alignment)+'">'+row.alignment+'</span></div>';
-      html += '<div class="history-score-item"><span class="history-score-label">C</span><span class="history-score-val" style="color:'+scoreColor(row.convergence)+'">'+row.convergence+'</span></div>';
-      html += '<div class="history-score-item" style="margin-left:auto"><span class="history-score-label">Index</span><span class="history-score-val" style="color:'+scoreColor(row.eligibility_index)+';font-size:20px">'+row.eligibility_index+'</span></div>';
-      html += '</div>';
-      html += '<div class="history-detail">'+row.verdict_summary+'</div>';
-      html += '</div>';
-    });
-    container.innerHTML = html;
-  } catch(e) {
-    container.innerHTML = '<div class="history-empty">Failed to load history.</div>';
-  }
-}
-
-function toggleHistoryDetail(card) {
-  var detail = card.querySelector('.history-detail');
-  detail.classList.toggle('open');
-}
+  if (params.get('canceled')) { window.history.replaceState({},'','/'); }
+});
 </script>
 </body>
 </html>
-<script>
-// Inject exportPDF into page after jsPDF loads
-document.addEventListener('DOMContentLoaded', function() {
-  window.exportPDF = function() {
-    if (!currentResult) return;
-    var r = currentResult;
-    var { jsPDF } = window.jspdf;
-    var doc = new jsPDF({ unit: 'mm', format: 'a4' });
-    var margin = 20;
-    var pageW = 210;
-    var contentW = pageW - margin * 2;
-    var y = margin;
-
-    // header
-    doc.setFillColor(26, 86, 219);
-    doc.rect(0, 0, pageW, 16, 'F');
-    doc.setTextColor(255,255,255);
-    doc.setFontSize(10);
-    doc.setFont('helvetica','bold');
-    doc.text('TAC-3D', margin, 10);
-    doc.setFont('helvetica','normal');
-    doc.text('Decision Eligibility Report', margin + 20, 10);
-    doc.text(new Date().toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}), pageW - margin, 10, {align:'right'});
-    y = 26;
-
-    // verdict
-    var verdictColors = {ELIGIBLE:[22,163,74], ELIGIBLE_WITH_CONDITIONS:[26,86,219], DEFER:[217,119,6], RESTRUCTURE:[220,38,38]};
-    var vc = verdictColors[r.verdict] || [26,86,219];
-    doc.setFillColor(vc[0], vc[1], vc[2]);
-    doc.roundedRect(margin, y, contentW, 20, 2, 2, 'F');
-    doc.setTextColor(255,255,255);
-    doc.setFontSize(13);
-    doc.setFont('helvetica','bold');
-    var vl = {ELIGIBLE:'ELIGIBLE',ELIGIBLE_WITH_CONDITIONS:'ELIGIBLE WITH CONDITIONS',DEFER:'DEFER',RESTRUCTURE:'RESTRUCTURE'}[r.verdict] || r.verdict;
-    doc.text(vl, margin + 6, y + 8);
-    doc.setFontSize(9);
-    doc.setFont('helvetica','normal');
-    var sumLines = doc.splitTextToSize(r.verdict_summary || '', contentW - 12);
-    doc.text(sumLines[0] || '', margin + 6, y + 14);
-    y += 26;
-
-    // scores
-    doc.setTextColor(100,100,100);
-    doc.setFontSize(8);
-    doc.setFont('helvetica','bold');
-    doc.text('DIMENSION SCORES', margin, y);
-    y += 5;
-    var scoreData = [
-      ['Tension', r.scores.tension],
-      ['Alignment', r.scores.alignment],
-      ['Convergence', r.scores.convergence],
-      ['Eligibility Index', r.scores.eligibility_index]
-    ];
-    scoreData.forEach(function(sd) {
-      doc.setTextColor(60,60,60);
-      doc.setFontSize(9);
-      doc.setFont('helvetica', sd[0]==='Eligibility Index'?'bold':'normal');
-      doc.text(sd[0], margin, y + 4);
-      // bar
-      var barX = margin + 45;
-      var barW = contentW - 60;
-      doc.setFillColor(235,235,235);
-      doc.roundedRect(barX, y, barW, 5, 1, 1, 'F');
-      var pct = sd[1] / 100;
-      var fc = sd[1] >= 72 ? [22,163,74] : sd[1] >= 48 ? [26,86,219] : sd[1] >= 28 ? [217,119,6] : [220,38,38];
-      doc.setFillColor(fc[0],fc[1],fc[2]);
-      doc.roundedRect(barX, y, barW * pct, 5, 1, 1, 'F');
-      doc.setTextColor(fc[0],fc[1],fc[2]);
-      doc.setFont('helvetica','bold');
-      doc.text(String(sd[1]), pageW - margin, y + 4, {align:'right'});
-      y += 9;
-    });
-    y += 4;
-
-    // structural summary
-    doc.setTextColor(100,100,100);
-    doc.setFontSize(8);
-    doc.setFont('helvetica','bold');
-    doc.text('STRUCTURAL SUMMARY', margin, y);
-    y += 4;
-    doc.setTextColor(60,60,60);
-    doc.setFontSize(9);
-    doc.setFont('helvetica','normal');
-    var sumText = (r.structural_summary || '').replace(/<[^>]+>/g, '');
-    var sumWrapped = doc.splitTextToSize(sumText, contentW);
-    doc.text(sumWrapped, margin, y);
-    y += sumWrapped.length * 4 + 4;
-
-    // tension map table
-    if (r.tension_map && r.tension_map.length) {
-      if (y > 240) { doc.addPage(); y = margin; }
-      doc.setTextColor(100,100,100);
-      doc.setFontSize(8);
-      doc.setFont('helvetica','bold');
-      doc.text('TENSION MAP', margin, y);
-      y += 3;
-      doc.autoTable({
-        startY: y,
-        margin: {left: margin, right: margin},
-        headStyles: {fillColor:[240,240,240], textColor:[80,80,80], fontSize:8, fontStyle:'bold'},
-        bodyStyles: {fontSize:8, textColor:[60,60,60]},
-        head: [['Layers', 'Severity', 'Deduction', 'Conflict']],
-        body: r.tension_map.map(function(t) {
-          return [(t.layers||[]).join(' x '), (t.severity||'').toUpperCase(), '-'+t.deduction+' pts', t.conflict];
-        }),
-        columnStyles: {0:{cellWidth:30}, 1:{cellWidth:20}, 2:{cellWidth:20}, 3:{cellWidth:'auto'}}
-      });
-      y = doc.lastAutoTable.finalY + 6;
-    }
-
-    // alignment gaps
-    if (r.alignment_gaps && r.alignment_gaps.length) {
-      if (y > 240) { doc.addPage(); y = margin; }
-      doc.setTextColor(100,100,100);
-      doc.setFontSize(8);
-      doc.setFont('helvetica','bold');
-      doc.text('ALIGNMENT ASSESSMENT', margin, y);
-      y += 3;
-      doc.autoTable({
-        startY: y,
-        margin: {left: margin, right: margin},
-        headStyles: {fillColor:[240,240,240], textColor:[80,80,80], fontSize:8, fontStyle:'bold'},
-        bodyStyles: {fontSize:8, textColor:[60,60,60]},
-        head: [['Severity', 'Description']],
-        body: r.alignment_gaps.map(function(g) {
-          return [(g.severity||'').toUpperCase(), g.description];
-        }),
-        columnStyles: {0:{cellWidth:25}}
-      });
-      y = doc.lastAutoTable.finalY + 6;
-    }
-
-    // convergence risks
-    if (r.convergence_risks && r.convergence_risks.length) {
-      if (y > 240) { doc.addPage(); y = margin; }
-      doc.setTextColor(100,100,100);
-      doc.setFontSize(8);
-      doc.setFont('helvetica','bold');
-      doc.text('CONVERGENCE PROFILE', margin, y);
-      y += 3;
-      doc.autoTable({
-        startY: y,
-        margin: {left: margin, right: margin},
-        headStyles: {fillColor:[240,240,240], textColor:[80,80,80], fontSize:8, fontStyle:'bold'},
-        bodyStyles: {fontSize:8, textColor:[60,60,60]},
-        head: [['Severity', 'Scenario']],
-        body: r.convergence_risks.map(function(c) {
-          return [(c.severity||'').toUpperCase(), c.scenario];
-        }),
-        columnStyles: {0:{cellWidth:25}}
-      });
-      y = doc.lastAutoTable.finalY + 6;
-    }
-
-    // gap inventory
-    if (r.gap_inventory && r.gap_inventory.length) {
-      if (y > 240) { doc.addPage(); y = margin; }
-      doc.setTextColor(100,100,100);
-      doc.setFontSize(8);
-      doc.setFont('helvetica','bold');
-      doc.text('GAP INVENTORY', margin, y);
-      y += 3;
-      doc.autoTable({
-        startY: y,
-        margin: {left: margin, right: margin},
-        headStyles: {fillColor:[240,240,240], textColor:[80,80,80], fontSize:8, fontStyle:'bold'},
-        bodyStyles: {fontSize:8, textColor:[60,60,60]},
-        head: [['Type', 'Gap', 'Resolution']],
-        body: r.gap_inventory.map(function(g) {
-          return [g.load_bearing ? 'LOAD-BEARING' : 'SECONDARY', g.gap, g.resolution];
-        }),
-        columnStyles: {0:{cellWidth:28}, 1:{cellWidth:60}}
-      });
-      y = doc.lastAutoTable.finalY + 6;
-    }
-
-    // conditions
-    if (r.conditions && r.conditions.length) {
-      if (y > 240) { doc.addPage(); y = margin; }
-      doc.setTextColor(100,100,100);
-      doc.setFontSize(8);
-      doc.setFont('helvetica','bold');
-      doc.text('CONDITIONS FOR ELIGIBILITY', margin, y);
-      y += 4;
-      r.conditions.forEach(function(c, i) {
-        doc.setTextColor(26,86,219);
-        doc.setFont('helvetica','bold');
-        doc.setFontSize(9);
-        doc.text('0'+(i+1), margin, y);
-        doc.setTextColor(60,60,60);
-        doc.setFont('helvetica','normal');
-        var cLines = doc.splitTextToSize(c, contentW - 12);
-        doc.text(cLines, margin + 10, y);
-        y += cLines.length * 4 + 3;
-      });
-    }
-
-    // footer
-    var pageCount = doc.internal.getNumberOfPages();
-    for (var p = 1; p <= pageCount; p++) {
-      doc.setPage(p);
-      doc.setTextColor(180,180,180);
-      doc.setFontSize(7);
-      doc.text('TAC-3D Decision Eligibility Report · Generated by TAC-3D v0.3', margin, 292);
-      doc.text('Page ' + p + ' of ' + pageCount, pageW - margin, 292, {align:'right'});
-    }
-
-    doc.save('TAC-3D-Report-' + new Date().toISOString().slice(0,10) + '.pdf');
-  };
-});
-</script>

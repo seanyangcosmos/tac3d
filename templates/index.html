@@ -15,6 +15,9 @@ header{border-bottom:1px solid var(--border);padding:0 40px;height:56px;display:
 .logo-div{width:1px;height:16px;background:var(--border2)}
 .logo-sub{font-size:12px;color:var(--text-3)}
 .badge{font-family:"DM Mono",monospace;font-size:10px;color:var(--text-3);border:1px solid var(--border2);border-radius:4px;padding:3px 8px}
+.nav-links{display:flex;align-items:center;gap:8px}
+.nav-btn{font-family:"DM Mono",monospace;font-size:11px;color:var(--text-3);background:transparent;border:1px solid var(--border2);border-radius:4px;padding:4px 12px;cursor:pointer;transition:all .15s;letter-spacing:.06em}
+.nav-btn:hover,.nav-btn.active{color:var(--accent);border-color:var(--accent);background:var(--accent-dim)}
 .container{max-width:860px;margin:0 auto;padding:48px 32px 100px}
 .hero{text-align:center;padding:32px 0 48px}
 .hero-eye{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;opacity:.8}
@@ -81,7 +84,6 @@ textarea::placeholder,input::placeholder{color:var(--text-3)}
 .report{display:flex;flex-direction:column;gap:16px}
 .rpt-sec{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
 .rpt-hdr{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;background:var(--surface2);cursor:pointer;user-select:none}
-.rpt-icon{font-size:15px}
 .rpt-title{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-2);flex:1}
 .rpt-toggle{font-size:11px;color:var(--text-3);transition:transform .2s}
 .rpt-toggle.open{transform:rotate(180deg)}
@@ -90,15 +92,54 @@ textarea::placeholder,input::placeholder{color:var(--text-3)}
 .rlist{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
 .rlist li{padding:12px 14px;background:var(--surface2);border-radius:6px;border-left:3px solid var(--border2);font-size:13.5px}
 .rlist li.high{border-left-color:var(--red)}
+.rlist li.critical{border-left-color:#7c0000}
 .rlist li.moderate{border-left-color:var(--amber)}
 .rlist li.low{border-left-color:var(--green)}
 .rlbl{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:4px}
 .cond-list{display:flex;flex-direction:column;gap:8px}
-.cond-item{display:flex;gap:10px;padding:10px 14px;background:var(--accent-dim);border:1px solid rgba(79,142,247,.2);border-radius:6px;font-size:13.5px;color:#a8c4f8}
+.cond-item{display:flex;gap:10px;padding:10px 14px;background:var(--accent-dim);border:1px solid rgba(26,86,219,.2);border-radius:6px;font-size:13.5px;color:#1a56db}
 .cond-num{font-family:"DM Mono",monospace;font-size:11px;color:var(--accent);flex-shrink:0;margin-top:2px}
-.reset-btn{display:block;margin:32px auto 0;background:transparent;border:1px solid var(--border2);border-radius:8px;padding:10px 24px;color:var(--text-3);font-size:13px;cursor:pointer;transition:all .15s}
-.err{display:none;background:var(--red-dim);border:1px solid var(--red);border-radius:8px;padding:16px 20px;color:#f79090;font-size:13.5px;margin-top:16px}
+.reset-btn{display:inline-block;background:transparent;border:1px solid var(--border2);border-radius:8px;padding:10px 24px;color:var(--text-3);font-size:13px;cursor:pointer;transition:all .15s}
+.reset-btn:hover{border-color:var(--text-3);color:var(--text)}
+.err{display:none;background:var(--red-dim);border:1px solid var(--red);border-radius:8px;padding:16px 20px;color:#dc2626;font-size:13.5px;margin-top:16px}
 .err.show{display:block}
+.followup-wrap{margin-top:32px;border:1px solid var(--accent);border-radius:10px;overflow:hidden;background:var(--accent-dim)}
+.followup-header{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:1px solid rgba(26,86,219,.2);background:rgba(26,86,219,.06)}
+.followup-tag{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.12em;color:var(--accent);font-weight:500}
+.followup-q{padding:16px 20px;font-size:13.5px;color:var(--text);line-height:1.75}
+.followup-input-area{padding:0 20px 20px}
+.followup-input-area textarea{background:#fff;border-color:rgba(26,86,219,.3)}
+.followup-input-area textarea:focus{border-color:var(--accent)}
+.followup-actions{display:flex;align-items:center;gap:12px;margin-top:12px}
+.followup-round{font-family:"DM Mono",monospace;font-size:10px;color:var(--text-3);margin-left:auto}
+.history-strip{margin-bottom:20px;display:flex;flex-direction:column;gap:8px}
+.history-item{padding:10px 14px;border-radius:6px;font-size:12.5px;line-height:1.6}
+.history-item.user{background:var(--surface2);border-left:3px solid var(--border2);color:var(--text-2)}
+.history-label{font-family:"DM Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.08em;margin-bottom:4px;color:var(--text-3)}
+
+/* ── History Page ── */
+.page{display:none}
+.page.active{display:block}
+.history-page-title{font-family:"Playfair Display",serif;font-size:28px;font-weight:400;margin-bottom:8px}
+.history-page-sub{font-size:14px;color:var(--text-3);margin-bottom:32px}
+.history-list{display:flex;flex-direction:column;gap:16px}
+.history-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:border-color .15s}
+.history-card:hover{border-color:var(--accent)}
+.history-card-top{padding:16px 20px;display:flex;align-items:flex-start;gap:16px}
+.history-verdict-badge{font-family:"DM Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.08em;padding:4px 10px;border-radius:4px;flex-shrink:0;margin-top:2px}
+.history-verdict-badge.eligible{background:var(--green-dim);color:var(--green)}
+.history-verdict-badge.conditional{background:var(--accent-dim);color:var(--accent)}
+.history-verdict-badge.defer{background:var(--amber-dim);color:var(--amber)}
+.history-verdict-badge.restructure{background:var(--red-dim);color:var(--red)}
+.history-card-decision{font-size:13.5px;color:var(--text);line-height:1.5;flex:1}
+.history-card-meta{font-size:11px;color:var(--text-3);margin-top:4px}
+.history-card-scores{padding:12px 20px;border-top:1px solid var(--border);background:var(--surface2);display:flex;gap:24px}
+.history-score-item{display:flex;flex-direction:column;align-items:center;gap:2px}
+.history-score-label{font-size:10px;color:var(--text-3);letter-spacing:.06em;text-transform:uppercase}
+.history-score-val{font-family:"DM Mono",monospace;font-size:16px;font-weight:500}
+.history-empty{text-align:center;padding:64px 32px;color:var(--text-3);font-size:14px}
+.history-detail{display:none;padding:16px 20px;border-top:1px solid var(--border);font-size:13px;color:var(--text-2);line-height:1.7;background:#fff}
+.history-detail.open{display:block}
 </style>
 </head>
 <body>
@@ -108,54 +149,84 @@ textarea::placeholder,input::placeholder{color:var(--text-3)}
     <span class="logo-div"></span>
     <span class="logo-sub">Decision Eligibility Screener</span>
   </div>
-  <span class="badge">PROTOTYPE v0.1</span>
+  <div class="nav-links">
+    <button class="nav-btn active" id="navScreen" onclick="showPage('screen')">Screener</button>
+    <button class="nav-btn" id="navHistory" onclick="showPage('history')">History</button>
+    <span class="badge">v0.3</span>
+  </div>
 </header>
+
 <div class="container">
-  <div class="hero">
-    <div class="hero-eye">Structural Reliability Assessment</div>
-    <h1>Is your decision<br>structurally ready?</h1>
-    <p class="hero-desc">Submit your decision and evidence layers. TAC-3D evaluates structural compatibility and returns a Decision Eligibility verdict.</p>
-  </div>
-  <div id="formArea">
-    <div class="card">
-      <div class="card-sec">
-        <div class="sec-label"><span class="sec-num">1</span>The Decision</div>
-        <div class="hint">State the decision as a clear, specific proposition.</div>
-        <textarea id="decisionInput" rows="3" placeholder="e.g. Invest $5M in an AI medical startup with a 3-year hold period"></textarea>
+
+  <!-- SCREENER PAGE -->
+  <div class="page active" id="pageScreen">
+    <div class="hero">
+      <div class="hero-eye">Structural Reliability Assessment</div>
+      <h1>Is your decision<br>structurally ready?</h1>
+      <p class="hero-desc">Submit your decision and evidence layers. TAC-3D evaluates structural compatibility and returns a Decision Eligibility verdict.</p>
+    </div>
+    <div id="formArea">
+      <div class="card">
+        <div class="card-sec">
+          <div class="sec-label"><span class="sec-num">1</span>The Decision</div>
+          <div class="hint">State the decision as a clear, specific proposition.</div>
+          <textarea id="decisionInput" rows="3" placeholder="e.g. Invest $5M in an AI medical startup with a 3-year hold period"></textarea>
+        </div>
+        <div class="card-sec">
+          <div class="sec-label"><span class="sec-num">2</span>Evidence Layers</div>
+          <div class="hint">Add 2-6 independent evidence sources.</div>
+          <div class="layers" id="layersList"></div>
+          <button class="add-btn" onclick="addLayer()"><span>+</span> Add evidence layer</button>
+        </div>
+        <div class="card-sec">
+          <div class="sec-label"><span class="sec-num">3</span>Context <span style="font-weight:300;text-transform:none;letter-spacing:0;font-size:10px;color:var(--text-3)">(optional)</span></div>
+          <div class="hint">Decision environment or execution conditions.</div>
+          <textarea id="contextInput" rows="2" placeholder="e.g. PE buyout, 5-year hold, board approval required"></textarea>
+        </div>
       </div>
-      <div class="card-sec">
-        <div class="sec-label"><span class="sec-num">2</span>Evidence Layers</div>
-        <div class="hint">Add 2-6 independent evidence sources.</div>
-        <div class="layers" id="layersList"></div>
-        <button class="add-btn" onclick="addLayer()"><span>+</span> Add evidence layer</button>
+      <div class="submit-area">
+        <button class="run-btn" onclick="runScreening()"><span>Run Screening</span><span>&#8594;</span></button>
+        <div class="run-note">Assessment takes 20-40 seconds.<br>TAC-3D searches external sources before evaluating.</div>
       </div>
-      <div class="card-sec">
-        <div class="sec-label"><span class="sec-num">3</span>Context <span style="font-weight:300;text-transform:none;letter-spacing:0;font-size:10px;color:var(--text-3)">(optional)</span></div>
-        <div class="hint">Decision environment or execution conditions.</div>
-        <textarea id="contextInput" rows="2" placeholder="e.g. PE buyout, 5-year hold, board approval required"></textarea>
+      <div class="err" id="errMsg"></div>
+    </div>
+    <div class="loading" id="loadingState">
+      <div class="spinner"></div>
+      <div class="load-txt" id="loadTxt">ANALYZING STRUCTURAL RELIABILITY</div>
+      <div class="steps">
+        <div class="step" id="s1"><span class="dot"></span>Searching external sources</div>
+        <div class="step" id="s2"><span class="dot"></span>Evaluating tension geometry</div>
+        <div class="step" id="s3"><span class="dot"></span>Mapping directional alignment</div>
+        <div class="step" id="s4"><span class="dot"></span>Testing convergence stability</div>
+        <div class="step" id="s5"><span class="dot"></span>Generating eligibility verdict</div>
       </div>
     </div>
-    <div class="submit-area">
-      <button class="run-btn" onclick="runScreening()"><span>Run Screening</span><span>&#8594;</span></button>
-      <div class="run-note">Assessment takes 15-30 seconds.<br>Results include scores and full structural report.</div>
-    </div>
-    <div class="err" id="errMsg"></div>
+    <div class="results" id="resultsArea"></div>
   </div>
-  <div class="loading" id="loadingState">
-    <div class="spinner"></div>
-    <div class="load-txt">ANALYZING STRUCTURAL RELIABILITY</div>
-    <div class="steps">
-      <div class="step" id="s1"><span class="dot"></span>Parsing evidence layers</div>
-      <div class="step" id="s2"><span class="dot"></span>Evaluating tension geometry</div>
-      <div class="step" id="s3"><span class="dot"></span>Mapping directional alignment</div>
-      <div class="step" id="s4"><span class="dot"></span>Testing convergence stability</div>
-      <div class="step" id="s5"><span class="dot"></span>Generating eligibility verdict</div>
+
+  <!-- HISTORY PAGE -->
+  <div class="page" id="pageHistory">
+    <div class="history-page-title">Screening History</div>
+    <div class="history-page-sub">Past decision assessments, stored locally on this server.</div>
+    <div class="history-list" id="historyList">
+      <div class="history-empty">Loading history...</div>
     </div>
   </div>
-  <div class="results" id="resultsArea"></div>
+
 </div>
+
 <script>
 var layers = [{name:"financial",content:""},{name:"operational",content:""}];
+var conversationHistory = [];
+var roundCount = 0;
+
+function showPage(page) {
+  document.getElementById('pageScreen').classList.toggle('active', page === 'screen');
+  document.getElementById('pageHistory').classList.toggle('active', page === 'history');
+  document.getElementById('navScreen').classList.toggle('active', page === 'screen');
+  document.getElementById('navHistory').classList.toggle('active', page === 'history');
+  if (page === 'history') loadHistory();
+}
 
 function renderLayers() {
   var list = document.getElementById("layersList");
@@ -164,7 +235,6 @@ function renderLayers() {
     var delBtn = layers.length > 2 ? '<button class="layer-del" onclick="removeLayer('+i+')">x</button>' : "";
     var div = document.createElement("div");
     div.className = "layer";
-    div.id = "layer" + i;
     div.innerHTML = '<div class="layer-hdr"><span class="layer-tag">LAYER '+(i+1)+'</span><input class="layer-name" type="text" value="'+layers[i].name+'" placeholder="label" data-idx="'+i+'">'+delBtn+'</div><textarea class="layer-body" rows="3" placeholder="Paste evidence here..." data-idx="'+i+'">'+layers[i].content+'</textarea>';
     list.appendChild(div);
   }
@@ -193,7 +263,7 @@ renderLayers();
 
 function animateSteps() {
   var ids = ["s1","s2","s3","s4","s5"];
-  var delays = [0,3000,7000,12000,18000];
+  var delays = [0,5000,10000,16000,22000];
   for (var i = 0; i < ids.length; i++) {
     (function(idx) {
       setTimeout(function() {
@@ -207,7 +277,8 @@ function animateSteps() {
     })(i);
   }
 }
-var PROMPT = "You are TAC-3D, a Decision Eligibility Screener. Evaluate decisions by analyzing structural compatibility across evidence layers using three dimensions: Tension, Alignment, Convergence.\n\nSCORING RULES:\nTENSION (starts at 100): Core assumptions contradict: -25. Incompatible timelines: -15. Unconfirmed premises: -12. Conflicting data: -10. Minor inconsistency: -5. Min 0.\nALIGNMENT (starts at 100): Different outcome pathways: -30. Inconsistent resources: -20. Success condition negates another: -18. Critical dependency missing: -15. Different priorities: -8. Min 0.\nCONVERGENCE (starts at 100): Holds in one scenario only: -28. Assumptions not stress-tested: -18. Sensitive to one external change: -15. Cross-time stability not evaluated: -12. Incomplete coverage: -6. Min 0.\nELIGIBILITY INDEX: (Tension x 0.35) + (Alignment x 0.40) + (Convergence x 0.25), rounded.\nVERDICTS: ELIGIBLE>=72, ELIGIBLE_WITH_CONDITIONS 48-71, DEFER 28-47, RESTRUCTURE<28.\n\nReturn ONLY valid JSON: {scores:{tension:int,alignment:int,convergence:int,eligibility_index:int},verdict:string,verdict_summary:string,tension_map:[{layers:[string,string],conflict:string,severity:string,deduction:int}],alignment_gaps:[{description:string,severity:string}],convergence_risks:[{scenario:string,severity:string}],gap_inventory:[{gap:string,load_bearing:bool,resolution:string}],conditions:[string],structural_summary:string}";
+
+var PROMPT = "You are TAC-3D, a Decision Eligibility Screener with web search capability. Before evaluating, use web search to verify 2-3 key claims in the evidence layers — such as market size, competitor landscape, regulatory environment, or valuation benchmarks. Search for data points that could confirm or challenge the structural assumptions.\n\nEvaluate decisions by analyzing structural compatibility across evidence layers using three dimensions: Tension, Alignment, Convergence.\n\nSCORING RULES:\nTENSION (starts at 100): Core assumptions contradict: -25. Incompatible timelines: -15. Unconfirmed premises: -12. Conflicting data: -10. Minor inconsistency: -5. Min 0.\nALIGNMENT (starts at 100): Different outcome pathways: -30. Inconsistent resources: -20. Success condition negates another: -18. Critical dependency missing: -15. Different priorities: -8. Min 0.\nCONVERGENCE (starts at 100): Holds in one scenario only: -28. Assumptions not stress-tested: -18. Sensitive to one external change: -15. Cross-time stability not evaluated: -12. Incomplete coverage: -6. Min 0.\nELIGIBILITY INDEX: (Tension x 0.35) + (Alignment x 0.40) + (Convergence x 0.25), rounded.\nVERDICTS: ELIGIBLE>=72, ELIGIBLE_WITH_CONDITIONS 48-71, DEFER 28-47, RESTRUCTURE<28.\n\nIf the user provides additional context in follow-up messages, re-evaluate and update scores accordingly. Always return ONLY valid JSON (no markdown, no explanation outside JSON): {scores:{tension:int,alignment:int,convergence:int,eligibility_index:int},verdict:string,verdict_summary:string,tension_map:[{layers:[string,string],conflict:string,severity:string,deduction:int}],alignment_gaps:[{description:string,severity:string}],convergence_risks:[{scenario:string,severity:string}],gap_inventory:[{gap:string,load_bearing:bool,resolution:string}],conditions:[string],structural_summary:string,followup_question:string}";
 
 async function runScreening() {
   var decision = document.getElementById("decisionInput").value.trim();
@@ -231,34 +302,53 @@ async function runScreening() {
     }
   }
   var userMsg = "DECISION: "+decision+(context ? "\n\nCONTEXT: "+context : "")+"\n\n---\n\nEVIDENCE LAYERS:\n\n"+layerText;
+  conversationHistory = [];
+  roundCount = 0;
+  conversationHistory.push({role:"user", content: userMsg});
   document.getElementById("formArea").style.display = "none";
   document.getElementById("loadingState").classList.add("show");
+  document.getElementById("loadTxt").textContent = "SEARCHING EXTERNAL SOURCES";
   animateSteps();
+  await callAPI();
+}
+
+async function callAPI() {
   try {
     var resp = await fetch("/api/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-          },
-        body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
-          max_tokens: 2000,
-          system: PROMPT,
-          messages: [{role:"user",content:userMsg}]
-        })
-     });
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 4000,
+        system: PROMPT,
+        messages: conversationHistory
+      })
+    });
     var data = await resp.json();
+    if (data.error) throw new Error(data.error);
     var raw = data.content && data.content[0] ? data.content[0].text : "";
     var match = raw.match(/\{[\s\S]*\}/);
     if (!match) throw new Error("Could not parse response.");
     var result = JSON.parse(match[0]);
     if (typeof result.scores.tension !== "number") throw new Error("Invalid score data.");
+    conversationHistory.push({role:"assistant", content: raw});
+    roundCount++;
     showResults(result);
   } catch(err) {
     document.getElementById("loadingState").classList.remove("show");
     document.getElementById("formArea").style.display = "block";
     showErr("Assessment failed: " + err.message);
   }
+}
+
+async function submitFollowup() {
+  var input = document.getElementById("followupInput").value.trim();
+  if (!input) return;
+  conversationHistory.push({role:"user", content: "Additional context: " + input});
+  document.getElementById("loadingState").classList.add("show");
+  document.getElementById("loadTxt").textContent = "RE-EVALUATING WITH NEW CONTEXT";
+  document.getElementById("resultsArea").classList.remove("show");
+  await callAPI();
 }
 
 function showErr(msg) {
@@ -273,6 +363,7 @@ function scoreColor(n) {
   if (n >= 28) return "var(--amber)";
   return "var(--red)";
 }
+
 function showResults(r) {
   document.getElementById("loadingState").classList.remove("show");
   var vc = {ELIGIBLE:"eligible",ELIGIBLE_WITH_CONDITIONS:"conditional",DEFER:"defer",RESTRUCTURE:"restructure"}[r.verdict] || "conditional";
@@ -322,7 +413,19 @@ function showResults(r) {
     }
     condHTML += "</div></div></div>";
   }
-  var html = '<div class="verdict '+vc+'"><div class="v-icon">'+vi+'</div><div><div class="v-label">'+vl+'</div><div class="v-sum">'+(r.verdict_summary||"")+'</div></div></div>';
+  var historyHTML = "";
+  if (roundCount > 1) {
+    historyHTML = '<div class="history-strip">';
+    for (var h = 0; h < conversationHistory.length - 2; h++) {
+      var hItem = conversationHistory[h];
+      if (hItem.role === "user" && h > 0) {
+        historyHTML += '<div class="history-item user"><div class="history-label">YOU</div>' + hItem.content.replace("Additional context: ","") + '</div>';
+      }
+    }
+    historyHTML += '</div>';
+  }
+  var html = historyHTML;
+  html += '<div class="verdict '+vc+'"><div class="v-icon">'+vi+'</div><div><div class="v-label">'+vl+(roundCount > 1 ? ' <span style="font-size:10px;opacity:.6">· Round '+roundCount+'</span>' : '')+'</div><div class="v-sum">'+(r.verdict_summary||"")+'</div></div></div>';
   html += '<div class="scores"><div class="sc-title">Dimension Scores</div><div class="sc-rows">';
   html += '<div class="sc-row"><div class="sc-lbl">Tension<small>Evidence conflict</small></div><div class="sc-track"><div class="sc-fill" id="f1" style="background:'+scoreColor(r.scores.tension)+'"></div></div><div class="sc-num" style="color:'+scoreColor(r.scores.tension)+'">'+r.scores.tension+'</div></div>';
   html += '<div class="sc-row"><div class="sc-lbl">Alignment<small>Directional compat.</small></div><div class="sc-track"><div class="sc-fill" id="f2" style="background:'+scoreColor(r.scores.alignment)+'"></div></div><div class="sc-num" style="color:'+scoreColor(r.scores.alignment)+'">'+r.scores.alignment+'</div></div>';
@@ -336,7 +439,8 @@ function showResults(r) {
   html += '<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-title">Convergence Profile</span><span class="rpt-toggle open">^</span></div><div class="rpt-body">'+cHTML+"</div></div>";
   html += '<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-title">Gap Inventory</span><span class="rpt-toggle open">^</span></div><div class="rpt-body">'+gHTML+"</div></div>";
   html += condHTML+"</div>";
-  html += '<button class="reset-btn" onclick="resetForm()">Back to screening</button>';
+  var followupQ = r.followup_question || "Do you have additional context that could affect this structural assessment?";
+  html += '<div class="followup-wrap"><div class="followup-header"><span class="followup-tag">TAC-3D FOLLOW-UP</span></div><div class="followup-q">'+followupQ+'</div><div class="followup-input-area"><textarea id="followupInput" rows="3" placeholder="Provide additional context or evidence..."></textarea><div class="followup-actions"><button class="run-btn" onclick="submitFollowup()"><span>Re-evaluate</span><span>&#8594;</span></button><button class="reset-btn" onclick="resetForm()">New screening</button><span class="followup-round">Round '+roundCount+'</span></div></div></div>';
   var ra = document.getElementById("resultsArea");
   ra.innerHTML = html;
   ra.classList.add("show");
@@ -360,9 +464,52 @@ function resetForm() {
   var ra = document.getElementById("resultsArea");
   ra.classList.remove("show");
   ra.innerHTML = "";
+  conversationHistory = [];
+  roundCount = 0;
   document.getElementById("formArea").style.display = "block";
   document.getElementById("errMsg").classList.remove("show");
   window.scrollTo({top:0,behavior:"smooth"});
+}
+
+async function loadHistory() {
+  var container = document.getElementById("historyList");
+  container.innerHTML = '<div class="history-empty">Loading...</div>';
+  try {
+    var resp = await fetch("/api/history");
+    var rows = await resp.json();
+    if (!rows.length) {
+      container.innerHTML = '<div class="history-empty">No screenings yet. Run your first assessment to see history here.</div>';
+      return;
+    }
+    var html = "";
+    rows.forEach(function(row) {
+      var vc = {ELIGIBLE:"eligible",ELIGIBLE_WITH_CONDITIONS:"conditional",DEFER:"defer",RESTRUCTURE:"restructure"}[row.verdict] || "conditional";
+      var vl = {ELIGIBLE:"ELIGIBLE",ELIGIBLE_WITH_CONDITIONS:"CONDITIONAL",DEFER:"DEFER",RESTRUCTURE:"RESTRUCTURE"}[row.verdict] || row.verdict;
+      var decision = row.decision.replace(/DECISION:\s*/,'').split('\n')[0].substring(0,120);
+      var date = new Date(row.created_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit'});
+      html += '<div class="history-card" onclick="toggleHistoryDetail(this)">';
+      html += '<div class="history-card-top">';
+      html += '<span class="history-verdict-badge '+vc+'">'+vl+'</span>';
+      html += '<div><div class="history-card-decision">'+decision+'</div><div class="history-card-meta">'+date+'</div></div>';
+      html += '</div>';
+      html += '<div class="history-card-scores">';
+      html += '<div class="history-score-item"><span class="history-score-label">T</span><span class="history-score-val" style="color:'+scoreColor(row.tension)+'">'+row.tension+'</span></div>';
+      html += '<div class="history-score-item"><span class="history-score-label">A</span><span class="history-score-val" style="color:'+scoreColor(row.alignment)+'">'+row.alignment+'</span></div>';
+      html += '<div class="history-score-item"><span class="history-score-label">C</span><span class="history-score-val" style="color:'+scoreColor(row.convergence)+'">'+row.convergence+'</span></div>';
+      html += '<div class="history-score-item" style="margin-left:auto"><span class="history-score-label">Index</span><span class="history-score-val" style="color:'+scoreColor(row.eligibility_index)+';font-size:20px">'+row.eligibility_index+'</span></div>';
+      html += '</div>';
+      html += '<div class="history-detail">'+row.verdict_summary+'</div>';
+      html += '</div>';
+    });
+    container.innerHTML = html;
+  } catch(e) {
+    container.innerHTML = '<div class="history-empty">Failed to load history.</div>';
+  }
+}
+
+function toggleHistoryDetail(card) {
+  var detail = card.querySelector('.history-detail');
+  detail.classList.toggle('open');
 }
 </script>
 </body>

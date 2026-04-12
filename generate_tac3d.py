@@ -1,0 +1,404 @@
+#!/usr/bin/env python3
+
+html = ‘’’<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAC-3D Decision Eligibility Screener</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a0f;--surface:#0f1218;--surface2:#161b24;--border:#1c2230;--border2:#232b3d;--accent:#4f8ef7;--accent-dim:#132040;--green:#3dd68c;--green-dim:#0a2818;--amber:#f5a623;--amber-dim:#2d1e00;--red:#f75f5f;--red-dim:#2d0a0a;--text:#dde2ed;--text-2:#7d899e;--text-3:#3d4a5e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;font-size:14px;line-height:1.7;min-height:100vh}
+header{border-bottom:1px solid var(--border);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(8,10,15,0.95);backdrop-filter:blur(16px);z-index:100}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-text{font-family:"DM Mono",monospace;font-size:13px;font-weight:500;letter-spacing:.14em;color:var(--accent)}
+.logo-div{width:1px;height:16px;background:var(--border2)}
+.logo-sub{font-size:12px;color:var(--text-3)}
+.badge{font-family:"DM Mono",monospace;font-size:10px;color:var(--text-3);border:1px solid var(--border2);border-radius:4px;padding:3px 8px}
+.container{max-width:860px;margin:0 auto;padding:48px 32px 100px}
+.hero{text-align:center;padding:32px 0 48px}
+.hero-eye{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;opacity:.8}
+.hero h1{font-family:"Playfair Display",serif;font-size:36px;font-weight:400;line-height:1.25;margin-bottom:14px;letter-spacing:-.02em}
+.hero-desc{font-size:15px;color:var(--text-2);max-width:500px;margin:0 auto;line-height:1.8}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:20px}
+.card-sec{padding:24px 28px;border-bottom:1px solid var(--border)}
+.card-sec:last-child{border-bottom:none}
+.sec-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.sec-num{width:20px;height:20px;background:var(--accent-dim);border:1px solid var(--accent);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:"DM Mono",monospace;font-size:10px;color:var(--accent)}
+.hint{font-size:12px;color:var(--text-3);margin-bottom:12px;font-style:italic}
+textarea,input[type=text]{width:100%;background:var(--surface2);border:1px solid var(--border2);border-radius:6px;padding:12px 14px;font-family:"DM Sans",sans-serif;font-size:14px;color:var(--text);outline:none;resize:vertical;transition:border-color .15s}
+textarea:focus,input[type=text]:focus{border-color:var(--accent)}
+textarea::placeholder,input::placeholder{color:var(--text-3)}
+.layers{display:flex;flex-direction:column;gap:12px}
+.layer{background:var(--surface2);border:1px solid var(--border2);border-radius:8px;overflow:hidden}
+.layer-hdr{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.02)}
+.layer-tag{font-family:"DM Mono",monospace;font-size:10px;color:var(--text-3);letter-spacing:.06em}
+.layer-name{flex:1;background:transparent;border:none;border-radius:0;padding:0;font-family:"DM Mono",monospace;font-size:12px;color:var(--accent);font-weight:500;outline:none}
+.layer-del{background:none;border:none;color:var(--text-3);cursor:pointer;font-size:16px;padding:0 4px;line-height:1}
+.layer-del:hover{color:var(--red)}
+.layer-body{width:100%;background:transparent;border:none;border-radius:0;padding:12px 14px;font-size:13.5px;min-height:80px;resize:vertical;color:var(--text);outline:none}
+.add-btn{width:100%;background:transparent;border:1px dashed var(--border2);border-radius:8px;padding:12px;color:var(--text-3);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;transition:all .15s}
+.add-btn:hover{border-color:var(--accent);color:var(--accent)}
+.submit-area{display:flex;align-items:center;gap:16px;padding:20px 0 0}
+.run-btn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:13px 32px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .15s}
+.run-btn:hover{opacity:.88;transform:translateY(-1px)}
+.run-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.run-note{font-size:12px;color:var(--text-3);line-height:1.5}
+.loading{display:none;text-align:center;padding:64px 32px;background:var(--surface);border:1px solid var(--border);border-radius:10px}
+.loading.show{display:block}
+.spinner{width:40px;height:40px;border:2px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 20px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.load-txt{font-family:"DM Mono",monospace;font-size:12px;color:var(--text-3);letter-spacing:.08em}
+.steps{margin-top:20px;display:flex;flex-direction:column;gap:8px;max-width:280px;margin-left:auto;margin-right:auto}
+.step{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--text-3);opacity:.4;transition:opacity .3s}
+.step.active{opacity:1;color:var(--accent)}
+.step.done{opacity:.6;color:var(--green)}
+.dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
+.results{display:none}
+.results.show{display:block;animation:fadeUp .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.verdict{border-radius:10px;padding:24px 28px;margin-bottom:20px;border:1px solid;display:flex;align-items:center;gap:20px}
+.verdict.eligible{background:var(--green-dim);border-color:var(--green)}
+.verdict.conditional{background:var(--accent-dim);border-color:var(--accent)}
+.verdict.defer{background:var(--amber-dim);border-color:var(--amber)}
+.verdict.restructure{background:var(--red-dim);border-color:var(--red)}
+.v-icon{font-size:28px;flex-shrink:0}
+.v-label{font-family:"DM Mono",monospace;font-size:13px;font-weight:500;letter-spacing:.1em;margin-bottom:4px}
+.verdict.eligible .v-label{color:var(--green)}
+.verdict.conditional .v-label{color:var(--accent)}
+.verdict.defer .v-label{color:var(--amber)}
+.verdict.restructure .v-label{color:var(--red)}
+.v-sum{font-size:13.5px;color:var(--text-2);line-height:1.65}
+.scores{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px;margin-bottom:20px}
+.sc-title{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:20px}
+.sc-rows{display:flex;flex-direction:column;gap:14px}
+.sc-row{display:grid;grid-template-columns:140px 1fr 48px;align-items:center;gap:16px}
+.sc-lbl{font-size:13px;font-weight:500;color:var(--text-2)}
+.sc-lbl small{display:block;font-size:11px;color:var(--text-3);font-weight:400;margin-top:1px}
+.sc-track{height:8px;background:var(--surface2);border-radius:4px;overflow:hidden;border:1px solid var(--border)}
+.sc-fill{height:100%;border-radius:4px;transition:width 1s cubic-bezier(.16,1,.3,1);width:0}
+.sc-num{font-family:"DM Mono",monospace;font-size:15px;font-weight:500;text-align:right}
+.sc-div{height:1px;background:var(--border);margin:4px 0}
+.report{display:flex;flex-direction:column;gap:16px}
+.rpt-sec{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.rpt-hdr{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;background:var(--surface2);cursor:pointer;user-select:none}
+.rpt-icon{font-size:15px}
+.rpt-title{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-2);flex:1}
+.rpt-toggle{font-size:11px;color:var(--text-3);transition:transform .2s}
+.rpt-toggle.open{transform:rotate(180deg)}
+.rpt-body{padding:20px;font-size:14px;color:var(--text-2);line-height:1.75}
+.rpt-body.hidden{display:none}
+.rlist{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+.rlist li{padding:12px 14px;background:var(--surface2);border-radius:6px;border-left:3px solid var(--border2);font-size:13.5px}
+.rlist li.high{border-left-color:var(--red)}
+.rlist li.moderate{border-left-color:var(--amber)}
+.rlist li.low{border-left-color:var(--green)}
+.rlbl{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:4px}
+.cond-list{display:flex;flex-direction:column;gap:8px}
+.cond-item{display:flex;gap:10px;padding:10px 14px;background:var(--accent-dim);border:1px solid rgba(79,142,247,.2);border-radius:6px;font-size:13.5px;color:#a8c4f8}
+.cond-num{font-family:"DM Mono",monospace;font-size:11px;color:var(--accent);flex-shrink:0;margin-top:2px}
+.reset-btn{display:block;margin:32px auto 0;background:transparent;border:1px solid var(--border2);border-radius:8px;padding:10px 24px;color:var(--text-3);font-size:13px;cursor:pointer;transition:all .15s}
+.reset-btn:hover{border-color:var(--text-3);color:var(--text-2)}
+.err{display:none;background:var(--red-dim);border:1px solid var(--red);border-radius:8px;padding:16px 20px;color:#f79090;font-size:13.5px;margin-top:16px}
+.err.show{display:block}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <span class="logo-text">TAC-3D</span>
+    <span class="logo-div"></span>
+    <span class="logo-sub">Decision Eligibility Screener</span>
+  </div>
+  <span class="badge">PROTOTYPE v0.1</span>
+</header>
+<div class="container">
+  <div class="hero">
+    <div class="hero-eye">Structural Reliability Assessment</div>
+    <h1>Is your decision<br>structurally ready?</h1>
+    <p class="hero-desc">Submit your decision and evidence layers. TAC-3D evaluates structural compatibility and returns a Decision Eligibility verdict.</p>
+  </div>
+  <div id="formArea">
+    <div class="card">
+      <div class="card-sec">
+        <div class="sec-label"><span class="sec-num">1</span>The Decision</div>
+        <div class="hint">State the decision as a clear, specific proposition.</div>
+        <textarea id="decisionInput" rows="3" placeholder="e.g. Invest $5M in an AI medical startup with a 3-year hold period"></textarea>
+      </div>
+      <div class="card-sec">
+        <div class="sec-label"><span class="sec-num">2</span>Evidence Layers</div>
+        <div class="hint">Add 2-6 independent evidence sources.</div>
+        <div class="layers" id="layersList"></div>
+        <button class="add-btn" onclick="addLayer()"><span>+</span> Add evidence layer</button>
+      </div>
+      <div class="card-sec">
+        <div class="sec-label"><span class="sec-num">3</span>Context <span style="font-weight:300;text-transform:none;letter-spacing:0;font-size:10px;color:var(--text-3)">(optional)</span></div>
+        <div class="hint">Decision environment or execution conditions.</div>
+        <textarea id="contextInput" rows="2" placeholder="e.g. PE buyout, 5-year hold, board approval required"></textarea>
+      </div>
+    </div>
+    <div class="submit-area">
+      <button class="run-btn" onclick="runScreening()"><span>Run Screening</span><span>&#8594;</span></button>
+      <div class="run-note">Assessment takes 15-30 seconds.<br>Results include scores and full structural report.</div>
+    </div>
+    <div class="err" id="errMsg"></div>
+  </div>
+  <div class="loading" id="loadingState">
+    <div class="spinner"></div>
+    <div class="load-txt">ANALYZING STRUCTURAL RELIABILITY</div>
+    <div class="steps">
+      <div class="step" id="s1"><span class="dot"></span>Parsing evidence layers</div>
+      <div class="step" id="s2"><span class="dot"></span>Evaluating tension geometry</div>
+      <div class="step" id="s3"><span class="dot"></span>Mapping directional alignment</div>
+      <div class="step" id="s4"><span class="dot"></span>Testing convergence stability</div>
+      <div class="step" id="s5"><span class="dot"></span>Generating eligibility verdict</div>
+    </div>
+  </div>
+  <div class="results" id="resultsArea"></div>
+</div>
+<script>
+var layers = [{name:"financial",content:""},{name:"operational",content:""}];
+
+function renderLayers() {
+var list = document.getElementById(“layersList”);
+list.innerHTML = “”;
+for (var i = 0; i < layers.length; i++) {
+var delBtn = layers.length > 2 ? ‘<button class="layer-del" onclick="removeLayer('+i+')">x</button>’ : “”;
+var div = document.createElement(“div”);
+div.className = “layer”;
+div.id = “layer” + i;
+div.innerHTML = ‘<div class="layer-hdr"><span class="layer-tag">LAYER ‘+(i+1)+’</span><input class="layer-name" type="text" value="'+layers[i].name+'" placeholder="label" data-idx="'+i+'">’+delBtn+’</div><textarea class="layer-body" rows="3" placeholder="Paste or describe the evidence from this layer..." data-idx="'+i+'">’+layers[i].content+’</textarea>’;
+list.appendChild(div);
+}
+var names = list.querySelectorAll(”.layer-name”);
+for (var n = 0; n < names.length; n++) {
+names[n].addEventListener(“change”, function() { layers[this.getAttribute(“data-idx”)].name = this.value; });
+}
+var bodies = list.querySelectorAll(”.layer-body”);
+for (var b = 0; b < bodies.length; b++) {
+bodies[b].addEventListener(“change”, function() { layers[this.getAttribute(“data-idx”)].content = this.value; });
+}
+}
+
+function addLayer() {
+if (layers.length >= 8) return;
+layers.push({name:“layer “+(layers.length+1),content:””});
+renderLayers();
+}
+
+function removeLayer(i) {
+layers.splice(i, 1);
+renderLayers();
+}
+
+renderLayers();
+
+function animateSteps() {
+var ids = [“s1”,“s2”,“s3”,“s4”,“s5”];
+var delays = [0,3000,7000,12000,18000];
+for (var i = 0; i < ids.length; i++) {
+(function(idx) {
+setTimeout(function() {
+if (idx > 0) {
+var prev = document.getElementById(ids[idx-1]);
+if (prev) { prev.classList.remove(“active”); prev.classList.add(“done”); }
+}
+var el = document.getElementById(ids[idx]);
+if (el) el.classList.add(“active”);
+}, delays[idx]);
+})(i);
+}
+}
+
+var PROMPT = “You are TAC-3D, a Decision Eligibility Screener. Evaluate decisions by analyzing structural compatibility across evidence layers using three dimensions: Tension, Alignment, Convergence.\n\nSCORING RULES:\nTENSION (starts at 100): Core assumptions contradict: -25. Incompatible timelines: -15. Unconfirmed premises: -12. Conflicting data: -10. Minor inconsistency: -5. Min 0.\nALIGNMENT (starts at 100): Different outcome pathways: -30. Inconsistent resources: -20. Success condition negates another: -18. Critical dependency missing: -15. Different priorities: -8. Min 0.\nCONVERGENCE (starts at 100): Holds in one scenario only: -28. Assumptions not stress-tested: -18. Sensitive to one external change: -15. Cross-time stability not evaluated: -12. Incomplete coverage: -6. Min 0.\nELIGIBILITY INDEX: (Tension x 0.35) + (Alignment x 0.40) + (Convergence x 0.25), rounded.\nVERDICTS: ELIGIBLE>=72, ELIGIBLE_WITH_CONDITIONS 48-71, DEFER 28-47, RESTRUCTURE<28.\n\nReturn ONLY valid JSON: {scores:{tension:int,alignment:int,convergence:int,eligibility_index:int},verdict:string,verdict_summary:string,tension_map:[{layers:[string,string],conflict:string,severity:string,deduction:int}],alignment_gaps:[{description:string,severity:string}],convergence_risks:[{scenario:string,severity:string}],gap_inventory:[{gap:string,load_bearing:bool,resolution:string}],conditions:[string],structural_summary:string}”;
+
+var API_KEY = “sk-ant-api03-Y6TpZZ3LICwQ39y_e98kCIMU2K6VDvJqivdppFomegfGuzjFW6VoCZNqbFnMEDjNVUXE0tehnukw1rVhbE3Rqw-bql2lAAA”;
+
+async function runScreening() {
+var decision = document.getElementById(“decisionInput”).value.trim();
+var context = document.getElementById(“contextInput”).value.trim();
+
+var list = document.getElementById(“layersList”);
+var names = list.querySelectorAll(”.layer-name”);
+var bodies = list.querySelectorAll(”.layer-body”);
+for (var i = 0; i < layers.length; i++) {
+if (names[i]) layers[i].name = names[i].value;
+if (bodies[i]) layers[i].content = bodies[i].value;
+}
+
+var errEl = document.getElementById(“errMsg”);
+errEl.classList.remove(“show”);
+
+if (!decision) { showErr(“Please describe the decision.”); return; }
+var filled = layers.filter(function(l){ return l.content.trim().length > 0; });
+if (filled.length < 2) { showErr(“Please provide content for at least 2 evidence layers.”); return; }
+
+var layerText = “”;
+for (var i = 0; i < layers.length; i++) {
+if (layers[i].content.trim()) {
+layerText += “LAYER “+(i+1)+” - “+layers[i].name.toUpperCase()+”\n”+layers[i].content+”\n\n—\n\n”;
+}
+}
+var userMsg = “DECISION: “+decision+(context ? “\n\nCONTEXT: “+context : “”)+”\n\n—\n\nEVIDENCE LAYERS:\n\n”+layerText;
+
+document.getElementById(“formArea”).style.display = “none”;
+document.getElementById(“loadingState”).classList.add(“show”);
+animateSteps();
+
+try {
+var resp = await fetch(“https://api.anthropic.com/v1/messages”, {
+method: “POST”,
+headers: {
+“Content-Type”: “application/json”,
+“x-api-key”: API_KEY,
+“anthropic-version”: “2023-06-01”,
+“anthropic-dangerous-direct-browser-access”: “true”
+},
+body: JSON.stringify({
+model: “claude-sonnet-4-20250514”,
+max_tokens: 2000,
+system: PROMPT,
+messages: [{role:“user”,content:userMsg}]
+})
+});
+var data = await resp.json();
+var raw = data.content && data.content[0] ? data.content[0].text : “”;
+var match = raw.match(/\{[\s\S]*\}/);
+if (!match) throw new Error(“Could not parse response.”);
+var result = JSON.parse(match[0]);
+if (typeof result.scores.tension !== “number”) throw new Error(“Invalid score data.”);
+showResults(result);
+} catch(err) {
+document.getElementById(“loadingState”).classList.remove(“show”);
+document.getElementById(“formArea”).style.display = “block”;
+showErr(“Assessment failed: “ + err.message);
+}
+}
+
+function showErr(msg) {
+var el = document.getElementById(“errMsg”);
+el.textContent = msg;
+el.classList.add(“show”);
+}
+
+function scoreColor(n) {
+if (n >= 72) return “var(–green)”;
+if (n >= 48) return “var(–accent)”;
+if (n >= 28) return “var(–amber)”;
+return “var(–red)”;
+}
+
+function showResults(r) {
+document.getElementById(“loadingState”).classList.remove(“show”);
+var vc = {ELIGIBLE:“eligible”,ELIGIBLE_WITH_CONDITIONS:“conditional”,DEFER:“defer”,RESTRUCTURE:“restructure”}[r.verdict] || “conditional”;
+var vi = {ELIGIBLE:”✓”,ELIGIBLE_WITH_CONDITIONS:”◉”,DEFER:”⚑”,RESTRUCTURE:”✕”}[r.verdict] || “◉”;
+var vl = {ELIGIBLE:“ELIGIBLE”,ELIGIBLE_WITH_CONDITIONS:“ELIGIBLE WITH CONDITIONS”,DEFER:“DEFER”,RESTRUCTURE:“RESTRUCTURE”}[r.verdict] || r.verdict;
+
+var tHTML = “”;
+if (r.tension_map && r.tension_map.length) {
+tHTML = ‘<ul class="rlist">’;
+for (var i = 0; i < r.tension_map.length; i++) {
+var t = r.tension_map[i];
+tHTML += ‘<li class=”’+(t.severity||“moderate”)+’”><div class="rlbl">’+((t.layers||[]).join(” x “))+” - “+(t.severity||””).toUpperCase()+” - -”+(t.deduction||0)+” pts</div>”+t.conflict+”</li>”;
+}
+tHTML += “</ul>”;
+} else { tHTML = ‘<p style="color:var(--green);font-size:13px">No structural conflicts detected.</p>’; }
+
+var aHTML = “”;
+if (r.alignment_gaps && r.alignment_gaps.length) {
+aHTML = ‘<ul class="rlist">’;
+for (var i = 0; i < r.alignment_gaps.length; i++) {
+var g = r.alignment_gaps[i];
+aHTML += ‘<li class=”’+(g.severity||“moderate”)+’”><div class="rlbl">’+(g.severity||””).toUpperCase()+”</div>”+g.description+”</li>”;
+}
+aHTML += “</ul>”;
+} else { aHTML = ‘<p style="color:var(--green);font-size:13px">Evidence layers are directionally compatible.</p>’; }
+
+var cHTML = “”;
+if (r.convergence_risks && r.convergence_risks.length) {
+cHTML = ‘<ul class="rlist">’;
+for (var i = 0; i < r.convergence_risks.length; i++) {
+var c = r.convergence_risks[i];
+cHTML += ‘<li class=”’+(c.severity||“moderate”)+’”><div class="rlbl">’+(c.severity||””).toUpperCase()+”</div>”+c.scenario+”</li>”;
+}
+cHTML += “</ul>”;
+} else { cHTML = ‘<p style="color:var(--green);font-size:13px">Conclusion is stable across evaluated scenarios.</p>’; }
+
+var gHTML = “”;
+if (r.gap_inventory && r.gap_inventory.length) {
+gHTML = ‘<ul class="rlist">’;
+for (var i = 0; i < r.gap_inventory.length; i++) {
+var g = r.gap_inventory[i];
+gHTML += ‘<li class=”’+(g.load_bearing?“high”:“moderate”)+’”><div class="rlbl">’+(g.load_bearing?“LOAD-BEARING GAP”:“SECONDARY GAP”)+’</div><strong style="color:var(--text)">’+g.gap+’</strong><div style="margin-top:6px;font-size:12.5px;color:var(--text-3)">Resolution: ’+g.resolution+”</div></li>”;
+}
+gHTML += “</ul>”;
+} else { gHTML = ‘<p style="color:var(--green);font-size:13px">No critical evidence gaps identified.</p>’; }
+
+var condHTML = “”;
+if (r.conditions && r.conditions.length) {
+condHTML = ‘<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-icon">◈</span><span class="rpt-title">Conditions for Eligibility</span><span class="rpt-toggle open">▲</span></div><div class="rpt-body"><div class="cond-list">’;
+for (var i = 0; i < r.conditions.length; i++) {
+var num = i < 9 ? “0”+(i+1) : “”+(i+1);
+condHTML += ‘<div class="cond-item"><span class="cond-num">’+num+’</span><span>’+r.conditions[i]+”</span></div>”;
+}
+condHTML += “</div></div></div>”;
+}
+
+var html = ‘<div class="verdict '+vc+'"><div class="v-icon">’+vi+’</div><div><div class="v-label">’+vl+’</div><div class="v-sum">’+(r.verdict_summary||””)+’</div></div></div>’;
+html += ‘<div class="scores"><div class="sc-title">Dimension Scores</div><div class="sc-rows">’;
+html += ‘<div class="sc-row"><div class="sc-lbl">Tension<small>Evidence conflict</small></div><div class="sc-track"><div class="sc-fill" id="f1" style="background:'+scoreColor(r.scores.tension)+'"></div></div><div class="sc-num" style="color:'+scoreColor(r.scores.tension)+'">’+r.scores.tension+’</div></div>’;
+html += ‘<div class="sc-row"><div class="sc-lbl">Alignment<small>Directional compat.</small></div><div class="sc-track"><div class="sc-fill" id="f2" style="background:'+scoreColor(r.scores.alignment)+'"></div></div><div class="sc-num" style="color:'+scoreColor(r.scores.alignment)+'">’+r.scores.alignment+’</div></div>’;
+html += ‘<div class="sc-row"><div class="sc-lbl">Convergence<small>Context stability</small></div><div class="sc-track"><div class="sc-fill" id="f3" style="background:'+scoreColor(r.scores.convergence)+'"></div></div><div class="sc-num" style="color:'+scoreColor(r.scores.convergence)+'">’+r.scores.convergence+’</div></div>’;
+html += ‘<div class="sc-div"></div>’;
+html += ‘<div class="sc-row"><div class="sc-lbl" style="font-weight:600;color:var(--text)">Eligibility Index<small>Weighted composite</small></div><div class="sc-track"><div class="sc-fill" id="f4" style="background:'+scoreColor(r.scores.eligibility_index)+'"></div></div><div class="sc-num" style="color:'+scoreColor(r.scores.eligibility_index)+';font-size:17px">’+r.scores.eligibility_index+’</div></div>’;
+html += ‘</div></div>’;
+html += ‘<div class="report">’;
+html += ‘<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-icon">△</span><span class="rpt-title">Structural Summary</span><span class="rpt-toggle open">▲</span></div><div class="rpt-body">’+(r.structural_summary||””)+”</div></div>”;
+html += ‘<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-icon">⚡</span><span class="rpt-title">Tension Map</span><span class="rpt-toggle open">▲</span></div><div class="rpt-body">’+tHTML+”</div></div>”;
+html += ‘<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-icon">→</span><span class="rpt-title">Alignment Assessment</span><span class="rpt-toggle open">▲</span></div><div class="rpt-body">’+aHTML+”</div></div>”;
+html += ‘<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-icon">◎</span><span class="rpt-title">Convergence Profile</span><span class="rpt-toggle open">▲</span></div><div class="rpt-body">’+cHTML+”</div></div>”;
+html += ‘<div class="rpt-sec"><div class="rpt-hdr" onclick="toggle(this)"><span class="rpt-icon">⬡</span><span class="rpt-title">Gap Inventory</span><span class="rpt-toggle open">▲</span></div><div class="rpt-body">’+gHTML+”</div></div>”;
+html += condHTML;
+html += “</div>”;
+html += ‘<button class="reset-btn" onclick="resetForm()">← Screen another decision</button>’;
+
+var ra = document.getElementById(“resultsArea”);
+ra.innerHTML = html;
+ra.classList.add(“show”);
+
+setTimeout(function() {
+var f1 = document.getElementById(“f1”); if(f1) f1.style.width = r.scores.tension+”%”;
+var f2 = document.getElementById(“f2”); if(f2) f2.style.width = r.scores.alignment+”%”;
+var f3 = document.getElementById(“f3”); if(f3) f3.style.width = r.scores.convergence+”%”;
+var f4 = document.getElementById(“f4”); if(f4) f4.style.width = r.scores.eligibility_index+”%”;
+}, 100);
+
+window.scrollTo({top:0,behavior:“smooth”});
+}
+
+function toggle(hdr) {
+var body = hdr.nextElementSibling;
+var t = hdr.querySelector(”.rpt-toggle”);
+body.classList.toggle(“hidden”);
+t.classList.toggle(“open”);
+}
+
+function resetForm() {
+var ra = document.getElementById(“resultsArea”);
+ra.classList.remove(“show”);
+ra.innerHTML = “”;
+document.getElementById(“formArea”).style.display = “block”;
+document.getElementById(“errMsg”).classList.remove(“show”);
+window.scrollTo({top:0,behavior:“smooth”});
+}
+</script>
+
+</body>
+</html>'''
+
+with open(’/root/tac3d/templates/index.html’, ‘w’) as f:
+f.write(html)
+print(“Done. File written:”, len(html), “chars”)

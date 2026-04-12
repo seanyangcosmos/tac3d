@@ -1,0 +1,8 @@
+node_modules/
+python3/
+*.pyc
+__pycache__/
+.env
+proxy.js~
+*.bak
+*~

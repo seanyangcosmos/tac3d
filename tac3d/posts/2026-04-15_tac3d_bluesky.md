@@ -1,0 +1,1 @@
+Verdict: Defer. Bespoke AAV GT shows strong mechanistic (85) and genetic (90) foundations, but clinical (45) lacks validated endpoints and <12m durability. Under FDA plausible‑mechanism criteria, transfer remains gated until endpoints/biomarkers predict benefit.

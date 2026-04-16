@@ -1,0 +1,7 @@
+Structural verdict: Defer. Scores — mechanistic: 75, genetic: 45, clinical: 25.
+
+Replimune’s RP1 decision is a topology lesson. Confidence is layer‑scoped: plausible mechanism and a coherent immuno‑oncology rationale cannot compensate for clinical evidence that the FDA considers not well‑controlled. The second CRL explicitly cites the inability to isolate RP1’s contribution versus PD‑1 and the reliance on single‑arm data and early, unplanned analyses. In Omega terms, support accumulated within a layer (mechanistic) does not automatically propagate across the stack when adjacent layers (clinical, and to a lesser extent genetic/pathway relevance) are weak.
+
+The implication is not “anti‑mechanism.” It’s a call to preserve geometry. Averaging across layers would hide exactly why transfer is gated: endpoints and controls don’t yet close the loop. The capital‑efficient move is to climb the stack — tighten trial control, pre‑specify analyses, and target endpoints that sit close to the mechanism in the right population and timeframe.
+
+Report confidence with provenance: high mechanistic plausibility; partial pathway/genetic reinforcement; immature, non‑convergent clinical evidence. Until randomized, endpoint‑convergent data demonstrate the isolated contribution of RP1, advancement is likely to re‑encounter the same gate. Progress is stackwise and earned, not inferred.

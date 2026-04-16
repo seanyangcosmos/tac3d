@@ -1,0 +1,1 @@
+Verdict: Defer (Replimune RP1). FDA’s 2nd CRL cites insufficient, not well‑controlled evidence; single‑arm data and unclear RP1 contribution vs PD‑1. Scores: mech 75, genetic 45, clinical 25. Next: randomized, endpoint‑convergent data before advancement.

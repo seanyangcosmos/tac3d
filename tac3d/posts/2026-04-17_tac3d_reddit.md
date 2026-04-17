@@ -1,17 +1,19 @@
-Title: FDA vs. RP1 (again): moving goalposts or missing gate? TAC‑3D says “Defer.” Change my mind.
+Title: Daraxonrasib in PDAC — huge Phase 3 OS benefit. Advance now, or wait for more data? (TAC‑3D: Advance)
 
-Curious how r/biotech / r/investing is processing Replimune’s second CRL for RP1. Is this the FDA being inconsistent, or did the trial geometry just not close the gate?
+Question for r/biotech / r/investing: With RevMed’s daraxonrasib showing OS 13.2 vs 6.7 months (HR 0.40) in KRAS‑mutant PDAC, do you advance to filing immediately or de‑risk further first?
 
-Quick TAC‑3D screen (weighing layers instead of averaging them):
-- Mechanistic ≈ 75 — Oncolytic HSV rationale is coherent; decent preclinical rescue. Good hypothesis refinement.
-- Genetic/Pathway ≈ 45 — IO context supports plausibility, but no predictive marker; heterogeneity likely.
-- Clinical ≈ 25 — FDA cites “not well‑controlled,” reliance on single‑arm data + early/unplanned analyses, and inability to isolate RP1’s contribution vs PD‑1. That’s the hole.
+TAC‑3D snapshot (real screen):
+- Verdict: Advance
+- Scores — mechanistic: 86, genetic: 94, clinical: 93
+- Indices — eligibility: 0.91, alignment: 0.88, convergence: 0.82, tension: 0.23
 
-Structural verdict: Defer. In TAC terms, confidence is layer‑scoped and transfer is gated. Support inside mechanism doesn’t automatically propagate when the clinical layer can’t isolate contribution or show endpoint convergence.
+Why I think the gate is closed:
+- Mechanism and genetics line up (KRAS(ON) MoA; >90% PDAC RAS‑driven = biomarker‑defined population).
+- Clinical effect is large and well‑controlled on a hard endpoint (near‑doubling of OS; HR 0.40).
 
-Questions for the crowd:
-1) If you ran the program, what’s your concrete fix? Randomized design vs SoC, pre‑specified analyses, endpoints close to the mechanism, and stratification for heterogeneity — or a different path entirely?
-2) For investors, is the bigger risk regulatory “inconsistency,” or is it portfolio exposure to trials that can’t carry their claims under adequate control? How are you hedging that?
-3) Would you re‑allocate toward programs that are explicitly attacking the gate (endpoint convergence + isolation of effect), or wait for a policy swing that may never come?
+What still needs attention (doesn’t change the verdict):
+- AE management (rash/diarrhea, Grade ≥3 TRAEs ~34%; dose mods ~35–41%); community‑friendly management pathways matter.
+- Long‑term safety/durability characterization.
+- Manufacturing scale‑up and sequencing filings across planned first‑line/adjuvant trials.
 
-My bias: this looks more like a topology problem than a politics problem. Happy to be convinced otherwise — especially by folks close to the ops/data.
+If you were running this: file now, or hold for more confirmatory depth? What would make you change your call? If you’re investing: how are you sizing position/risk given effect size vs ops execution?

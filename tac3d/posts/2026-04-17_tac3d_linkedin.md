@@ -1,7 +1,11 @@
-Structural verdict: Advance. Scores — mechanistic: 85, genetic: 95, clinical: 95.
+Structural verdict: Advance.
+Scores — mechanistic: 86, genetic: 94, clinical: 93.
+Indices — eligibility: 0.91, alignment: 0.88, convergence: 0.82, tension: 0.23.
 
-Revolution Medicines’ daraxonrasib Phase 3 readout in KRAS‑mutated pancreatic cancer is the rare case where all three layers align. Mechanism is coherent (KRAS(ON) multi‑selective inhibition with clear target engagement). The genetic rationale is exceptional (KRAS drivers define the disease in >90% of PDAC, yielding a biomarker‑anchored population). And the clinical signal is decisive: median OS 13.2 vs 6.7 months (HR 0.40; p<0.0001), representing a near‑doubling of survival in a setting starved for effect size.
+Daraxonrasib’s Phase 3 in KRAS‑mutant PDAC shows a rare, decisive survival benefit (OS 13.2 vs 6.7 months; HR 0.40). In TAC‑3D terms, confidence propagates because adjacent layers close the gate: a coherent KRAS(ON) MoA (mechanistic), a biomarker‑defined population with direct causal relevance (genetic), and a large, well‑controlled effect on a hard endpoint (clinical).
 
-Topology matters here because it explains why this should move now. Confidence propagates when adjacent layers close the gate; in PDAC, a large, well‑controlled Phase 3 with clinically meaningful endpoints and a biomarker‑defined population does exactly that. The TAC‑3D screen still flags operational risks (rash/diarrhea common; Grade ≥3 TRAEs ~34%; dose modifications ~35–41%; long‑term safety characterization ongoing), but these are manageable in context and do not erode the structural alignment.
+The indices reinforce this geometry: high eligibility with strong alignment and convergence, low tension. Residual risks remain operational (AE management — rash/diarrhea, Grade ≥3 TRAEs ~34%; dose mods ~35–41%; long‑term safety characterization; manufacturing scale‑up), but they do not undermine structural integrity.
 
-Action path: submit promptly (global filings), prepare payor dossiers emphasizing OS magnitude and biomarker selection, and continue to mature durability/safety follow‑up. This is the kind of stack‑aligned advance that justifies decisive allocation — not because the story is good, but because the geometry is closed.
+Action: file promptly (global submissions), lead with OS magnitude and hazard ratio, and pair with clinic‑ready toxicity management algorithms. Prepare payor dossiers around biomarker selection, cost per life‑year, and real‑world implementation. Continue durability/safety follow‑up.
+
+This is the stack‑aligned kind of advance that deserves decisive allocation — not because the story is good, but because the structure is closed.

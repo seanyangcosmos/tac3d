@@ -1,1 +1,1 @@
-Verdict: Advance (RevMed daraxonrasib). Phase 3 PDAC: OS 13.2 vs 6.7 mo (HR 0.40). Scores: mech 86, genetic 94, clinical 93. Indices — eligibility 0.91, alignment 0.88, convergence 0.82, tension 0.23. Proceed to filing; continue AE/durability surveillance.
+Verdict: Advance (RevMed daraxonrasib). Phase 3 PDAC: OS 13.2 vs 6.7 mo (HR 0.40). Scores: mech 87, genetic 95, clinical 96. Indices — eligibility 0.93, alignment 0.91, convergence 0.90, tension 0.12. Proceed to filing; continue AE/durability surveillance.

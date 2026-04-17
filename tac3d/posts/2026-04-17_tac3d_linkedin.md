@@ -1,0 +1,7 @@
+Structural verdict: Advance. Scores — mechanistic: 85, genetic: 95, clinical: 95.
+
+Revolution Medicines’ daraxonrasib Phase 3 readout in KRAS‑mutated pancreatic cancer is the rare case where all three layers align. Mechanism is coherent (KRAS(ON) multi‑selective inhibition with clear target engagement). The genetic rationale is exceptional (KRAS drivers define the disease in >90% of PDAC, yielding a biomarker‑anchored population). And the clinical signal is decisive: median OS 13.2 vs 6.7 months (HR 0.40; p<0.0001), representing a near‑doubling of survival in a setting starved for effect size.
+
+Topology matters here because it explains why this should move now. Confidence propagates when adjacent layers close the gate; in PDAC, a large, well‑controlled Phase 3 with clinically meaningful endpoints and a biomarker‑defined population does exactly that. The TAC‑3D screen still flags operational risks (rash/diarrhea common; Grade ≥3 TRAEs ~34%; dose modifications ~35–41%; long‑term safety characterization ongoing), but these are manageable in context and do not erode the structural alignment.
+
+Action path: submit promptly (global filings), prepare payor dossiers emphasizing OS magnitude and biomarker selection, and continue to mature durability/safety follow‑up. This is the kind of stack‑aligned advance that justifies decisive allocation — not because the story is good, but because the geometry is closed.

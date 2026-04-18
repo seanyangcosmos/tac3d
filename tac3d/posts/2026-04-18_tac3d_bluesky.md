@@ -1,0 +1,1 @@
+UCB-Neurona (NRTX-1001) TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS. EI 69 | T 75 | A 70 | C 63. Mechanistic + early clinical strength; genetic layer indirect. Risks: Phase 3 start vs. closing, allogeneic cell therapy CMC scale-up, regulatory path. Next: verify mfg/reg readiness.

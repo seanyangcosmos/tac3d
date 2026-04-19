@@ -1,0 +1,1 @@
+Eli Lilly–Centessa (cleminorexton, OX2R) TAC-3D: ELIGIBLE. EI 72 | T 62 | A 78 | C 66. Mechanistic/genetic alignment is strong with early clinical signals. Risks: ~2-year timing gap vs. Takeda, differentiation beyond dosing, payer access. Priority: accelerate Phase 3 + CMC/commercial readiness.

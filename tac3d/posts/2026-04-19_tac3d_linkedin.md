@@ -1,11 +1,11 @@
-TAC-3D verdict: ELIGIBLE (Eligibility Index 72; Tension 62; Alignment 78; Convergence 66)
+TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS (Eligibility Index 62; Tension 70; Alignment 65; Convergence 52)
 
-Decision: Eli Lilly will acquire Centessa Pharmaceuticals (~$7.8B, per reports), adding cleminorexton — an orexin‑2 receptor agonist in development for narcolepsy/idiopathic hypersomnia — and a broader orexin pipeline.
+Decision: Immatics (IMTX) reported a pediatric complete remission case for a PRAME‑targeted TCR therapy highlighted at AACR—an encouraging early signal for adoptive T‑cell therapy in solid tumors.
 
-Strengths: Layer alignment is high. The orexin pathway has strong human biology and pathophysiology support in narcolepsy, and class‑level clinical activity is emerging. A once‑daily OX2R profile offers a credible differentiation thesis if borne out clinically. Lilly’s capital and commercial scale improve the odds of execution.
+Strengths (structure‑first): Mechanistic and genetic foundations are credible. PRAME is a well‑characterized cancer‑testis antigen with broad tumor overexpression and minimal normal‑tissue signal, supporting target plausibility and a therapeutic window. Antigen‑specific TCR recognition provides a coherent causal path to tumor cell clearance when expression and HLA context align.
 
-Tensions and risks: Competitive timing (Takeda’s OX2R program is ahead) compresses the window to first launch. Differentiation must extend beyond dosing convenience to outcomes and patient preference. Payer access for specialty sleep therapeutics can be challenging. CMC and commercial readiness will matter early if timelines are accelerated.
+Tensions and risks (why conditions apply): Clinical evidence is N=1 in a pediatric setting with limited durability (6 months cited) and potential selection/reporting bias. Generalizability to adult solid tumors is unknown. HLA‑A*02:01 restriction narrows eligibility. Manufacturing scale, cost, and CRS management add execution complexity.
 
-Conditions to clear: 1) run an expedited, well‑powered Phase 3 to narrow the timing gap; 2) demonstrate differentiated clinical value beyond dosing (e.g., durability, function, safety/tolerability); 3) secure a payer strategy tuned to sleep‑medicine workflows; 4) advance broader orexin assets (e.g., follow‑ons) to show platform value.
+Conditions to clear: 1) validate efficacy in controlled trials across multiple solid tumor types; 2) establish PRAME expression thresholds and HLA criteria for patient selection; 3) develop predictive biomarkers beyond PRAME expression alone; 4) demonstrate durable responses in larger cohorts; 5) standardize manufacturing and CRS management protocols.
 
-Structural read: Strong mechanistic and emerging clinical rationale with credible platform potential. Competitive timing and market access create real execution risk, but the deal is eligible on structure.
+Structural read: Strong target biology with a promising but very early clinical signal. The case warrants continued development, but broader validation and operational readiness are required—eligible with conditions.

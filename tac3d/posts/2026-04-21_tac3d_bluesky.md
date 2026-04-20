@@ -1,0 +1,1 @@
+TAC-3D verdict: ELIGIBLE. Eligibility Index 79 (T75, A80, C82). Corrective action after FDA OPDP warning aligns regulatory, clinical, and commercial layers. Priorities: cease violative content, define timelines/metrics, resource MLR, track FDA correspondence.

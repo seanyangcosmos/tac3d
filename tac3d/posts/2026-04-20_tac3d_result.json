@@ -1,0 +1,44 @@
+{
+  "scores": {
+    "tension": 58,
+    "alignment": 45,
+    "convergence": 40,
+    "eligibility_index": 48
+  },
+  "verdict": "ELIGIBLE_WITH_CONDITIONS",
+  "verdict_summary": "Decision shows structural gaps requiring specific conditions: resolving mechanistic-clinical linkage uncertainty, addressing regulatory precedent contradictions, and establishing clearer timeline convergence for market success.",
+  "tension_map": [
+    "EMA negative opinion contradicts US regulatory acceptance of mixed efficacy data, creating regulatory precedent conflict",
+    "Safety profile deemed manageable in US but contributed to EMA rejection and market restrictions, indicating unresolved risk-benefit calculations",
+    "Micro-dystrophin expression levels lack robust correlation with functional outcomes per EMA assessment, challenging core mechanistic assumptions",
+    "New primary endpoint (time-to-rise) differs from prior EMBARK study design, creating methodological discontinuity"
+  ],
+  "alignment_gaps": [
+    "EMA approval pathway requires different evidence package than achieved US approval, indicating non-aligned regulatory strategies",
+    "Prior EMBARK trial showed secondary endpoint benefits but missed primary endpoint, suggesting misaligned outcome prioritization",
+    "Safety events and commercial holds in 2025 conflict with planned trial execution timeline and market confidence",
+    "Resource allocation to new 72-week trial may not address fundamental EMA concerns about clinical meaningfulness of biological effects"
+  ],
+  "convergence_risks": [
+    "Decision success depends heavily on single regulatory jurisdiction (EMA) approval after prior rejection",
+    "Time-to-rise endpoint selection not stress-tested against EMA's specific objections about functional relevance",
+    "72-week timeline extends vulnerability to additional safety events or competitive developments",
+    "Market dynamics and prescriber confidence may not recover even with successful trial completion",
+    "External factors (regulatory shifts, safety discoveries, competitive landscape) could invalidate trial design assumptions"
+  ],
+  "gap_inventory": [
+    "Mechanistic Layer: Micro-dystrophin functional correlation uncertainty persists despite genetic rationale",
+    "Clinical Layer: EMA-specific evidence requirements not fully characterized beyond general placebo-controlled data need",
+    "Regulatory Layer: Path forward contingent on single jurisdiction acceptance with unclear regulatory precedent value",
+    "Commercial Layer: Market recovery assumptions not validated against post-safety event prescriber behavior patterns"
+  ],
+  "conditions": [
+    "Establish clear EMA feedback on specific evidence requirements beyond placebo-controlled time-to-rise data",
+    "Develop contingency regulatory strategy for potential second EMA rejection or additional data requests",
+    "Implement robust safety monitoring and risk mitigation protocols to prevent trial disruption",
+    "Validate time-to-rise endpoint clinical meaningfulness through regulatory pre-submission dialogue",
+    "Create market recovery strategy independent of regulatory success to address commercial sustainability"
+  ],
+  "structural_summary": "Decision architecture shows moderate structural integrity with significant regulatory dependency. Core mechanistic rationale remains sound but clinical translation evidence gap persists per EMA assessment. Alignment suffers from regulatory jurisdiction conflicts and prior trial design limitations. Convergence vulnerable to single-point-of-failure regulatory approval and external market factors. Success requires addressing EMA's specific clinical meaningfulness concerns beyond standard placebo-controlled methodology.",
+  "followup_question": "What specific clinical meaningfulness criteria has EMA articulated beyond placebo-controlled efficacy that the time-to-rise endpoint must satisfy, and how does this differ from FDA's approval rationale?"
+}

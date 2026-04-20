@@ -1,0 +1,7 @@
+TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS — Eligibility Index 48 (Tension 58, Alignment 45, Convergence 40).
+
+Roche’s decision to run a new global Phase 3 in early ambulatory DMD is structurally sound but gated. The clinical layer must close EMA’s “clinical meaningfulness” gap that blocked prior approval, and regulatory strategies must converge across jurisdictions. The new 72-week time-to-rise primary endpoint can work, but only if it creates a defensible linkage from micro-dystrophin biology to durable functional benefit while maintaining a stable safety profile.
+
+Key tensions: US acceptance of mixed evidence vs EMA’s rejection, safety events that forced restrictions, and a design shift from earlier placebo-controlled work. Alignment gaps center on outcome prioritization and the precise evidence package EMA will require beyond a standard randomized trial. Convergence risk remains high because success depends on a single regulator after a negative precedent.
+
+Conditions to de-risk: pre-submission dialogue to validate the endpoint’s clinical meaningfulness, explicit closure criteria for the clinical gate, a robust safety monitoring and mitigation plan, and a contingency regulatory pathway if EMA requests additional data. If those conditions are met, the design can translate plausible biology into jurisdiction-ready evidence rather than another partial-stack convergence.

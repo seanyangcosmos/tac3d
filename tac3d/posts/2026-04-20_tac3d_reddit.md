@@ -1,15 +1,13 @@
-Elevidys in Europe: does a 72-week time-to-rise trial close the gate?
+Biovac’s 400M-dose Cape Town vaccine factory: does $108M financing turn into real supply resilience?
 
-TAC-3D screen on today’s decision: Roche will run a new global Phase 3 of Elevidys (early ambulatory DMD, 72-week time-to-rise primary) aiming for an EU resubmission.
+TAC-3D screen on today’s news: EIB/EC/IFC financing backs Biovac’s scale-up to 400M doses/yr.
 
-Verdict: ELIGIBLE_WITH_CONDITIONS — Eligibility Index 48 (Tension 58, Alignment 45, Convergence 40).
-
-The split is familiar. FDA allowed use in ambulatory patients on mixed data, later tightened use after safety events. EMA said no, citing lack of meaningful functional benefit and a weak link from biology to outcomes. The new design is longer and uses a functional endpoint that matters. but is it enough to meet EMA’s clinical meaningfulness bar?
+Verdict: ELIGIBLE — Eligibility Index 72 (Tension 72, Alignment 75, Convergence 68).
 
 Questions for r/biotech and r/investing:
-- Does time-to-rise over 72 weeks, with a prespecified minimal clinically important difference, satisfy EMA’s definition of clinical meaningfulness in early ambulatory DMD?
-- What MCID would you accept here, and how should multiplicity be handled to prevent p-hacking while keeping the readout decisionable?
-- How much safety stability is necessary to restore prescriber confidence after 2025’s events, and what monitoring or stopping rules would you want to see written into the protocol?
-- If EMA still asks for more, what is the fastest contingency path that preserves value. another functional endpoint, a durability extension, or a different population?
+- WHO PQ is the gate for tender access. What timeline is realistic from tech transfer to PQ, and what inspection readiness signals would you want to see early?
+- Technology transfer is a single point of failure. How would you structure backup platform suppliers without breaking COGS or adding years to validation?
+- Demand concentration risk is real if AU, Gavi, and UNICEF dominate. What are credible diversification channels in the region over the next 3 years?
+- Cost competitiveness decides utilization. How would you benchmark Biovac’s unit economics against global incumbents before committing to full capacity?
 
-Our read. ELIGIBLE_WITH_CONDITIONS means the plan can work if it becomes evidence-first on EMA’s terms, safety-first in execution, and convergence-first in design. If those conditions are met, this trial can move the stack from partial convergence to a closed clinical gate. If not, a second rejection is a real risk.
+Our read: ELIGIBLE at 72 means proceed, but keep structure in front of story. Prioritize PQ alignment, cost benchmarking, and workforce pipeline partnerships. Retire single-dependency risks. If those conditions hold, financing can convert into durable capacity rather than stranded fixed cost.

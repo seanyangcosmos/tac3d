@@ -1,7 +1,16 @@
-TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS — Eligibility Index 48 (Tension 58, Alignment 45, Convergence 40).
+TAC-3D verdict: ELIGIBLE — Eligibility Index 72 (Tension 72, Alignment 75, Convergence 68)
 
-Roche’s decision to run a new global Phase 3 in early ambulatory DMD is structurally sound but gated. The clinical layer must close EMA’s “clinical meaningfulness” gap that blocked prior approval, and regulatory strategies must converge across jurisdictions. The new 72-week time-to-rise primary endpoint can work, but only if it creates a defensible linkage from micro-dystrophin biology to durable functional benefit while maintaining a stable safety profile.
+Biovac’s $108M financing package from EIB/EC/IFC validates the Cape Town vaccine factory plan and a 400M doses per year capacity target. Structural screening indicates the decision is sound with moderate residual risks that can be actively managed.
 
-Key tensions: US acceptance of mixed evidence vs EMA’s rejection, safety events that forced restrictions, and a design shift from earlier placebo-controlled work. Alignment gaps center on outcome prioritization and the precise evidence package EMA will require beyond a standard randomized trial. Convergence risk remains high because success depends on a single regulator after a negative precedent.
+Layer view:
+- Demand: Regional supply resilience, routine immunization, and outbreak response support scale-up. Cyclicality and payer concentration (AU, Gavi, UNICEF) remain watch points.
+- Manufacturing: Success depends on technology transfer partners, validated processes, and GMP systems. Ramp timelines, yield variability, and workforce scale-up drive execution risk.
+- Regulatory/Access: WHO prequalification is critical for tenders, alongside SAHPRA and evolving AMA reliance. PQ timelines and inspection readiness can misalign with outbreak needs.
 
-Conditions to de-risk: pre-submission dialogue to validate the endpoint’s clinical meaningfulness, explicit closure criteria for the clinical gate, a robust safety monitoring and mitigation plan, and a contingency regulatory pathway if EMA requests additional data. If those conditions are met, the design can translate plausible biology into jurisdiction-ready evidence rather than another partial-stack convergence.
+Conditions to lock in value:
+- Secure backup platform suppliers and tech transfer agreements to reduce single-point dependencies.
+- Benchmark cost vs global incumbents before committing to full capacity.
+- Build a workforce pipeline with local technical institutions; codify retention and training.
+- Align early with WHO PQ and procurement standards to prevent timing surprises.
+
+Bottom line: With targeted de-risking, financing and capacity plans are aligned with regional demand. Executing against PQ, cost competitiveness, and workforce readiness will convert ELIGIBLE into durable supply security and commercial resilience.

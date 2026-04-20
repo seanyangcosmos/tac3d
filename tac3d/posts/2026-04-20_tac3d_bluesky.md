@@ -1,1 +1,1 @@
-TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS. Eligibility Index 48 (T58, A45, C40). Risk is regulatory convergence: EMA needs a defensible link from micro-dystrophin expression to functional benefit. The 72-week time-to-rise Phase 3 must resolve linkage and demonstrate safety stability.
+TAC-3D verdict: ELIGIBLE. Eligibility Index 72 (T72, A75, C68). Financing validates viability; 400M doses/yr target fits demand. Residual risks: tech transfer dependency, PQ timelines, payer concentration. Mitigate via backup suppliers, cost benchmarking, and workforce partnerships.

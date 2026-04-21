@@ -1,1 +1,1 @@
-TAC-3D verdict: ELIGIBLE. Eligibility Index 79 (T75, A80, C82). Corrective action after FDA OPDP warning aligns regulatory, clinical, and commercial layers. Priorities: cease violative content, define timelines/metrics, resource MLR, track FDA correspondence.
+TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS. Eligibility Index 57 (T63, A52, C58). ORR alone misaligns with survival-driven endpoints. To compete with ivonescimab, MK-2010 needs rapid P2/3 survival strategy and a clear differentiation path (ADC combinations, biomarker selection).

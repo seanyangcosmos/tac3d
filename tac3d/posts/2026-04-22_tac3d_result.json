@@ -1,0 +1,33 @@
+{
+  "scores": {"tension": 78, "alignment": 62, "convergence": 67, "eligibility_index": 69},
+  "verdict": "ELIGIBLE_WITH_CONDITIONS",
+  "verdict_summary": "Decision is structurally sound but requires conditions to address competitive positioning gaps and timeline optimization",
+  "tension_map": [
+    "LITESPARK-012 negative results vs. triplet mechanistic rationale",
+    "Continuing belzutifan development vs. failed 1L differentiation"
+  ],
+  "alignment_gaps": [
+    "Resource allocation from failed triplet to unproven alternatives",
+    "Regulatory pathway uncertainty for zanzalintinib combinations",
+    "Go/no-go gate criteria not aligned with survival differentiation goals"
+  ],
+  "convergence_risks": [
+    "Zanzalintinib combinations face same TKI-ICI tolerability challenges",
+    "Biomarker-guided designs lack validated predictive markers in RCC",
+    "Competitive landscape evolution may nullify current positioning advantage"
+  ],
+  "gap_inventory": [
+    "Detailed effect sizes from LITESPARK-012 not available for informed comparison",
+    "Zanzalintinib Phase 3 survival data pending (STELLAR-304 ongoing)",
+    "Biomarker strategy specifics undefined in reallocation plan",
+    "Timeline and resource commitment for pivot strategy not quantified"
+  ],
+  "conditions": [
+    "Define specific biomarker-guided design criteria with validated predictive markers",
+    "Establish clear survival differentiation thresholds for go/no-go decisions",
+    "Secure interim analysis data from ongoing zanzalintinib Phase 3 trials",
+    "Quantify resource reallocation timeline and competitive positioning windows"
+  ],
+  "structural_summary": "The decision to deprioritize the Keytruda + Welireg + Lenvima triplet shows appropriate response to LITESPARK-012's failure to meet dual primary endpoints. The mechanistic tension between continuing triplet development despite negative results is resolved. However, alignment gaps emerge around resource reallocation to unproven alternatives like zanzalintinib combinations, which face similar TKI-ICI tolerability challenges. Convergence risks include biomarker strategy uncertainty and evolving competitive dynamics that may erode positioning advantages.",
+  "followup_question": "What specific survival differentiation criteria will determine success for the reallocated zanzalintinib combination strategies, and how do these compare to the failed LITESPARK-012 triplet's mechanistic hypothesis?"
+}

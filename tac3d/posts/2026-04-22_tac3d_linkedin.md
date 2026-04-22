@@ -1,15 +1,15 @@
-TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS — Eligibility Index 69 (Tension 78, Alignment 62, Convergence 67)
+TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS — Eligibility Index 58 (Tension 63, Alignment 52, Convergence 60)
 
-After LITESPARK-012 failed to meet OS and PFS, deprioritizing the Keytruda + Welireg + Lenvima triplet in first-line RCC and reallocating to survival-differentiated strategies is structurally sound. The mechanistic story for stacking PD-1, HIF-2α, and VEGF pathways is plausible, but the clinical gate did not close. In this landscape, value accrues to survival and tolerability, not to additive complexity without differentiation.
+Tortugas Neuroscience launches with $106M and in-licensed CNS programs from Eisai and Hansoh across schizophrenia, tinnitus, focal epilepsy and reversible encephalopathies. Structurally, the plan is viable but gated by classic CNS headwinds and a crowded schizophrenia market.
 
 Cross-layer readout:
-- Mechanistic: Immune–angiogenic–HIF axis synergy remains hypothesis-supporting, but diminishing returns and overlapping toxicities are common in stacked regimens.
-- Clinical: Triplet missed dual primaries vs Keytruda + Lenvima. Survival translation is the gating property for any next move.
-- Strategy: Competitors advancing zanzalintinib combos with cleaner narratives raise execution pressure. Pivots must be survival-first and time-aware.
+- Clinical: “Derisked mechanisms” still face high Phase II/III attrition and placebo sensitivity in neuropsychiatry. Oral once-daily supports adherence but does not substitute for differentiation.
+- Market: Schizophrenia is dominated by entrenched players; payers prize functional outcomes and safety. Tinnitus endpoints are variable, epilepsy standards are demanding.
+- Operations: Dual tech transfer (Eisai/Hansoh) accelerates entry but needs airtight protocols and IP clarity; multi-program execution can strain a $106M budget.
 
-Conditions to execute the pivot:
-- Define biomarker-guided criteria with validated predictive markers for selection and enrichment.
-- Set explicit survival differentiation thresholds for go/no-go decisions and power for interim looks.
-- Secure interim data visibility from ongoing zanzalintinib Phase 3 programs; align partner operations to accelerate starts.
+Conditions to reduce risk:
+- Phase resources and sequence programs by highest probability and shortest time-to-decision; publish explicit clinical differentiation thresholds per indication.
+- Lock tech transfer/IP documentation and CMC plans before major spend; pre-wire regulatory paths indication by indication.
+- Stand up competitive intelligence for schizophrenia given recent market moves; define contingency triggers if early readouts underperform.
 
-Bottom line: The triplet’s failure resolves the wrong bet fast. A survival-driven, biomarker-enabled pivot with tight timelines can convert structural tension into alignment before the competitive window closes.
+Bottom line: ELIGIBLE_WITH_CONDITIONS means proceed, but with disciplined phasing, validated transfer, and decisionable milestones that acknowledge CNS reality.

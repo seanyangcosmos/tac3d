@@ -1,1 +1,1 @@
-TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS. Eligibility Index 69 (T78, A62, C67). LITESPARK-012’s negative readout resolves mechanistic tension; alignment now hinges on survival-driven pivots. Define biomarker criteria, survival thresholds, and tight timelines for zanzalintinib combos.
+TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS. Eligibility Index 58 (T63, A52, C60). High CNS failure rates and a crowded schizophrenia market drive conditions: phased budget, validated tech transfer/IP, clear clinical differentiation thresholds, and indication-specific regulatory paths.

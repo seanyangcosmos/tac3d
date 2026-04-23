@@ -1,15 +1,15 @@
-TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS — Eligibility Index 71 (Tension 78, Alignment 65, Convergence 70)
+TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS — Eligibility Index 65 (Tension 70, Alignment 60, Convergence 65)
 
-Merck’s Idvynso (doravirine/islatravir) wins FDA approval as a once-daily, complete regimen for virologically suppressed adults. Switching studies showed non-inferiority versus staying on Biktarvy, confirming clinical layer viability. The market layer, however, is dominated by Gilead’s HIV franchise (Biktarvy leadership, Yeztugo prophylaxis), creating switching friction and payer scrutiny that can blunt early impact.
+Moderna’s mCOMBRIAX (flu + COVID-19 combo) secured European Commission approval, creating a clear path to launch across EU/EEA. The clinical layer is supported by mRNA‑1010 Phase 3 data showing a 26.6% efficacy edge vs a current flu shot in adults 50+, and combo convenience strengthens the value proposition. Tension remains around U.S. uncertainty after last year’s withdrawal of the combo filing and the FDA’s prior refusal‑to‑file for the flu component (now accepted with an August decision date).
 
-Cross-layer readout:
-- Clinical: Parity on viral suppression is solid but not a differentiator on its own. The non-INSTI, tenofovir-free profile may matter for select patients (DDIs, metabolic considerations, resistance context).
-- Market: Entrenched prescriber habits and payer value tests (adherence, resistance barrier, long-term safety) favor incumbents.
-- Strategy: Diversification ahead of Keytruda LOE is sensible, but commercial expectations must reflect real switching dynamics.
+Cross‑layer readout:
+- Regulatory: EU confirmed, US path volatile. Asynchronous approvals increase coordination complexity.
+- Clinical: Co‑formulation rationale is sound; standalone EU approval status for mRNA‑1010 lags combo timing.
+- Market: Uptake depends on national procurement decisions, seasonal logistics, and public sentiment toward mRNA combos.
 
 Conditions to execute well:
-- Define explicit differentiation beyond non-inferiority (drug–drug interactions, metabolic/resistance profile) and anchor launch messaging to those scenarios.
-- Secure formulary access via competitive contracts; align revenue targets with switching reality and segment-specific uptake curves.
-- Initiate real-world evidence to document long-term adherence and safety advantages; identify subpopulations most likely to benefit and focus field deployment.
+- Set explicit resource allocation targets between EU commercialization and US regulatory preparation; define trigger points to rebalance.
+- Secure procurement commitment timelines with priority EU national authorities; align supply for the 2026–27 season.
+- Build a market‑specific positioning narrative that accounts for regulatory asymmetry; prepare contingency actions if FDA August decision is negative or delayed.
 
-Bottom line: Idvynso’s launch is eligible with conditions. Clinical parity plus precise positioning, payer strategy, and RWE can turn a viable approval into a durable foothold against an entrenched market leader.
+Bottom line: The EU launch is eligible with conditions. Clear EU/US prioritization, locked procurement schedules, and a robust FDA fallback plan convert regulatory asymmetry into an executable go‑to‑market sequence.

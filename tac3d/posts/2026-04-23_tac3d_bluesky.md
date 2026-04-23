@@ -1,1 +1,1 @@
-TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS. Eligibility Index 71 (T78, A65, C70). FDA approval confirms clinical parity; market tension from Biktarvy dominance. Conditions: explicit differentiation (DDIs, metabolic/resistance profile), payer strategy, targeted subpopulations, and RWE.
+TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS. Eligibility Index 65 (T70, A60, C65). EU approval supports combo convenience; US regulatory volatility drives tension. Conditions: explicit EU/US resource split, procurement commitments, and an FDA‑negative fallback plan.

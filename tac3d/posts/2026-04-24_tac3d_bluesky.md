@@ -1,0 +1,1 @@
+TAC-3D verdict: ELIGIBLE. Eligibility Index 88 (T85, A92, C88). Regulatory alignment is clear: stop manufacturing, no restart, remediate CGMP, notify customers. Residual risks: 15‑day response vs remediation scope—manage with milestones and liability‑aware comms.

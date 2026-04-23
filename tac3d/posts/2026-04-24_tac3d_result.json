@@ -1,0 +1,33 @@
+{
+  "scores": {
+    "tension": 85,
+    "alignment": 92,
+    "convergence": 88,
+    "eligibility_index": 88
+  },
+  "verdict": "ELIGIBLE",
+  "verdict_summary": "Decision demonstrates strong structural compatibility across all layers with minimal tension points and clear regulatory alignment.",
+  "tension_map": [
+    "Minor timing tension: 15-day FDA response requirement vs full CGMP remediation timeline expectations",
+    "Resource allocation tension: immediate cessation costs vs long-term compliance investment needs"
+  ],
+  "alignment_gaps": [
+    "Gap between immediate customer notification requirements and comprehensive recall coordination timeline"
+  ],
+  "convergence_risks": [
+    "Risk if FDA extends enforcement actions beyond current warning letter scope",
+    "Potential instability if commercial viability assessment contradicts compliance commitment"
+  ],
+  "gap_inventory": [
+    "FDA response strategy not fully specified within 15-day deadline",
+    "Customer notification protocol lacks detail on liability management",
+    "CGMP remediation scope and timeline not quantified"
+  ],
+  "conditions": [
+    "Ensure FDA response within 15 business days addresses all cited violations comprehensively",
+    "Establish clear remediation timeline with measurable CGMP compliance milestones",
+    "Implement robust customer communication plan that manages legal exposure while ensuring transparency"
+  ],
+  "structural_summary": "The decision exhibits strong structural integrity with regulatory compliance driving clear cessation actions. FDA warning letter creates unambiguous compliance pathway, manufacturing quality evidence supports sterility concerns, and commercial layer aligns with risk containment priorities. Minor tensions exist around timing coordination but don't compromise core decision logic.",
+  "followup_question": "What specific CGMP remediation milestones will demonstrate compliance readiness to FDA, and how will the company sequence customer notifications to minimize downstream supply chain disruption while maintaining legal protection?"
+}

@@ -1,0 +1,1 @@
+TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS. Eligibility Index 70 (T72, A66, C73). Strong 6‑mo efficacy (80% to moderate/normal) meets approval bar; scale hinges on durability data, center‑of‑excellence buildout, surgeon training, payer plan for admin costs, and an RWE registry.

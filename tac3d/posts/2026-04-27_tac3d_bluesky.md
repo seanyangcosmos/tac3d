@@ -1,0 +1,1 @@
+TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS. Eligibility Index 66 (T73, A65, C60). Inhaled reformulations could lower AEs/adherence burden vs oral IPF SOC, but Phase 3 must show FVC/progression benefit. Conditions: payer value plan, CMC/device milestones, and risk‑adjusted sequencing.

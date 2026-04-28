@@ -1,0 +1,1 @@
+NVS decision (Q1 2026 + EU Rhapsido): TAC-3D = ELIGIBLE_WITH_CONDITIONS. Scores: EI72 T75 A72 C70. Structure: positive catalyst vs patent headwinds; temporal risk (earnings today). Conditions: WAIT for 08:00 ET results; monitor EU launch adoption; reassess target dispersion.

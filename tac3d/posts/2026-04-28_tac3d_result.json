@@ -1,0 +1,38 @@
+{
+  "verdict": "ELIGIBLE_WITH_CONDITIONS",
+  "scores": {
+    "tension": 75,
+    "alignment": 72,
+    "convergence": 70,
+    "eligibility_index": 72
+  },
+  "verdict_summary": "Decision shows structural coherence across multiple catalysts but requires temporal sequencing conditions due to earnings uncertainty and mixed analyst sentiment.",
+  "tension_map": [
+    "Mixed consensus data creates uncertainty - reported Q1 expectations ranging from $0.13 to $2.13 EPS across sources",
+    "Analyst ratings diverge significantly - some showing 'Sell' consensus while others show 'Moderate Buy'",
+    "Patent headwind concerns conflict with positive pipeline momentum from Rhapsido approval"
+  ],
+  "alignment_gaps": [
+    "Earnings timing vs. investment decision urgency - results scheduled for market open today may alter risk/reward calculation",
+    "Short-term catalyst (Rhapsido EU approval) vs. long-term patent cliff concerns create temporal misalignment",
+    "Strong fundamentals (40% core operating margin, strong cash flows) vs. mixed near-term guidance revisions"
+  ],
+  "convergence_risks": [
+    "Decision holds primarily in scenario where Q1 results meet/exceed expectations and Rhapsido launch proceeds smoothly",
+    "Vulnerable to earnings disappointment given recent estimate revisions and patent headwind concerns",
+    "Analyst sentiment appears divided with significant price target dispersion ($118-$180 range)"
+  ],
+  "gap_inventory": [
+    "Actual Q1 2026 results not yet available as decision point occurs on earnings day",
+    "Rhapsido commercial launch timeline and revenue contribution estimates unclear",
+    "No quantified impact assessment of patent cliff timeline vs. pipeline replacement"
+  ],
+  "conditions": [
+    "WAIT for Q1 earnings release (8:00 AM ET today) before executing decision",
+    "MONITOR Rhapsido launch execution metrics and early adoption indicators in EU",
+    "VERIFY analyst price target convergence following earnings - current dispersion suggests high uncertainty",
+    "ASSESS pipeline value catalyst timeline vs. patent expiry headwinds for timing optimization"
+  ],
+  "structural_summary": "The decision framework shows reasonable structural integrity with fresh positive catalyst (Rhapsido EU approval) supporting strong baseline fundamentals, but temporal convergence is compromised by earnings uncertainty occurring simultaneously with the investment decision point. The significant analyst rating and price target dispersion indicates unresolved structural tensions around valuation and near-term outlook.",
+  "followup_question": "Given the timing conflict between today's earnings release and the investment decision, would you prefer to restructure this as a conditional decision framework (IF earnings beat THEN add, IF miss THEN wait) rather than a binary add/wait choice?"
+}

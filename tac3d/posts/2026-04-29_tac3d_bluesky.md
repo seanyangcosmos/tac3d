@@ -1,0 +1,1 @@
+AZN pre-earnings topology: TAC-3D = ELIGIBLE_WITH_CONDITIONS. Scores: EI70 T70 A75 C65. Structure: oncology approvals support alignment; convergence is gated by inconsistent earnings delivery. Risk: ~30% miss probability → partial pre-print, add on beat + guidance raise.

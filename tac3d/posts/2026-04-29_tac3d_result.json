@@ -1,0 +1,37 @@
+{
+  "verdict": "ELIGIBLE_WITH_CONDITIONS",
+  "scores": {
+    "tension": 70,
+    "alignment": 75,
+    "convergence": 65,
+    "eligibility_index": 70
+  },
+  "verdict_summary": "Pre-earnings position viable but requires clear risk parameters due to mixed historical earnings performance and execution dependencies on oncology commercialization.",
+  "tension_map": [
+    {"source":"Mixed Q1 expectations vs recent performance","description":"Conflicting EPS estimates ($2.52 vs $1.27) and recent Q4 miss ($1.06 actual vs $2.18 estimate) create uncertainty about Q1 delivery capability"},
+    {"source":"Timing vs catalyst maturity","description":"ENHERTU approvals occurred December 2025/January 2025 but full commercial ramp may not be captured in Q1 2026 results"}
+  ],
+  "alignment_gaps": [
+    {"dimension":"Execution timeline mismatch","impact":"ENHERTU commercialization benefits may lag earnings recognition, creating short-term performance gap vs long-term value thesis"},
+    {"dimension":"Market expectation calibration","impact":"Analyst estimates appear optimistic relative to recent earnings volatility and Q4 2025 miss pattern"}
+  ],
+  "convergence_risks": [
+    {"scenario":"Strong Q1 beat drives momentum","stability":"ENHERTU ramp validates 2026 oncology growth thesis but depends on execution consistency"},
+    {"scenario":"Q1 miss continues pattern","stability":"Recent earnings volatility suggests fundamental guidance/delivery disconnect that could persist"},
+    {"scenario":"Mixed results with strong guidance","stability":"Pipeline momentum (20+ Phase III readouts in 2026) could offset near-term earnings volatility"}
+  ],
+  "gap_inventory": [
+    "Inconsistent earnings delivery pattern (1 beat, 2 misses, 1 match in last 4 quarters)",
+    "Commercial ramp timing uncertainty for recent ENHERTU approvals",
+    "Analyst estimate reliability given recent forecast misses",
+    "Translation gap between pipeline progress and quarterly financial performance"
+  ],
+  "conditions": [
+    "Position size should account for ~30% earnings miss probability based on recent track record",
+    "Set clear stop-loss parameters if Q1 results disappoint AND guidance is not raised",
+    "Pre-earnings position justified only if comfortable holding through potential volatility",
+    "Consider staged entry: partial position pre-earnings, remainder post-results with strong guidance confirmation"
+  ],
+  "structural_summary": "Decision has solid fundamental support from ENHERTU approvals and strong pipeline momentum (20+ Phase III readouts in 2026), but faces near-term execution risk from inconsistent earnings delivery pattern. The oncology growth thesis is structurally sound with 44% revenue contribution and key drugs like Imfinzi ($6.1B) and Enhertu ($2.8B AZN share) showing strong growth. However, recent Q4 miss and mixed quarterly performance create uncertainty about management's ability to deliver against raised expectations.",
+  "followup_question": "What is your risk tolerance for a potential 15-20% post-earnings decline if Q1 results disappoint, and would you prefer to wait for post-earnings clarity even if it means missing a potential 10-15% upside from a strong beat?"
+}

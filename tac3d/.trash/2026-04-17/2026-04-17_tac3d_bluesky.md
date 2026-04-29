@@ -1,0 +1,1 @@
+Verdict: Advance (RevMed daraxonrasib). Phase 3 PDAC: OS 13.2 vs 6.7 mo (HR 0.40, p<0.0001). KRAS(ON) MoA + biomarker‑defined population. Scores: mech 85, genetic 95, clinical 95. File now; continue AE mgmt (rash/diarrhea) and durability follow‑up as data mature.

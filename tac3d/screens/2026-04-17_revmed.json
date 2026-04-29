@@ -1,0 +1,29 @@
+{
+  "scores": {
+    "tension": 98,
+    "alignment": 95,
+    "convergence": 90,
+    "eligibility_index": 94
+  },
+  "verdict": "ELIGIBLE",
+  "verdict_summary": "Strong cross-layer coherence with mechanistic rationale fully validated by unprecedented clinical benefit; minimal structural tensions detected",
+  "tension_map": [
+    "Minor inconsistency: Phase 1 PFS (8.8 months) appears modest relative to Phase 3 OS magnitude, but likely reflects different patient populations and endpoints"
+  ],
+  "alignment_gaps": [
+    "Resource alignment confirmed: FDA breakthrough therapy and orphan drug designations align with regulatory pathway acceleration",
+    "Different priorities minimal: Multi-selective RAS(ON) approach addresses broader mutation spectrum than allele-specific competitors"
+  ],
+  "convergence_risks": [
+    "Cross-time stability strong: Consistent safety profile across Phase 1/1b studies supports regulatory confidence",
+    "External sensitivity low: >90% RAS mutation prevalence in PDAC provides stable target population"
+  ],
+  "gap_inventory": [],
+  "conditions": [
+    "Monitor safety data maturation from ongoing Phase 3 studies",
+    "Confirm manufacturing scalability for commercial launch preparation",
+    "Track competitive landscape as multiple KRAS-directed agents advance in PDAC"
+  ],
+  "structural_summary": "Exceptional structural alignment across all evidence layers. <cite index=\"4-25\">Mechanistic KRAS(ON) multi-selective inhibition demonstrates coherent translation to unprecedented clinical benefit with median OS 13.2 vs 6.7 months (HR 0.40, p<0.0001)</cite>. <cite index=\"1-5,2-10\">Genetic rationale strongly supported by >90% RAS mutation prevalence in PDAC</cite>. <cite index=\"1-8,6-1,6-8\">Regulatory pathway accelerated with FDA breakthrough therapy and orphan drug designations</cite>. <cite index=\"4-8,6-9\">FDA Commissioner's National Priority Voucher pilot program selection enables rapid 1-2 month review timeline</cite>. Clinical magnitude exceeds typical regulatory approval thresholds for oncology submissions.",
+  "followup_question": "What is the expected timeline for NDA submission and FDA review completion under the Priority Voucher pilot program?"
+}

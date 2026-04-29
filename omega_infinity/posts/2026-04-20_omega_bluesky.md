@@ -1,0 +1,1 @@
+Evidence alignment within a single layer does not automatically propagate across the stack. Treat confidence as layer‑dependent: support can accumulate locally while advancement stays constrained until the next layer’s closure criteria are met.

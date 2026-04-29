@@ -1,0 +1,1 @@
+Topology separates evidence density from transfer readiness. Build the structure at the core, arbitrate across mechanism/genetics/clinical in the decision layer, then translate with the overlay. Confidence moves only when the next layer’s gate is shut.

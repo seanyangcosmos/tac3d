@@ -1,0 +1,35 @@
+{
+  "scores": {
+    "tension": 88,
+    "alignment": 85,
+    "convergence": 87,
+    "eligibility_index": 87
+  },
+  "verdict": "ELIGIBLE",
+  "verdict_summary": "Strong regulatory advancement supported by robust mechanistic rationale, genetic targeting precision, and substantial clinical benefit - minimal structural tensions identified.",
+  "tension_map": [
+    "Minor inconsistency: Phase 3 OS benefit (13.2 vs 6.7 months, HR 0.40) in previously treated setting may not fully translate to regulatory approval timeline expectations (-5)",
+    "Unconfirmed premise: Multi-selective RAS(ON) mechanism advantage over allele-specific inhibitors requires real-world validation (-7)"
+  ],
+  "alignment_gaps": [
+    "Different priorities: Regulatory urgency (Commissioner's National Priority Voucher) versus comprehensive safety database development timeline (-8)",
+    "Inconsistent resources: Phase 3 completion versus parallel preparation for first-line and adjuvant trials resource allocation (-7)"
+  ],
+  "convergence_risks": [
+    "Cross-time stability concern: >90% PDAC RAS mutation prevalence assumption may shift with improved early detection methods (-6)",
+    "Incomplete coverage: Safety profile evaluation primarily from second-line setting may not capture first-line toxicity patterns (-6)"
+  ],
+  "gap_inventory": [
+    "Regulatory pathway optimization for multi-indication development",
+    "Long-term safety monitoring framework establishment",
+    "Manufacturing scale-up for multi-trial supply",
+    "Competitive landscape evolution assessment"
+  ],
+  "conditions": [
+    "Confirm comprehensive safety database adequacy for regulatory submission",
+    "Establish clear development timeline coordination across multiple Phase 3 trials",
+    "Validate manufacturing capacity for projected commercial demand"
+  ],
+  "structural_summary": "Decision exhibits strong structural integrity with <cite index=\"1-4,6-4,10-12\">daraxonrasib demonstrating statistically significant OS improvement (13.2 vs 6.7 months, HR 0.40, p<0.0001) in Phase 3 RASolute 302</cite>. <cite index=\"1-1,1-5\">Mechanistic foundation solid with RAS(ON) multi-selective inhibition targeting active GTP-bound state</cite>, and <cite index=\"2-6,7-5\">genetic rationale compelling with >90% PDAC harboring RAS mutations</cite>. <cite index=\"1-7,1-8,1-9\">FDA breakthrough therapy designation, orphan drug status, and Commissioner's National Priority Voucher selection</cite> create favorable regulatory alignment.",
+  "followup_question": "How will the company sequence regulatory submissions across the planned first-line metastatic and adjuvant PDAC trials while maintaining development momentum for the current second-line indication?"
+}

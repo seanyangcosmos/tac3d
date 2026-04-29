@@ -1,0 +1,16 @@
+Read /root/.openclaw/workspace/omega_infinity/api_map.md first.
+
+Omega Infinity primary entrypoint:
+http://127.0.0.1:8009
+
+This is the central reasoning interface.
+
+Supporting services:
+
+Decision layer:
+http://127.0.0.1:5056
+
+Overlay layer:
+http://127.0.0.1:5055
+
+Agents should inspect port 8009 first before calling other services.

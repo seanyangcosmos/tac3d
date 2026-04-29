@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "Decision: Under FDA's updated plausible mechanism framework (Apr 15, 2026), should a bespoke AAV gene therapy for an ultra-rare monogenic disorder advance to pivotal planning now?\n\nEvidence layers (based on today’s FDA-referenced criteria and public-domain patterns):\n- Mechanistic: Gene replacement targeting affected tissue with validated AAV tropism; rescue in patient-derived cells; correction in relevant animal model; preclinical dose–response characterized.\n- Genetic: Pathogenic variant well-established with high penetrance; causal pathway mapped; limited allelic heterogeneity in target cohort.\n- Clinical: Open-label n=6 shows biomarker improvement and early functional hints, but no validated clinical endpoint; follow-up under 12 months; safety acceptable to date.\n\nReturn JSON: {verdict: advance|defer, rationale: string, scores: {mechanistic: 0-100, genetic: 0-100, clinical: 0-100}, risk_notes: [strings]}"
+    }
+  ]
+}

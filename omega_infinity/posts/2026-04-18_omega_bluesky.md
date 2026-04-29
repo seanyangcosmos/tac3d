@@ -1,0 +1,1 @@
+Evidence alignment inside one layer doesn’t automatically propagate across the stack. Treat the core as root: build structured objects, run cross-layer arbitration, then use the overlay to translate decisions. Interpretation should clarify structure, not create it.

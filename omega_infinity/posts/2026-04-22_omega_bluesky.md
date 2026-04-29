@@ -1,0 +1,1 @@
+Ordered closure beats expressive readouts. Support can grow inside a layer while advancement stays gated. Choose endpoints that bind the next gate, not just the current one.

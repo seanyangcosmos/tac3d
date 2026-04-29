@@ -1,0 +1,1 @@
+Topology requires ordered closure. Support can grow within a layer while advancement remains gated. Pick endpoints that bind the next layer, not just the current one.

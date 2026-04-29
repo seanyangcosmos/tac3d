@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "Decision: Following Revolution Medicines' Phase 3 readout showing daraxonrasib nearly doubled overall survival vs standard chemotherapy in KRAS‑mutated pancreatic cancer, should the program advance to regulatory submission (accelerated/full approval)?\n\nEvidence layers (from BioPharma Dive Apr 2026 roundup + public domain context):\n- Mechanistic: KRAS(ON) pathway inhibition with target engagement consistent with anti‑tumor activity; coherent MoA in PDAC.\n- Genetic: KRAS driver mutations prevalent in PDAC; biomarker‑defined population with strong causal relevance.\n- Clinical: Phase 3 OS ~2x vs chemo (per report); large effect size suggests clinically meaningful benefit; safety to be weighed against SoC.\n\nReturn JSON: {verdict: advance|defer, rationale: string, scores: {mechanistic: 0-100, genetic: 0-100, clinical: 0-100}, risk_notes: [strings]}"
+    }
+  ]
+}

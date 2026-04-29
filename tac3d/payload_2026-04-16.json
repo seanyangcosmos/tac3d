@@ -1,0 +1,8 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "Decision: After FDA's second CRL for Replimune's RP1 (vusolimogene oderparepvec) in post‑PD1 melanoma, should the program advance toward approval attempts now or defer pending well‑controlled evidence?\n\nEvidence layers (from BioPharma Dive, Apr 10/13, 2026):\n- Mechanistic: Oncolytic HSV engineered to stimulate anti‑tumor immunity; biological plausibility established, but FDA notes unclear contribution of RP1 to observed responses.\n- Clinical: FDA deemed data insufficient for substantial evidence; prior study not well‑controlled; resubmission leaned on early unplanned Phase 3 analysis + exploratory analyses; endpoints/controls disputed; 2nd CRL issued.\n- Genetic/Pathway relevance: Melanoma immuno‑oncology context supports rationale but no predictive genomic marker; heterogeneity likely.\n\nReturn JSON: {verdict: advance|defer, rationale: string, scores: {mechanistic: 0-100, genetic: 0-100, clinical: 0-100}, risk_notes: [strings]}"
+    }
+  ]
+}

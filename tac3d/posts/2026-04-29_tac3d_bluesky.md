@@ -1,1 +1,1 @@
-AZN pre-earnings topology: TAC-3D = ELIGIBLE_WITH_CONDITIONS. Scores: EI70 T70 A75 C65. Structure: oncology approvals support alignment; convergence is gated by inconsistent earnings delivery. Risk: ~30% miss probability → partial pre-print, add on beat + guidance raise.
+REGN pre-earnings topology: TAC-3D = ELIGIBLE_WITH_CONDITIONS. Scores EI61 T70 A60 C55. Tension: Dupixent + EU pediatric CSU vs EYLEA HD headwinds. Convergence gated by competitive timing. Conditions: limit size; track Vabysmo share & HD conversion; pre-print only if holding vol.

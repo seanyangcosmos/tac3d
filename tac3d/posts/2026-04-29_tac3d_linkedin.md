@@ -1,14 +1,14 @@
-TAC-3D verdict on AstraZeneca (AZN) — ELIGIBLE_WITH_CONDITIONS
-Scores: Eligibility Index 70, Tension 70, Alignment 75, Convergence 65.
+TAC-3D verdict on Regeneron (REGN) — ELIGIBLE_WITH_CONDITIONS
+Scores: Eligibility Index 61, Tension 70, Alignment 60, Convergence 55.
 
-Context (April 29, 2026): Q1 2026 results land today. The structure is attractive: oncology remains the core growth engine and recent ENHERTU approvals continue to expand the addressable market. Pipeline cadence into 2026 is strong, supporting the long‑term thesis.
+Context (April 29, 2026): Q1 results land today. The structure mixes a positive catalyst (Dupixent momentum and a recent EU pediatric CSU approval expanding the addressable base) with franchise headwinds (EYLEA HD facing competitive pressure, including Vabysmo share gains).
 
-Why the conditions? Convergence is constrained by delivery volatility. Recent quarterly results have swung between beats and misses, and Q4 2025 underperformance highlights execution risk into the print. ENHERTU’s commercialization ramp is positive, but recognition in near‑term earnings may lag.
+Why the conditions? Pre‑earnings positioning carries timing risk. Consensus assumes healthy year‑on‑year growth, yet quarterly delivery has been mixed and competitive dynamics can dominate near‑term prints. Dupixent collaboration economics are supportive, but recognition vs. Sanofi timing may not fully align in Q1.
 
-Actionable conditions from TAC-3D:
-• Position size should reflect an estimated ~30% miss probability based on recent track record.
-• Consider a staged entry: partial pre‑earnings, add on a beat with a guidance raise; or defer until post‑print clarity.
-• Set explicit stop‑loss parameters if results disappoint and guidance isn’t raised.
-• Treat oncology growth and 2026 readouts as supportive of alignment, while accepting near‑term convergence risk.
+Actionable conditions from TAC‑3D:
+• Limit position size; size for pre‑print volatility.
+• Track Vabysmo market share and EYLEA HD conversion metrics through the call.
+• Define exit triggers if competitive/manufacturing risks resurface.
+• Consider staged entry: small pre‑print allocation, add only on clean results and guidance.
 
-Bottom line: The AZN thesis is structurally supported, but timing matters. A disciplined, risk‑aware approach (sizing, staging, and post‑print confirmation) is the appropriate way to engage pre‑earnings today.
+Bottom line: The REGN thesis has credible long‑term support, but convergence is gated by competitive timing. A risk‑aware, staged approach is appropriate into today’s print.

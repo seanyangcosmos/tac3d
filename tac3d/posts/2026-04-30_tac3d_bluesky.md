@@ -1,0 +1,1 @@
+LLY pre‑earnings topology (Apr 30, 2026): TAC‑3D = ELIGIBLE_WITH_CONDITIONS. Scores: EI50 T53 A46 C52. Structure: access catalysts (GoodRx, capacity ramp) vs near‑term pricing (gross‑to‑net) and timing (Medicare Bridge). Conditions: confirm Q1, monitor GTN commentary, size conservatively.

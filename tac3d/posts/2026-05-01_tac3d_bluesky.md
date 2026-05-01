@@ -1,0 +1,1 @@
+AMGN decision topology: TAC‑3D = ELIGIBLE_WITH_CONDITIONS. Scores: EI71 T78 A72 C65. Structure: Q1 strength + MariTide P3 vs GLP‑1 incumbents and Terns integration costs. Gating items: P3 milestones/timeline clarity, integration impact on Q2 margins, competitive monthly‑dose advantage validation.

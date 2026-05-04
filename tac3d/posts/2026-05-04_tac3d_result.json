@@ -1,0 +1,37 @@
+{
+  "scores": {
+    "tension": 75,
+    "alignment": 68,
+    "convergence": 62,
+    "eligibility_index": 68
+  },
+  "verdict": "ELIGIBLE_WITH_CONDITIONS",
+  "verdict_summary": "Deal is structurally sound but CVR achievement requires exceptional commercial execution against competitive headwinds in both LDL-C and edema markets.",
+  "tension_map": [
+    "CVR thresholds set against ambitious sales targets: bempedoic acid $350M (2025: $159.6M) and Enbumyst $160M (newly launched product)",
+    "Recently acquired Enbumyst integration risk conflicts with immediate CVR performance expectations",
+    "Strong competitive pressure from established statins/PCSK9s in LDL-C market versus growth assumptions"
+  ],
+  "alignment_gaps": [
+    "CVR milestone dependency creates misaligned success pathways between upfront cash certainty and contingent value realization",
+    "Enbumyst launch execution requirements conflict with established NEXLETOL/NEXLIZET commercial priorities",
+    "58% premium valuation assumes flawless integration of recently acquired Corstasis assets"
+  ],
+  "convergence_risks": [
+    "Deal structure sensitive to single-product execution in competitive therapeutic areas",
+    "CVR value realization concentrated in narrow 2027-2030 timeframe without stress-testing scenarios",
+    "Commercial assumptions not validated across different market penetration or competitive response scenarios"
+  ],
+  "gap_inventory": [
+    "Integration timeline pressure: Corstasis acquisition closed April 2, 2026; ARCHIMED deal expected Q3 2026",
+    "Competitive positioning assumptions may be optimistic given established alternatives in both therapeutic areas",
+    "CVR structure creates binary outcome risk rather than graduated value recognition"
+  ],
+  "conditions": [
+    "Validate Enbumyst commercial launch metrics and early adoption indicators before close",
+    "Stress-test bempedoic acid growth assumptions against competitive PCSK9 pricing and market access changes",
+    "Establish integration success criteria for Corstasis operations within ARCHIMED timeline"
+  ],
+  "structural_summary": "The acquisition demonstrates strategic coherence through healthcare PE expertise and cardiovascular market focus, but CVR structure creates execution-dependent value gaps. Recent Enbumyst acquisition adds portfolio breadth but increases integration complexity during ownership transition.",
+  "followup_question": "What specific commercial milestones has Esperion achieved with Enbumyst since the April 2026 Corstasis integration, and how do current market penetration rates compare to the $160M CVR threshold assumptions?"
+}

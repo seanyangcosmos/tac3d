@@ -1,0 +1,45 @@
+{
+  "verdict": "ELIGIBLE_WITH_CONDITIONS",
+  "scores": {
+    "tension": 70,
+    "alignment": 58,
+    "convergence": 67,
+    "eligibility_index": 65
+  },
+  "verdict_summary": "Lonvo-z shows strong Phase 3 efficacy and mechanistic coherence, but gaps exist in durability validation, safety breadth, and commercial readiness that require careful monitoring before full regulatory approval confidence.",
+  "tension_map": [
+    "Timeline tension: BLA completion H2 2026 vs commercial launch H1 2027 leaves narrow regulatory review window",
+    "Efficacy heterogeneity: 62% attack-free vs 38% with partial response suggests patient stratification needs",
+    "Limited long-term safety: Only mild-moderate AEs through 6 months, but durability beyond Phase 1/2 cohort unclear"
+  ],
+  "alignment_gaps": [
+    "Patient selection criteria not fully defined for commercial use despite efficacy heterogeneity",
+    "Premium pricing strategy acknowledged but specific value framework not established",
+    "Manufacturing/supply chain readiness for commercial scale not detailed",
+    "Real-world administration protocols may differ from controlled trial setting"
+  ],
+  "convergence_risks": [
+    "Durability assumes permanent KLKB1 inactivation but long-term follow-up limited to Phase 1/2 subset",
+    "Regulatory precedent: First in vivo CRISPR approval creates unknown review variables",
+    "Market disruption potential high but adoption timeline depends on physician comfort with gene editing",
+    "Competition timing: Other HAE agents advancing could alter competitive landscape"
+  ],
+  "gap_inventory": [
+    "Long-term safety data beyond 6 months in Phase 3 population",
+    "Real-world effectiveness validation outside controlled trial environment",
+    "Manufacturing scale-up and quality consistency demonstration",
+    "Physician training and administration infrastructure development",
+    "Patient selection criteria for optimal outcomes",
+    "Detailed health economic outcomes data for payer negotiations"
+  ],
+  "conditions": [
+    "Monitor FDA review timeline and any regulatory questions about novel mechanism",
+    "Track longer-term safety and durability data from ongoing follow-up studies",
+    "Validate commercial manufacturing readiness and supply chain capacity",
+    "Assess real-world physician adoption patterns and patient selection criteria",
+    "Monitor competitive landscape developments in HAE treatment",
+    "Evaluate payer acceptance and reimbursement pathway establishment"
+  ],
+  "structural_summary": "Decision shows high mechanistic coherence with proven KLKB1-bradykinin pathway targeting supported by robust Phase 3 efficacy (87% attack reduction, 62% attack-free patients). However, structural gaps exist around durability validation beyond Phase 1/2 subset, commercial readiness despite aggressive timeline, and regulatory precedent uncertainty for first in vivo CRISPR approval. Evidence layers align on mechanism and acute efficacy but diverge on long-term validation depth.",
+  "followup_question": "What specific regulatory precedents or FDA guidance documents will likely govern the review of lonvo-z as the first in vivo CRISPR therapy, and how might novel mechanism considerations affect approval timeline assumptions?"
+}

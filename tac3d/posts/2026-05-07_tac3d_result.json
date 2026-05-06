@@ -1,0 +1,86 @@
+{
+  "verdict": "ELIGIBLE_WITH_CONDITIONS",
+  "scores": {
+    "tension": 82,
+    "alignment": 78,
+    "convergence": 65,
+    "eligibility_index": 75
+  },
+  "verdict_summary": "Deal demonstrates strong mechanistic foundation and clinical proof-of-concept but faces convergence risks around competitive dynamics and commercial execution uncertainties requiring structured conditions.",
+  "tension_map": [
+    {
+      "source": "Layer 1 vs Layer 3",
+      "tension_type": "timeline_incompatibility",
+      "description": "Strong mechanistic rationale conflicts with limited Phase II efficacy dataset and regulatory timeline uncertainty",
+      "severity": "moderate",
+      "points_deducted": 10
+    },
+    {
+      "source": "Layer 2 vs Layer 3",
+      "tension_type": "unconfirmed_premises",
+      "description": "ET pathway target validation relies on correlative rather than causal evidence in human disease",
+      "severity": "minor",
+      "points_deducted": 8
+    }
+  ],
+  "alignment_gaps": [
+    {
+      "layer_pair": "Layer 1-3",
+      "gap_type": "resource_pathway_mismatch",
+      "description": "Disease-modifying claims require significant development resources but face high regulatory bar for visual field endpoints",
+      "severity": "moderate",
+      "points_deducted": 15
+    },
+    {
+      "layer_pair": "Deal structure vs clinical reality",
+      "gap_type": "milestone_dependency",
+      "description": "Up to $2.45B deal value heavily dependent on unproven pivotal trial success in two indications",
+      "severity": "moderate",
+      "points_deducted": 7
+    }
+  ],
+  "convergence_risks": [
+    {
+      "scenario": "Competitive landscape evolution",
+      "risk_type": "single_scenario_dependency",
+      "description": "Value proposition assumes limited competition in neuroprotection space but multiple players advancing similar approaches",
+      "severity": "high",
+      "points_deducted": 20
+    },
+    {
+      "scenario": "Regulatory pathway",
+      "risk_type": "external_sensitivity",
+      "description": "FDA acceptance of visual field improvement endpoints uncertain given historical challenges in glaucoma drug development",
+      "severity": "moderate",
+      "points_deducted": 15
+    }
+  ],
+  "gap_inventory": [
+    "Limited Phase II dataset (60 patients total across both indications)",
+    "No direct comparison to emerging neuroprotective competitors",
+    "Manufacturing scale-up requirements for bio-erodible implant not addressed",
+    "Commercial strategy unclear for sustained-release ophthalmology positioning"
+  ],
+  "conditions": [
+    {
+      "category": "clinical",
+      "requirement": "Successful completion of Phase IIb/III pivotal trials with pre-specified visual field endpoints meeting regulatory acceptance criteria",
+      "timeline": "H2 2025 trial initiation with 2027-2028 readouts",
+      "risk_mitigation": "Structured milestone payments tied to interim efficacy signals"
+    },
+    {
+      "category": "regulatory",
+      "requirement": "FDA agreement on registrational pathway and endpoint acceptance for neuroprotective claims",
+      "timeline": "Pre-pivotal trial guidance within 12 months",
+      "risk_mitigation": "Alternative indication development if primary endpoints fail"
+    },
+    {
+      "category": "commercial",
+      "requirement": "Demonstrated manufacturing scalability and sustainable competitive positioning analysis",
+      "timeline": "24 months post-close",
+      "risk_mitigation": "Portfolio integration with existing Eylea franchise for market access synergies"
+    }
+  ],
+  "structural_summary": "The acquisition shows solid mechanistic and early clinical foundation with PER-001 demonstrating potential as first disease-modifying treatment for glaucoma and diabetic retinopathy. However, convergence risks emerge from limited clinical dataset, competitive dynamics in neuroprotection space, and regulatory uncertainty around visual field endpoints. Deal structure appropriately balances risk with milestone-based payments but requires structured conditions around pivotal trial success and regulatory pathway clarity.",
+  "followup_question": "Given Bayer's recent strategic shift toward focused R&D investments under CEO Bill Anderson, how does this $2.45B ophthalmology bet align with their portfolio prioritization criteria, and what specific competitive intelligence exists on rival endothelin pathway programs that could impact PER-001's market positioning timeline?"
+}

@@ -1,0 +1,7 @@
+Structural verdict: ELIGIBLE (Eligibility 78 | Tension 85 | Alignment 72 | Convergence 78).
+
+Angelini’s $4.1B acquisition of Catalyst is structurally coherent: validated neuro‑rare mechanisms (LEMS, DMD, epilepsy), established U.S. commercial infrastructure, and patent‑risk resolution that extends runway. That combination supports durable value creation despite a premium price and the work of cross‑Atlantic integration.
+
+Mechanism and market logic align: FIRDAPSE addresses presynaptic transmission failure in LEMS, AGAMREE offers better‑tolerated anti‑inflammatory control in DMD, and FYCOMPA targets AMPA‑mediated excitation in epilepsy. The portfolio is diversified within a focused brain health lane—good for operational concentration and payer dialogues—but still concentrated enough to require vigilant lifecycle management.
+
+Decision takeaway: treat the deal as eligible with clear execution gates. Close on shareholder/antitrust timelines, preserve rare‑disease expertise through integration, pressure‑test post‑2035 FIRDAPSE succession, and align regulatory pathways across FDA/EMA for pipeline adds. Confidence should increase as these structural gates close without disrupting patient access.

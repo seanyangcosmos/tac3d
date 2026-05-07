@@ -1,0 +1,39 @@
+{
+  "verdict": "ELIGIBLE",
+  "scores": {
+    "tension": 85,
+    "alignment": 72,
+    "convergence": 78,
+    "eligibility_index": 78
+  },
+  "verdict_summary": "Deal structure exhibits strong mechanistic coherence and timely patent risk resolution, supporting durable value creation in U.S. rare neuro markets despite premium valuation and integration complexity.",
+  "tension_map": [
+    "Premium valuation (28% above 30-day VWAP) vs established revenue base ($589M 2025) creates modest tension but mitigated by growth trajectory",
+    "Integration risk between family-owned Italian pharma and U.S. commercial operations requires cultural/operational bridging",
+    "Patent litigation resolution timing coinciding with deal announcement suggests coordinated risk management rather than core contradiction"
+  ],
+  "alignment_gaps": [
+    "Angelini's European-centric operations must align with U.S. rare disease commercial infrastructure and regulatory environment",
+    "Different organizational scales (acquiring vs acquired) require harmonization of decision-making processes and resource allocation",
+    "Brain health strategic focus alignment validated but requires integration of three distinct therapeutic mechanisms and patient populations"
+  ],
+  "convergence_risks": [
+    "Generic FIRDAPSE entry delayed only until January 2035 creates future revenue cliff risk requiring pipeline development",
+    "Three-asset portfolio concentration in rare neuro creates vulnerability to regulatory/competitive changes in single therapeutic area",
+    "Cross-Atlantic integration complexity may stress operational convergence during critical post-acquisition period"
+  ],
+  "gap_inventory": [
+    "Cultural integration protocols between Italian family business and U.S. biotech operations",
+    "Regulatory pathway alignment for pipeline assets across FDA and EMA jurisdictions",
+    "Commercial infrastructure optimization for rare disease patient access across different healthcare systems",
+    "Post-2035 FIRDAPSE lifecycle management and successor product development timeline"
+  ],
+  "conditions": [
+    "Successful completion of shareholder approval and antitrust clearance within Q3 2026 timeline",
+    "Integration of Catalyst's U.S. commercial capabilities without disruption to patient access",
+    "Development of post-2035 FIRDAPSE succession strategy to address generic entry risk",
+    "Preservation of specialized rare disease expertise during organizational consolidation"
+  ],
+  "structural_summary": "The acquisition demonstrates strong structural eligibility with mechanistically validated assets, cleared patent risks, and strategic market entry logic. FIRDAPSE's LEMS indication, AGAMREE's DMD indication, and FYCOMPA's epilepsy indication provide diversified but coherent rare neuro portfolio. Patent litigation resolution protecting exclusivity until 2035 provides substantial runway. Premium valuation reflects strategic value of U.S. market entry for Angelini's brain health expansion. Integration risks are manageable given clear therapeutic focus alignment and established commercial infrastructure.",
+  "followup_question": "What specific post-acquisition synergies does Angelini anticipate between its European CNS pipeline and Catalyst's established U.S. commercial infrastructure in rare neurological diseases?"
+}

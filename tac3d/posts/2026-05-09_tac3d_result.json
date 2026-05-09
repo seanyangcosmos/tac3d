@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "tension": 62,
+    "alignment": 52,
+    "convergence": 58,
+    "eligibility_index": 57
+  },
+  "verdict": "ELIGIBLE_WITH_CONDITIONS",
+  "verdict_summary": "Structural evidence supports PROTAC validation but requires conditions due to mixed signals on platform transferability and commercial outlook",
+  "tension_map": [
+    "Mechanistic validation conflicts with narrow commercial positioning",
+    "First-in-class approval creates precedent tension with limited market acceptance",
+    "Platform potential contradicts partner divestment strategy"
+  ],
+  "alignment_gaps": [
+    "Biomarker-driven efficacy (ESR1m) vs. broader platform applicability",
+    "Technical milestone achievement vs. uncertain commercial trajectory",
+    "Long-term platform validation vs. immediate partnership transfer"
+  ],
+  "convergence_risks": [
+    "Approval success may not predict platform-wide performance",
+    "ESR1-specific mechanism may not translate across PROTAC applications",
+    "Current partnership dynamics may not reflect future platform value"
+  ],
+  "gap_inventory": [
+    "Platform transferability assumptions lack cross-indication validation",
+    "Commercial viability assessment incomplete given partnership transition",
+    "Timeline sensitivity to partner selection and market positioning unclear"
+  ],
+  "conditions": [
+    "Monitor ARV-102 (LRRK2), ARV-806 (KRAS G12D), and ARV-393 (BCL6) clinical readouts for platform validation confirmation",
+    "Await third-party commercialization partner announcement to assess market positioning strategy",
+    "Track competitive PROTAC developments from other companies to validate mechanism-of-action durability",
+    "Evaluate safety profile evolution across broader patient population post-launch"
+  ],
+  "structural_summary": "<cite index=\"1-2,3-2\">FDA approval on May 1, 2026 of vepdegestrant (Veppanu) as the first PROTAC validates the protein degradation mechanism</cite>, with <cite index=\"1-10,1-11\">clinical evidence showing median PFS of 5.0 vs 2.1 months (HR 0.57) and ORR of 19% vs 4% in ESR1-mutated patients</cite>. However, structural tensions exist: <cite index=\"2-4,13-6,13-7\">Arvinas and Pfizer are seeking third-party commercialization due to narrow market potential after disappointing broader trial results</cite>, while <cite index=\"13-16,13-23\">the company is shifting focus to earlier-stage programs including LRRK2 for Parkinson's and KRAS G12D degraders</cite>. The approval validates targeted protein degradation but creates alignment gaps between technical achievement and commercial execution, requiring conditions to confirm platform transferability across Arvinas's broader pipeline.",
+  "followup_question": "What are the comparative clinical outcomes and commercial prospects for Arvinas's next-generation PROTAC candidates (ARV-102, ARV-806, ARV-393) relative to vepdegestrant's biomarker-restricted approval, and how might these inform the durability of the protein degradation investment thesis?"
+}

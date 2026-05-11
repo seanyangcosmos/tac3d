@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-11",
+  "decision": "Treat Intellia Therapeutics’ rolling BLA for lonvoguran ziclumeran (lonvo‑z; NTLA‑2002) after positive Phase 3 HAELO results as a 2026 investable catalyst?",
+  "verdict": "ELIGIBLE",
+  "scores": {
+    "eligibility_index": 80,
+    "tension": 88,
+    "alignment": 75,
+    "convergence": 82
+  },
+  "verdict_summary": "Strong three-layer convergence supports investable catalyst status with favorable risk profile",
+  "tension_map": [
+    "Minor timing sensitivity: lonvo-z durability maintains through 36+ months but commercial penetration timeline vs current prophylactics unclear",
+    "Regulatory pathway precedent: first in vivo CRISPR Phase 3 creates novel review dynamics"
+  ],
+  "alignment_gaps": [
+    "Competitive displacement velocity: unclear patient migration rate from established chronic therapies (lanadelumab, berotralstat)",
+    "Payer reception uncertainty: one-time curative pricing vs chronic therapy economics requires validation",
+    "Ex-US market access: collaboration/distribution strategy not finalized"
+  ],
+  "convergence_risks": [
+    "CRISPR field validation dependency: lonvo-z as proof-of-concept for broader in vivo editing investment thesis",
+    "HAE patient preference evolution: gene editing acceptance vs established therapy satisfaction rates"
+  ],
+  "conditions": [
+    "Monitor BLA submission completeness and FDA review milestones through H2 2026",
+    "Track early commercial uptake indicators and physician adoption patterns",
+    "Assess payer coverage decisions and pricing reception in initial launch markets"
+  ],
+  "structural_summary": "Decision exhibits strong structural integrity across mechanistic, genetic, and clinical evidence layers. KLKB1 target validation through convergent disease genetics (SERPING1/contact pathway), established pharmacology (kallikrein inhibitors), and robust Phase 3 efficacy (87% attack reduction, 62% functional cure rate) creates coherent investment thesis. Rolling BLA initiation with H2 2026 completion timeline provides executable catalyst framework. Primary risks center on commercial execution and competitive dynamics rather than scientific validity.",
+  "followup_question": "What specific competitive moat does lonvo-z's permanent genetic modification establish versus next-generation chronic prophylactics (subcutaneous delivery, extended dosing intervals) that could emerge pre-launch?"
+}

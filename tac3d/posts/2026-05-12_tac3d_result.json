@@ -1,0 +1,69 @@
+{
+  "date": "2026-05-12",
+  "decision": "Treat Celcuity’s VIKTORIA-1 positive PIK3CA‑mutant results and planned sNDA for gedatolisib as an investable 2026 catalyst?",
+  "verdict": "ELIGIBLE",
+  "scores": {
+    "eligibility_index": 76,
+    "tension": 85,
+    "alignment": 72,
+    "convergence": 70
+  },
+  "verdict_summary": "Strong structural compatibility across evidence layers with established mechanistic rationale, validated genetic target, and compelling clinical proof-of-concept supporting 2026 sNDA catalyst potential.",
+  "tension_map": [
+    {
+      "layer_comparison": "Mechanistic vs Genetic",
+      "tension_score": 95,
+      "description": "Multi-target PAM inhibition aligns perfectly with PIK3CA-driven pathway activation"
+    },
+    {
+      "layer_comparison": "Genetic vs Clinical",
+      "tension_score": 90,
+      "description": "PIK3CA mutation prevalence matches clinical trial population enrichment"
+    },
+    {
+      "layer_comparison": "Mechanistic vs Clinical",
+      "tension_score": 70,
+      "description": "Minor tension: mechanism suggests equal efficacy in WT/mutant, but initial commercial focus on distinct populations"
+    }
+  ],
+  "alignment_gaps": [
+    {
+      "gap_type": "Timeline Alignment",
+      "severity": "Moderate",
+      "description": "sNDA timing dependent on existing WT PDUFA (July 2026) creating sequential rather than parallel approval pathway"
+    },
+    {
+      "gap_type": "Commercial Strategy",
+      "severity": "Low",
+      "description": "Dual indication strategy (WT/mutant) requires coordinated launch sequence and market positioning"
+    }
+  ],
+  "convergence_risks": [
+    {
+      "risk_type": "Cross-Indication Dependency",
+      "probability": "Medium",
+      "impact": "Medium",
+      "description": "sNDA success partially dependent on WT indication approval establishing commercial foundation"
+    },
+    {
+      "risk_type": "Competitive Landscape Evolution",
+      "probability": "Medium",
+      "impact": "Medium",
+      "description": "PI3K inhibitor space may evolve before 2026 launch, affecting comparative positioning"
+    }
+  ],
+  "gap_inventory": [
+    "Detailed PFS/OS data from PIK3CA mutant cohort pending ASCO 2026 presentation",
+    "Safety profile comparison between mutant/WT populations not yet disclosed",
+    "Alpelisib comparator positioning and market differentiation strategy",
+    "Commercial manufacturing and supply chain readiness timeline"
+  ],
+  "conditions": [
+    "Monitor July 2026 PDUFA outcome for WT indication as foundational approval",
+    "Track detailed PIK3CA mutant data at ASCO 2026 for confirmation of topline results",
+    "Assess FDA feedback during Priority Review process for any conditional approval requirements",
+    "Evaluate competitive landscape changes in PI3K inhibitor market through 2026"
+  ],
+  "structural_summary": "Decision demonstrates strong structural integrity with mechanistic rationale supporting comprehensive PAM pathway inhibition, well-defined genetic biomarker population, and positive Phase 3 clinical proof-of-concept. Primary tensions arise from sequential regulatory pathway dependencies rather than fundamental evidence contradictions. The existing Priority Review status and July 2026 PDUFA date for the WT indication provides a clear timeline anchor, while positive PIK3CA mutant topline results establish clinical validation across both populations.",
+  "followup_question": "Given the sequential approval pathway (WT first, then mutant sNDA), what is the optimal investment sizing strategy to account for the compounding regulatory risk across both indications while capturing the full commercial opportunity?"
+}

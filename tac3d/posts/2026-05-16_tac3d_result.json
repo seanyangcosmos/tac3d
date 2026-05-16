@@ -1,0 +1,38 @@
+{
+  "scores": {
+    "tension": 88,
+    "alignment": 75,
+    "convergence": 68,
+    "eligibility_index": 77
+  },
+  "verdict": "ELIGIBLE",
+  "verdict_summary": "Decision structurally sound with well-aligned mechanistic, molecular, and clinical evidence supporting accelerated approval pathway",
+  "tension_map": [
+    "Minor tension between single-arm design lacking placebo control and regulatory preference for controlled trials",
+    "Small inconsistency between mechanistic selectivity claims versus actual safety profile complexity"
+  ],
+  "alignment_gaps": [
+    "Gap between broad BCL-2 family involvement in MCL pathogenesis versus selective BCL-2 targeting approach",
+    "Resource allocation mismatch between accelerated approval pathway expectations and single-arm trial limitations",
+    "Temporal misalignment between immediate approval needs and pending confirmatory trial timeline (CELESTIAL-RRMCL)"
+  ],
+  "convergence_risks": [
+    "Approval contingent on confirmatory trial success - vulnerable to future negative results",
+    "Safety profile stress-testing limited to specific population subset (post-BTK inhibitor failure)",
+    "Mechanistic assumptions about BCL-2 dependence not validated across broader MCL patient heterogeneity",
+    "Durability projections based on median 11.9-month follow-up may not represent long-term outcomes"
+  ],
+  "gap_inventory": [
+    "No companion diagnostic requirement despite molecular heterogeneity in MCL",
+    "Limited head-to-head comparison data versus existing therapies",
+    "Incomplete characterization of optimal patient selection criteria",
+    "Safety data concentrated in specific trial population may not generalize"
+  ],
+  "conditions": [
+    "Confirmatory CELESTIAL-RRMCL trial must demonstrate clinical benefit to maintain approval",
+    "Post-market surveillance required for broader safety characterization beyond trial population",
+    "Real-world evidence collection needed to validate efficacy across diverse MCL patient populations"
+  ],
+  "structural_summary": "Decision demonstrates strong structural alignment across mechanistic rationale (BCL-2 pathway targeting), molecular understanding (cyclin D1/BCL-2 biology), and clinical outcomes (52% ORR, 15.8-month median DOR). Minor tensions exist around single-arm design limitations and safety complexity. Primary convergence risk centers on confirmatory trial dependency for sustained approval. Evidence layers reinforce each other effectively, supporting accelerated approval framework while acknowledging inherent uncertainties.",
+  "followup_question": "What specific biomarkers or patient characteristics from the BGB-11417-201 trial could inform optimal patient selection strategies for sonrotoclax, given the heterogeneous nature of MCL biology?"
+}

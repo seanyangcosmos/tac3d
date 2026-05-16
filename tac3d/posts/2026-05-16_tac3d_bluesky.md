@@ -1,0 +1,2 @@
+TAC-3D verdict: ELIGIBLE (EI 77) — Tension 88 | Alignment 75 | Convergence 68.
+Sonrotoclax’s accelerated approval in R/R MCL (post-BTKi) aligns mechanistic apoptosis targeting with single‑arm clinical signal (ORR 52%, DOR 15.8m). Constraint: transfer remains gated pending CELESTIAL‑RRMCL confirmation.

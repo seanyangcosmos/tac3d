@@ -1,0 +1,7 @@
+TAC-3D verdict: ELIGIBLE (Eligibility Index 77) — Tension 88 | Alignment 75 | Convergence 68.
+
+FDA’s May 13, 2026 accelerated approval of sonrotoclax (BCL‑2 inhibitor) for adults with relapsed/refractory mantle cell lymphoma after BTK inhibitor therapy is structurally sound. Mechanistic rationale is clear: re‑engage apoptosis in a setting with anti‑apoptotic dependence. Molecular context supports plausibility in MCL without requiring a companion diagnostic.
+
+Clinical evidence is directional, not definitive: a single‑arm Phase 1/2 (N=103) reports ORR 52% and median DOR 15.8 months after 11.9 months of follow‑up. That alignment is sufficient for accelerated approval, but it does not close the loop. The primary convergence risk is the dependency on the CELESTIAL‑RRMCL confirmatory trial to demonstrate clinical benefit and preserve approval.
+
+Operational guidance: treat current use as a gated transfer. Define patient selection criteria explicitly, monitor real‑world safety beyond the trial population, and keep resourcing tied to confirmatory milestones. Strength in one layer should not be allowed to retro‑justify gaps in another; maintain layer boundaries while the confirmation work runs.

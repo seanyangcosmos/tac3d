@@ -1,0 +1,39 @@
+{
+  "scores": {
+    "tension": 90,
+    "alignment": 85,
+    "convergence": 78,
+    "eligibility_index": 84
+  },
+  "verdict": "ELIGIBLE",
+  "verdict_summary": "Strong structural compatibility across evidence layers supports this approval decision. Mechanistic rationale aligns with clinical efficacy, molecular understanding matches patient population, and risk-benefit framework is internally consistent.",
+  "tension_map": [
+    "Single-arm study design lacks control group comparison - addressed by historical context and unmet need",
+    "Median CR duration not reached in limited follow-up - balanced by durability signals at 12 months (75.3%)",
+    "High-grade AE rate (98%) - expected and manageable in this frail population context"
+  ],
+  "alignment_gaps": [
+    "No companion diagnostic requirement despite AML heterogeneity - justified by broad BCL-2 dependence patterns",
+    "Biomarker-agnostic approach vs. precision medicine trend - offset by population-specific fitness criteria",
+    "Resource allocation between convenience and monitoring intensity for oral vs IV regimens"
+  ],
+  "convergence_risks": [
+    "Real-world performance may differ from trial setting given patient frailty",
+    "Long-term safety profile requires post-market surveillance in broader population",
+    "Healthcare system adaptation needed for oral administration monitoring protocols",
+    "Comparative effectiveness vs azacitidine + venetoclax requires longer follow-up"
+  ],
+  "gap_inventory": [
+    "Limited follow-up duration for durability assessment",
+    "Single-arm design prevents direct comparative analysis",
+    "Post-market real-world evidence collection framework needed"
+  ],
+  "conditions": [
+    "Robust post-market surveillance for safety signal detection",
+    "Real-world evidence generation for comparative effectiveness",
+    "Healthcare provider education on oral regimen management",
+    "Long-term follow-up studies for durability confirmation"
+  ],
+  "structural_summary": "Decision demonstrates strong structural integrity with mechanistic biology (HMA + BCL-2 synergy) supporting clinical outcomes (41.6% CR rate), molecular rationale aligning with population characteristics (elderly/unfit AML), and regulatory framework (Project Orbis, orphan designation) matching approval pathway. The first all-oral HMA/BCL-2 combination addresses significant unmet need while maintaining efficacy comparable to standard parenteral regimens.",
+  "followup_question": "How will post-market studies compare real-world effectiveness of this oral regimen against the current standard azacitidine + venetoclax combination, particularly regarding treatment adherence and quality of life benefits in the elderly population?"
+}

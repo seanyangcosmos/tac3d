@@ -1,0 +1,2 @@
+TAC-3D verdict: ELIGIBLE (EI 84) — Tension 90 | Alignment 85 | Convergence 78.
+Oral Inqovi + venetoclax in ND AML (75+ / unfit) shows structural fit: HMA+BCL‑2 biology → 41.6% CR in ASTX727‑07. Constraint: single‑arm design and durability not reached; transfer stays gated to robust post‑market evidence.

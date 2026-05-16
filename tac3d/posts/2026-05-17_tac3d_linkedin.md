@@ -1,0 +1,7 @@
+TAC-3D verdict: ELIGIBLE (Eligibility Index 84) — Tension 90 | Alignment 85 | Convergence 78.
+
+FDA’s May 13, 2026 approval of oral decitabine/cedazuridine (Inqovi) with venetoclax for newly diagnosed AML in adults ≥75 or ineligible for intensive induction is structurally coherent. Mechanistically, HMA exposure increases apoptotic priming while venetoclax restores mitochondrial apoptosis via BCL‑2 inhibition; cedazuridine enables IV‑equivalent oral decitabine. This fits the biology of unfit AML where treatment tolerance and apoptosis dependence are central.
+
+Evidence remains layer‑asymmetric. Clinically, ASTX727‑07 (n=101) reports CR 41.6% (95% CI 31.9–51.8) with median time to CR of 2 months; median CR duration was not reached at the data cut. That directional signal supports approval under Project Orbis and orphan context, but comparative effectiveness vs azacitidine + venetoclax and long‑term durability are still open.
+
+Operationally: treat transfer as gated. Implement robust monitoring for myelosuppression and infections, plan real‑world evidence capture (adherence, QoL, durability), and avoid letting convenience of oral delivery retro‑justify evidence gaps. Keep resources tied to post‑market signal quality rather than headline CR alone.

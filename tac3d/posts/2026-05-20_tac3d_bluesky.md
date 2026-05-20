@@ -1,0 +1,1 @@
+TAC-3D verdict: ELIGIBLE (EI 85; T/A/C 88/85/82) — Sonrotoclax AA in r/r MCL shows cross-layer compatibility. Tension comes from genetic heterogeneity vs 52% ORR. Convergence remains robust but contingent on confirmatory trials. Priority: biomarker-guided selection.

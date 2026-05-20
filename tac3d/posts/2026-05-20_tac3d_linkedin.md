@@ -1,0 +1,7 @@
+TAC-3D verdict: ELIGIBLE — eligibility_index 85; tension 88; alignment 85; convergence 82.
+
+The FDA’s accelerated approval of sonrotoclax (Beqalzi) for relapsed/refractory mantle cell lymphoma after ≥2 prior lines including a BTK inhibitor reflects strong cross-layer compatibility. Mechanistic logic is clear: BCL‑2 dependence in MCL supports selective inhibition. Genetic signals reinforce plausibility, though dependence is heterogeneous (e.g., ~20% 18q21/BCL2 amplification), which helps explain response variability. Clinically, the single‑arm BGB‑11417‑201 study (n=103) demonstrated a 52% ORR with a 1.9‑month median time to response and 15.8‑month median DOR; safety is manageable with TLS precautions.
+
+Where the topology flags tension is at the GENETIC–CLINICAL interface: incomplete biomarker coverage vs broader clinical activity. Convergence remains robust but is gated by the accelerated‑approval condition — confirmatory trials must verify clinical benefit and clarify resistant subpopulations.
+
+Decision posture: prioritize biomarker‑guided stratification in confirmatory designs, define a mechanistic‑clinical bridge for non‑responders, and maintain TLS risk controls. This preserves stack integrity while increasing the odds that observed efficacy propagates into durable, label‑defining benefit.

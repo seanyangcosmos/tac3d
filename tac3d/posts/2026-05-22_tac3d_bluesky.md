@@ -1,0 +1,1 @@
+Biogen–Apellis (C3; GA) — TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS. EI 56 | T 62 | A 55 | C 48. Mechanism/genetics align; OAKS/DERBY show 16–22% GA slowing. Post‑marketing retinal vasculitis remains the gating constraint; CVR path requires tight pharmacovigilance and prescriber education.

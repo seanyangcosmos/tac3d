@@ -1,0 +1,19 @@
+{
+  "decision": "Should investors view Biogen’s completed acquisition of Apellis (May 14, 2026) as structurally investable now, given C3-targeted mechanism, AMD genetics, OAKS/DERBY efficacy, and postmarketing safety signals with Syfovre?",
+  "verdict": "ELIGIBLE_WITH_CONDITIONS",
+  "scores": { "eligibility_index": 56, "tension": 62, "alignment": 55, "convergence": 48 },
+  "summary": "Acquisition has moderate structural eligibility: strong complement C3 mechanism and AMD genetics; measurable GA efficacy; operational friction from rare post‑marketing retinal vasculitis; CVR upside depends on pharmacovigilance and prescriber adoption.",
+  "notes": {
+    "tension_map": [
+      {"issue": "Safety-efficacy paradox", "impact": "High"},
+      {"issue": "Risk-benefit timing disconnect", "impact": "Medium"}
+    ],
+    "conditions": [
+      "Enhance PV and track vasculitis reporting rates",
+      "Codify prescriber education and risk communication",
+      "Scenario-plan CVR milestones under safety headwinds",
+      "Monitor competitive complement assets"
+    ]
+  },
+  "timestamp": "2026-05-22T02:12:00Z"
+}

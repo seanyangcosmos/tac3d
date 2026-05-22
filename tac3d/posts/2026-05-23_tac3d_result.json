@@ -1,0 +1,7 @@
+{
+  "decision": "Should investors view Roche/Genentech’s Tecentriq adjuvant approval (May 15, 2026) for ctDNA MRD-positive muscle‑invasive bladder cancer as structurally investable now — given PD‑L1 mechanism, biomarker genetics (TMB/APOBEC/DDR), and MRD‑enriched clinical data?",
+  "verdict": "ELIGIBLE_WITH_CONDITIONS",
+  "scores": { "eligibility_index": 76, "tension": 83, "alignment": 77, "convergence": 68 },
+  "summary": "Strong mechanistic and biomarker alignment (PD‑L1, high TMB/APOBEC; MRD positivity) with FDA‑validated adjuvant strategy; primary risk is convergence dependency on MRD subgroup and companion diagnostic uptake. Monitoring conditions: CDx performance/adoption, long‑term safety, HEOR, and competitive evolution.",
+  "timestamp": "2026-05-22T17:11:00Z"
+}

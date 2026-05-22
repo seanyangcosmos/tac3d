@@ -1,0 +1,1 @@
+Tecentriq adjuvant for ctDNA MRD+ MIBC — TAC-3D verdict: ELIGIBLE_WITH_CONDITIONS. EI 76 | T 83 | A 77 | C 68. Mechanism and biomarker context (PD‑L1, high TMB/APOBEC; MRD positivity) align; convergence risk centers on companion diagnostic adoption and subgroup dependency.

@@ -1,0 +1,1 @@
+Chiesi–KalVista (HAE; plasma kallikrein) — TAC-3D: ELIGIBLE. EI 76 | T 85 | A 72 | C 70. Mechanism/genetics converge; KONFIDENT met endpoints; EKTERLY approved. Convergence risks: competitive timing (BioCryst long‑acting PK), positioning vs oral prophylaxis, and integration execution.

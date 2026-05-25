@@ -1,0 +1,32 @@
+{
+  "scores": {"tension": 85, "alignment": 72, "convergence": 70, "eligibility_index": 76},
+  "verdict": "ELIGIBLE",
+  "verdict_summary": "Strong tri-layer evidence coherence supports acquisition with manageable competitive risks",
+  "tension_map": [
+    "Minor inconsistency between mechanistic rationale and emerging competitive landscape pressures",
+    "Genetic evidence robustly validates plasma kallikrein pathway targeting without contradictions",
+    "Clinical evidence confirms mechanism translation with proven efficacy/safety profile"
+  ],
+  "alignment_gaps": [
+    "Competitive timing risks: BioCryst's expanded pipeline and CSL's new launches create resource allocation pressure",
+    "Market positioning uncertainty with oral on-demand vs prophylactic approaches requiring different commercial strategies",
+    "Integration complexity between KalVista's focused HAE platform and Chiesi's broader rare disease portfolio"
+  ],
+  "convergence_risks": [
+    "Market dynamics sensitivity: Kallikrein inhibitors scaling at 19.12% CAGR with BioCryst's berotralstat delivering $437M in 2024, creating competitive pressure",
+    "Regulatory expansion dependency: EKTERLY approved in US, EU, UK, Japan with pediatric studies ongoing for sustained growth",
+    "Commercial execution risk in crowded therapeutic landscape with established players"
+  ],
+  "gap_inventory": [
+    "Competitive response modeling from BioCryst's navenibart pipeline advancement",
+    "Market share sustainability analysis given new HAE therapy approvals in 2025-2026",
+    "Integration risk assessment for KalVista's specialized commercial infrastructure"
+  ],
+  "conditions": [
+    "Monitor BioCryst's navenibart Phase 3 progress and potential filing timeline impact",
+    "Establish clear differentiation strategy for oral on-demand vs existing oral prophylactic positioning",
+    "Develop integration plan for KalVista's commercial team within Chiesi's rare disease structure"
+  ],
+  "structural_summary": "The mechanistic, genetic, and clinical evidence layers demonstrate strong internal coherence supporting EKTERLY's therapeutic rationale and validated efficacy. Strong market uptake following July 2025 US launch validates commercial potential. However, convergence risks emerge from BioCryst's navenibart long-acting plasma kallikrein inhibitor in Phase 3 and established competition from Takeda's Takhzyro and CSL entries. The $1.9B acquisition appears strategically sound given Chiesi's 2030 revenue targets, though execution risks require active management.",
+  "followup_question": "What is Chiesi's specific commercial strategy to differentiate EKTERLY's oral on-demand positioning against BioCryst's established oral prophylactic ORLADEYO and their advancing long-acting navenibart pipeline?"
+}

@@ -1,0 +1,50 @@
+{
+  "verdict": "ELIGIBLE_WITH_CONDITIONS",
+  "scores": {
+    "eligibility_index": 73,
+    "tension": 78,
+    "alignment": 75,
+    "convergence": 67
+  },
+  "verdict_summary": "Decision eligible with conditions. ENHANCE represents incremental commercial optimization rather than breakthrough catalyst. Clinical bioequivalence validated but commercial differentiation limited in crowded anti-CD20 market.",
+  "tension_map": [
+    "Mechanistic layer supports anti-CD20 efficacy but dosing optimization provides minimal new therapeutic benefit versus established regimen",
+    "Strong commercial performance trajectory conflicts with limited differentiation potential of single-dose initiation versus competitors"
+  ],
+  "alignment_gaps": [
+    "Genetic layer provides no directional support for dosing regimen changes - purely operational improvement",
+    "Commercial catalyst potential constrained by BRIUMVI's existing strong growth trajectory making incremental gains less impactful"
+  ],
+  "convergence_risks": [
+    "Catalyst assessment sensitive to competitive dynamics in anti-CD20 market with Ocrevus dominance and emerging alternatives",
+    "Commercial impact dependent on infusion center operational benefits translating to market share gains",
+    "Limited durability as competitive advantage given ease of replication by other anti-CD20 therapies"
+  ],
+  "gap_inventory": [
+    "No data on actual infusion center throughput improvements or cost reductions from single-dose regimen",
+    "Missing competitive positioning analysis versus Ocrevus simplified dosing initiatives",
+    "Lack of physician/patient preference data for single versus split initiation regimens"
+  ],
+  "conditions": [
+    "Monitor Q1-Q2 2026 commercial metrics for evidence of accelerated market penetration post-ENHANCE",
+    "Assess competitive response from Roche/other anti-CD20 players to dosing simplification trends",
+    "Evaluate regulatory approval timeline and commercial implementation strategy for single-dose regimen"
+  ],
+  "structural_summary": "Evidence layers show moderate structural compatibility. Mechanistic foundation solid but dosing change represents operational rather than therapeutic advancement. Clinical validation clear but commercial catalyst potential limited by BRIUMVI's already strong growth trajectory and competitive market dynamics. Missing critical commercial validation data.",
+  "followup_question": "What specific infusion center efficiency metrics or physician adoption data would strengthen the commercial catalyst case for ENHANCE beyond bioequivalence demonstration?",
+  "decision": "Should investors treat TG Therapeutics' Phase 3 ENHANCE result — a single Day 1 initiation infusion for BRIUMVI (ublituximab) shown bioequivalent to the current Day 1 + Day 15 start — as a meaningful near-term commercial catalyst?",
+  "layers": [
+    {
+      "name": "Mechanistic (anti-CD20 B-cell depletion in RMS)",
+      "content": "Ublituximab targets CD20 on B cells, driving ADCC/CDC-mediated depletion that reduces inflammatory activity in relapsing MS; class mechanism validated across ocrelizumab/ofatumumab and ULTIMATE I/II outcomes versus teriflunomide (lower ARR)."
+    },
+    {
+      "name": "Genetic (risk ≠ response)",
+      "content": "MS susceptibility is strongly associated with HLA‑DRB1*15:01 and other immune loci, but there is no established pharmacogenomic predictor of anti‑CD20 response in RMS; genetic reinforcement for this dosing change is weak/indirect."
+    },
+    {
+      "name": "Clinical (ENHANCE Phase 3 initiation simplification)",
+      "content": "TG Therapeutics reported ENHANCE met its primary endpoint: bioequivalent drug exposure for a single Day 1 initiation infusion versus the approved Day 1 & Day 15 regimen in adults with RMS (randomized, double‑blind). Operationally reduces initiation burden and may improve infusion center throughput; efficacy/safety endpoints unchanged in this readout."
+    }
+  ]
+}

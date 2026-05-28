@@ -1,0 +1,1 @@
+Topology view: dosing simplification is operational, not therapeutic. ENHANCE validates single‑day BRIUMVI initiation, but confidence stays local to the clinical layer until commercial transfer metrics arrive. Verdict: ELIGIBLE_WITH_CONDITIONS. EI 73 | T 78 | A 75 | C 67.

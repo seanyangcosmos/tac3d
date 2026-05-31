@@ -1,0 +1,1 @@
+TAC-3D: ELIGIBLE (EI78|T78|A82|C73). PEAK 2L GIST: PFS 16.5 vs 9.2 mo (HR0.50); ORR 46% vs 26%. Mechanism: A-loop (bezuclastinib) + ATP-pocket (sunitinib). Priority Review; PDUFA 2026-11-30. Watch OS maturity + hepatic safety.

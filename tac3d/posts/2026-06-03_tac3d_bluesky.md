@@ -1,0 +1,1 @@
+ELIGIBLE — EI 85 | T 88 | A 85 | C 82. Triplet EC+mFOLFOX6 targets BRAF V600E mCRC with pathway + EGFR feedback control; genetics (~8–12%) and ASCO ’26/BREAKWATER data close the loop. FDA traditional approval (Feb ’26). Constraint: pace rollout vs cost and capacity.

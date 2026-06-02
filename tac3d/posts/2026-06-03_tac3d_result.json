@@ -1,0 +1,30 @@
+{
+  "verdict": "ELIGIBLE",
+  "scores": {
+    "tension": 88,
+    "alignment": 85,
+    "convergence": 82,
+    "eligibility_index": 85
+  },
+  "verdict_summary": "Strong structural compatibility with validated FDA approval, robust ASCO 2026 outcomes, and consistent evidence across mechanistic, genetic, and clinical layers supporting first-line EC+mFOLFOX6 adoption in BRAF V600E-mutant mCRC.",
+  "tension_map": [
+    "Minor inconsistency: Prior accelerated approval (2024) vs traditional approval (Feb 2026) timing creates slight regulatory progression uncertainty (-5)"
+  ],
+  "alignment_gaps": [
+    "Different priorities: Investment/formulary decisions require balancing cost considerations against clinical outcomes data (-8)",
+    "Resource allocation: Timing of formulary exposure may need coordination with institutional capacity planning (-7)"
+  ],
+  "convergence_risks": [
+    "Cross-time stability: Long-term cost-effectiveness and real-world outcomes beyond clinical trial setting need ongoing monitoring (-12)",
+    "Incomplete coverage: Limited post-marketing surveillance data for safety profile in diverse populations (-6)"
+  ],
+  "gap_inventory": [
+    "Long-term cost-effectiveness data in real-world settings",
+    "Post-marketing safety surveillance in diverse populations",
+    "Optimal timing strategies for formulary implementation",
+    "Resource allocation planning for institutional capacity"
+  ],
+  "conditions": [],
+  "structural_summary": "Decision demonstrates strong structural integrity across evidence layers. FDA granted traditional approval to encorafenib + cetuximab + fluorouracil-based chemotherapy for BRAF V600E-mutant mCRC on February 24, 2026, supported by Phase 3 BREAKWATER trial efficacy data. ASCO 2026 presentations demonstrate significant survival improvements, with median PFS of 15.2 months vs 8.3 months for standard therapy. BRAF V600E mutations occur in 8-12% of metastatic colorectal cancer cases, confirming genetic prevalence estimates. Mechanistic rationale aligns with clinical outcomes through validated pathway targeting approach.",
+  "followup_question": "What specific timeline and budget parameters should guide the investment/formulary exposure pacing to optimize institutional readiness while ensuring timely patient access to this newly approved first-line therapy?"
+}

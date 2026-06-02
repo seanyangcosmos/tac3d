@@ -1,0 +1,7 @@
+TAC-3D verdict: ELIGIBLE — Eligibility Index 77 | Tension 73 | Alignment 82 | Convergence 75.
+
+Structure first, story second. Mechanistically, daraxonrasib’s RAS(ON) multi-selective inhibition directly targets the active RAS state that dominates PDAC biology. Genetically, PDAC remains KRAS-addicted (>90% mutated; G12D/V most common), so the mechanism is pointed at the core driver. Clinically, ASCO ’26 plenary Phase 3 results show a survival benefit versus chemotherapy in previously treated metastatic disease, closing the loop between rationale, genetics, and human data.
+
+Where the topology adds caution is timing. Much of the positive surprise appears priced: a large immediate move, strong YTD appreciation, and analyst targets now within reach. That creates a tension between structural eligibility and entry risk. TAC-3D’s read is to keep the structure, adjust the execution.
+
+Practical stance: favor disciplined, sized exposure over an “all-at-once” accumulation. Let first-line and adjuvant readouts (and regulatory milestones) degrade uncertainty further, and watch insider activity and manufacturing clarity as secondary checks. In short: the stack is aligned; pacing the decision respects current valuation and preserves option value.

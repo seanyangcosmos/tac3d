@@ -1,0 +1,1 @@
+ELIGIBLE — EI 77 | T 73 | A 82 | C 75. Mechanism (RAS(ON)) matches KRAS-dominant PDAC genetics; Phase 3 survival benefit closes the loop clinically. Constraint: timing after a large move; structure argues for disciplined, sized entries vs. immediate accumulation.

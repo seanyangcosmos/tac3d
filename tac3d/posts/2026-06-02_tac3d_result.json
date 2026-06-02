@@ -1,0 +1,37 @@
+{
+  "verdict": "ELIGIBLE",
+  "scores": {
+    "tension": 73,
+    "alignment": 82,
+    "convergence": 75,
+    "eligibility_index": 77
+  },
+  "verdict_summary": "Decision eligible for execution with strong three-layer evidence convergence. ASCO plenary results confirm mechanistic rationale and genetic targeting strategy, though some minor execution timing tensions exist.",
+  "tension_map": [
+    "Timing tension: Decision to accumulate 'after' ASCO results vs. stock already up 20%+ post-presentation",
+    "Market efficiency concern: Major positive data already reflected in 98% YTD stock appreciation",
+    "Insider selling pattern conflicts with accumulation thesis (43 sales, 0 purchases in 6 months)"
+  ],
+  "alignment_gaps": [
+    "Price target convergence: Multiple analyst upgrades to $195-205 range suggest limited near-term upside",
+    "Market cap consideration: $31-32B valuation may limit explosive growth potential for accumulation strategy"
+  ],
+  "convergence_risks": [
+    "Single indication dependency: Success concentrated in pancreatic cancer second-line setting",
+    "Regulatory execution risk: FDA review timeline despite Priority Voucher use",
+    "Competition emergence: Amgen/Bristol Myers targeting overlapping RAS mutations"
+  ],
+  "gap_inventory": [
+    "First-line PDAC trial (RASolute 303) results pending for broader indication expansion",
+    "Manufacturing scale-up requirements for commercial launch not detailed",
+    "Competitive positioning vs. existing KRAS G12C inhibitors unclear in overlapping patient populations"
+  ],
+  "conditions": [
+    "Monitor insider trading patterns for shift from selling to holding/buying",
+    "Establish position sizing limits given current valuation levels",
+    "Track RASolute 303 (first-line) and 304 (adjuvant) trial progress for indication expansion",
+    "Confirm FDA submission timeline and Priority Voucher utilization effectiveness"
+  ],
+  "structural_summary": "Three evidence layers demonstrate strong internal consistency: mechanistic rationale (RAS(ON) multi-selective inhibition) directly addresses genetic reality (>90% KRAS mutations in PDAC) and clinical results validate both (60% mortality risk reduction, doubled survival). ASCO plenary presentation confirms unprecedented Phase 3 success in historically challenging indication. However, substantial stock appreciation (98% YTD) and analyst price target proximity suggest much positive data already incorporated. Accumulation strategy faces timing tension but remains structurally sound given regulatory pathway clarity and pipeline expansion potential.",
+  "followup_question": "Given the 98% YTD stock appreciation and proximity to analyst price targets ($195-205), would a dollar-cost averaging approach over 3-6 months better manage entry timing risk versus immediate accumulation?"
+}
